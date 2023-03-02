@@ -1,7 +1,6 @@
 <?php
-use App\Http\Controllers\CompanyDashboard;
+
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/company',[CompanyDashboard::class,'companyindex']);
-Route::get('/addemp',[CompanyDashboard::class,'empadd']);
-Route::post('/addemp',[CompanyDashboard::class,'empdata']);
-Route::get('/loginemp',[CompanyDashboard::class,'emplogin']);
-Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']);
-Route::get('/student',[StudentController::class,'studentindex']);
-
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -33,11 +21,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+require __DIR__.'/auth.php';
+
+Route::get('/company/dashboard', function () {
+    return view('company.dashboard');
+})->middleware(['auth:company', 'verified'])->name('company.dashboard');
+require __DIR__.'/companyauth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__.'/auth.php';
