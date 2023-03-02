@@ -8,11 +8,14 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
-            $table->id('empid');
+        Schema::create('employee', function (Blueprint $table) {
+            $table->id('id');
+           /*  $table->foreignId('user_id')->constrained(); */
             $table->string('empname');
             $table->string('designation');
             $table->string('email')->unique();
@@ -26,9 +29,11 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('employee');
     }
 };
