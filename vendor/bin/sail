@@ -24,6 +24,12 @@ if [ -d /proc/cygdrive ]; then
 fi
 
 export COMPOSER_RUNTIME_BIN_DIR="$(cd "${self%[/\\]*}" > /dev/null; pwd)"
+<<<<<<< HEAD
+=======
+=======
+export COMPOSER_RUNTIME_BIN_DIR=$(cd "${self%[/\\]*}" > /dev/null; pwd)
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
+>>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
 
 # If bash is sourcing this file, we have to source the target as well
 bashSource="$BASH_SOURCE"
