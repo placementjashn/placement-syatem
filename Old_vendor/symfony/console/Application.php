@@ -21,6 +21,7 @@ use Symfony\Component\Console\Command\SignalableCommandInterface;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\Console\Completion\CompletionInput;
 use Symfony\Component\Console\Completion\CompletionSuggestions;
+use Symfony\Component\Console\Completion\Suggestion;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
 use Symfony\Component\Console\Event\ConsoleSignalEvent;
@@ -32,6 +33,7 @@ use Symfony\Component\Console\Exception\NamespaceNotFoundException;
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Helper\DebugFormatterHelper;
+use Symfony\Component\Console\Helper\DescriptorHelper;
 use Symfony\Component\Console\Helper\FormatterHelper;
 use Symfony\Component\Console\Helper\Helper;
 use Symfony\Component\Console\Helper\HelperSet;
@@ -72,23 +74,27 @@ class Application implements ResetInterface
 {
     private array $commands = [];
     private bool $wantHelps = false;
-    private $runningCommand = null;
+    private ?Command $runningCommand = null;
     private string $name;
     private string $version;
-    private $commandLoader = null;
+    private ?CommandLoaderInterface $commandLoader = null;
     private bool $catchExceptions = true;
     private bool $autoExit = true;
-    private $definition;
-    private $helperSet;
-    private $dispatcher = null;
-    private $terminal;
+    private InputDefinition $definition;
+    private HelperSet $helperSet;
+    private ?EventDispatcherInterface $dispatcher = null;
+    private Terminal $terminal;
     private string $defaultCommand;
     private bool $singleCommand = false;
     private bool $initialized = false;
 <<<<<<< HEAD
     private ?SignalRegistry $signalRegistry = null;
 =======
-    private $signalRegistry;
+<<<<<<< HEAD
+    private SignalRegistry $signalRegistry;
+=======
+    private ?SignalRegistry $signalRegistry = null;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 >>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     private array $signalsToDispatchEvent = [];
 
@@ -145,13 +151,8 @@ class Application implements ResetInterface
             @putenv('COLUMNS='.$this->terminal->getWidth());
         }
 
-        if (null === $input) {
-            $input = new ArgvInput();
-        }
-
-        if (null === $output) {
-            $output = new ConsoleOutput();
-        }
+        $input ??= new ArgvInput();
+        $output ??= new ConsoleOutput();
 
         $renderException = function (\Throwable $e) use ($output) {
             if ($output instanceof ConsoleOutputInterface) {
@@ -232,7 +233,7 @@ class Application implements ResetInterface
         try {
             // Makes ArgvInput::getFirstArgument() able to distinguish an option from an argument.
             $input->bind($this->getDefinition());
-        } catch (ExceptionInterface $e) {
+        } catch (ExceptionInterface) {
             // Errors must be ignored, full binding/validation happens later when the command is known.
         }
 
@@ -262,7 +263,26 @@ class Application implements ResetInterface
             // the command name MUST be the first element of the input
             $command = $this->find($name);
         } catch (\Throwable $e) {
-            if (!($e instanceof CommandNotFoundException && !$e instanceof NamespaceNotFoundException) || 1 !== \count($alternatives = $e->getAlternatives()) || !$input->isInteractive()) {
+            if (($e instanceof CommandNotFoundException && !$e instanceof NamespaceNotFoundException) && 1 === \count($alternatives = $e->getAlternatives()) && $input->isInteractive()) {
+                $alternative = $alternatives[0];
+
+                $style = new SymfonyStyle($input, $output);
+                $output->writeln('');
+                $formattedBlock = (new FormatterHelper())->formatBlock(sprintf('Command "%s" is not defined.', $name), 'error', true);
+                $output->writeln($formattedBlock);
+                if (!$style->confirm(sprintf('Do you want to run "%s" instead? ', $alternative), false)) {
+                    if (null !== $this->dispatcher) {
+                        $event = new ConsoleErrorEvent($input, $output, $e);
+                        $this->dispatcher->dispatch($event, ConsoleEvents::ERROR);
+
+                        return $event->getExitCode();
+                    }
+
+                    return 1;
+                }
+
+                $command = $this->find($alternative);
+            } else {
                 if (null !== $this->dispatcher) {
                     $event = new ConsoleErrorEvent($input, $output, $e);
                     $this->dispatcher->dispatch($event, ConsoleEvents::ERROR);
@@ -274,27 +294,24 @@ class Application implements ResetInterface
                     $e = $event->getError();
                 }
 
-                throw $e;
-            }
+                try {
+                    if ($e instanceof CommandNotFoundException && $namespace = $this->findNamespace($name)) {
+                        $helper = new DescriptorHelper();
+                        $helper->describe($output instanceof ConsoleOutputInterface ? $output->getErrorOutput() : $output, $this, [
+                            'format' => 'txt',
+                            'raw_text' => false,
+                            'namespace' => $namespace,
+                            'short' => false,
+                        ]);
 
-            $alternative = $alternatives[0];
+                        return isset($event) ? $event->getExitCode() : 1;
+                    }
 
-            $style = new SymfonyStyle($input, $output);
-            $output->writeln('');
-            $formattedBlock = (new FormatterHelper())->formatBlock(sprintf('Command "%s" is not defined.', $name), 'error', true);
-            $output->writeln($formattedBlock);
-            if (!$style->confirm(sprintf('Do you want to run "%s" instead? ', $alternative), false)) {
-                if (null !== $this->dispatcher) {
-                    $event = new ConsoleErrorEvent($input, $output, $e);
-                    $this->dispatcher->dispatch($event, ConsoleEvents::ERROR);
-
-                    return $event->getExitCode();
+                    throw $e;
+                } catch (NamespaceNotFoundException) {
+                    throw $e;
                 }
-
-                return 1;
             }
-
-            $command = $this->find($alternative);
         }
 
         if ($command instanceof LazyCommand) {
@@ -308,9 +325,6 @@ class Application implements ResetInterface
         return $exitCode;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function reset()
     {
     }
@@ -359,18 +373,16 @@ class Application implements ResetInterface
             CompletionInput::TYPE_ARGUMENT_VALUE === $input->getCompletionType()
             && 'command' === $input->getCompletionName()
         ) {
-            $commandNames = [];
             foreach ($this->all() as $name => $command) {
                 // skip hidden commands and aliased commands as they already get added below
                 if ($command->isHidden() || $command->getName() !== $name) {
                     continue;
                 }
-                $commandNames[] = $command->getName();
+                $suggestions->suggestValue(new Suggestion($command->getName(), $command->getDescription()));
                 foreach ($command->getAliases() as $name) {
-                    $commandNames[] = $name;
+                    $suggestions->suggestValue(new Suggestion($name, $command->getDescription()));
                 }
             }
-            $suggestions->suggestValues(array_filter($commandNames));
 
             return;
         }
@@ -573,7 +585,7 @@ class Application implements ResetInterface
     {
         $this->init();
 
-        return isset($this->commands[$name]) || ($this->commandLoader && $this->commandLoader->has($name) && $this->add($this->commandLoader->get($name)));
+        return isset($this->commands[$name]) || ($this->commandLoader?->has($name) && $this->add($this->commandLoader->get($name)));
     }
 
     /**
@@ -1022,7 +1034,7 @@ class Application implements ResetInterface
         try {
             $command->mergeApplicationDefinition();
             $input->bind($command->getDefinition());
-        } catch (ExceptionInterface $e) {
+        } catch (ExceptionInterface) {
             // ignore invalid options/arguments for now, to allow the event listeners to customize the InputDefinition
         }
 

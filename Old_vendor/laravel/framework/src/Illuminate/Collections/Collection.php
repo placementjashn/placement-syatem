@@ -456,11 +456,25 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     /**
      * Get an item from the collection by key or add it to collection if it does not exist.
      *
+<<<<<<< HEAD
      * @template TGetOrPutValue
      *
      * @param  mixed  $key
      * @param  TGetOrPutValue|(\Closure(): TGetOrPutValue)  $value
      * @return TValue|TGetOrPutValue
+=======
+<<<<<<< HEAD
+     * @param  mixed  $key
+     * @param  mixed  $value
+     * @return mixed
+=======
+     * @template TGetOrPutValue
+     *
+     * @param  mixed  $key
+     * @param  TGetOrPutValue|(\Closure(): TGetOrPutValue)  $value
+     * @return TValue|TGetOrPutValue
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function getOrPut($key, $value)
     {
@@ -1026,21 +1040,22 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
      * Get one or a specified number of items randomly from the collection.
      *
      * @param  (callable(self<TKey, TValue>): int)|int|null  $number
+     * @param  bool  $preserveKeys
      * @return static<int, TValue>|TValue
      *
      * @throws \InvalidArgumentException
      */
-    public function random($number = null)
+    public function random($number = null, $preserveKeys = false)
     {
         if (is_null($number)) {
             return Arr::random($this->items);
         }
 
         if (is_callable($number)) {
-            return new static(Arr::random($this->items, $number($this)));
+            return new static(Arr::random($this->items, $number($this), $preserveKeys));
         }
 
-        return new static(Arr::random($this->items, $number));
+        return new static(Arr::random($this->items, $number, $preserveKeys));
     }
 
     /**
@@ -1146,9 +1161,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     {
         $chunks = floor(($this->count() - $size) / $step) + 1;
 
-        return static::times($chunks, function ($number) use ($size, $step) {
-            return $this->slice(($number - 1) * $step, $size);
-        });
+        return static::times($chunks, fn ($number) => $this->slice(($number - 1) * $step, $size));
     }
 
     /**
@@ -1571,6 +1584,11 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     }
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Flatten a multi-dimensional associative array with dots.
      *
      * @return static
@@ -1581,6 +1599,10 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Convert a flatten "dot" notation array into an expanded array.
      *
      * @return static

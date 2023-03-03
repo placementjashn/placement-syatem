@@ -255,7 +255,7 @@ class UrlGenerator implements UrlGeneratorContract
         // for asset paths, but only for routes to endpoints in the application.
         $root = $this->assetRoot ?: $this->formatRoot($this->formatScheme($secure));
 
-        return $this->removeIndex($root).'/'.trim($path, '/');
+        return Str::finish($this->removeIndex($root), '/').trim($path, '/');
     }
 
     /**
@@ -484,7 +484,17 @@ class UrlGenerator implements UrlGeneratorContract
                     ? $value->{$route->bindingFieldFor($key)}
                     : $value;
 
+<<<<<<< HEAD
             return $value instanceof BackedEnum ? $value->value : $value;
+=======
+<<<<<<< HEAD
+            return function_exists('enum_exists') && $value instanceof BackedEnum
+                ? $value->value
+                : $value;
+=======
+            return $value instanceof BackedEnum ? $value->value : $value;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         })->all();
 
         return $this->routeUrl()->to(

@@ -83,7 +83,7 @@ class ReflectionCaster
         // Cannot create ReflectionGenerator based on a terminated Generator
         try {
             $reflectionGenerator = new \ReflectionGenerator($c);
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             $a[Caster::PREFIX_VIRTUAL.'closed'] = true;
 
             return $a;
@@ -144,7 +144,7 @@ class ReflectionCaster
             array_unshift($trace, [
                 'function' => 'yield',
                 'file' => $function->getExecutingFile(),
-                'line' => $function->getExecutingLine() - (int) (\PHP_VERSION_ID < 80100),
+                'line' => $function->getExecutingLine(),
             ]);
             $trace[] = $frame;
             $a[$prefix.'trace'] = new TraceStub($trace, false, 0, -1, -1);
@@ -292,13 +292,21 @@ class ReflectionCaster
         if ($c->isOptional()) {
             try {
                 $a[$prefix.'default'] = $v = $c->getDefaultValue();
+<<<<<<< HEAD
                 if ($c->isDefaultValueConstant() && !\is_object($v)) {
+=======
+<<<<<<< HEAD
+                if ($c->isDefaultValueConstant()) {
+=======
+                if ($c->isDefaultValueConstant() && !\is_object($v)) {
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
                     $a[$prefix.'default'] = new ConstStub($c->getDefaultValueConstantName(), $v);
                 }
                 if (null === $v) {
                     unset($a[$prefix.'allowsNull']);
                 }
-            } catch (\ReflectionException $e) {
+            } catch (\ReflectionException) {
             }
         }
 

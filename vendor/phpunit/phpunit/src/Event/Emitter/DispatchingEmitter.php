@@ -400,7 +400,6 @@ final class DispatchingEmitter implements Emitter
      */
     public function testAssertionSucceeded(mixed $value, Constraint\Constraint $constraint, string $message): void
     {
-<<<<<<< HEAD
         if (!$this->hasSubscriberFor(Test\AssertionSucceeded::class)) {
             return;
         }
@@ -409,23 +408,6 @@ final class DispatchingEmitter implements Emitter
             new Test\AssertionSucceeded(
                 $this->telemetryInfo(),
                 (new Exporter)->export($value),
-=======
-<<<<<<< HEAD
-        $this->dispatcher->dispatch(
-            new Test\AssertionSucceeded(
-                $this->telemetryInfo(),
-                '',
-=======
-        if (!$this->hasSubscriberFor(Test\AssertionSucceeded::class)) {
-            return;
-        }
-
-        $this->dispatcher->dispatch(
-            new Test\AssertionSucceeded(
-                $this->telemetryInfo(),
-                (new Exporter)->export($value),
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
                 $constraint->toString(),
                 $constraint->count(),
                 $message,
@@ -439,19 +421,10 @@ final class DispatchingEmitter implements Emitter
      */
     public function testAssertionFailed(mixed $value, Constraint\Constraint $constraint, string $message): void
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         if (!$this->hasSubscriberFor(Test\AssertionFailed::class)) {
             return;
         }
 
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         $this->dispatcher->dispatch(
             new Test\AssertionFailed(
                 $this->telemetryInfo(),
@@ -1083,11 +1056,6 @@ final class DispatchingEmitter implements Emitter
 
         return $info;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
     /**
      * @psalm-param class-string $className
@@ -1100,8 +1068,4 @@ final class DispatchingEmitter implements Emitter
 
         return $this->dispatcher->hasSubscriberFor($className);
     }
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 }

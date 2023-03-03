@@ -197,14 +197,40 @@ final class Application
         }
 
         printf(
+<<<<<<< HEAD
             '%s%sAn error occurred inside PHPUnit.%s%sMessage:  %s',
+=======
+<<<<<<< HEAD
+            '%s%sAn error occurred inside PHPUnit.%s%sMessage:  %s%sLocation: %s:%d%s%s%s%s',
+=======
+            '%s%sAn error occurred inside PHPUnit.%s%sMessage:  %s',
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             PHP_EOL,
             PHP_EOL,
             PHP_EOL,
             PHP_EOL,
+<<<<<<< HEAD
             $message
         );
 
+=======
+<<<<<<< HEAD
+            $message,
+            PHP_EOL,
+            $t->getFile(),
+            $t->getLine(),
+            PHP_EOL,
+            PHP_EOL,
+            $t->getTraceAsString(),
+            PHP_EOL
+        );
+
+=======
+            $message
+        );
+
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         $first = true;
 
         do {
@@ -223,6 +249,10 @@ final class Application
             $first = false;
         } while ($t = $t->getPrevious());
 
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         exit(Result::CRASH);
     }
 
