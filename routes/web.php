@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CompanyDashboard;
+
+use App\Http\Controllers\StudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +32,16 @@ Route::get('/company/dashboard', function () {
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');
 require __DIR__.'/companyauth.php';
 
+Route::get('/company',[CompanyDashboard::class,'companyindex']);
+Route::get('/addemp',[CompanyDashboard::class,'empadd']);
+Route::post('/addemp',[CompanyDashboard::class,'empdata']);
+Route::get('/loginemp',[CompanyDashboard::class,'emplogin']);
+Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']);
+Route::get('/student',[StudentController::class,'studentindex']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+?>
