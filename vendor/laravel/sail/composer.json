@@ -42,5 +42,13 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
+<<<<<<< HEAD
     "prefer-stable": true
+=======
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^6.0|^7.0|^8.0",
+        "phpstan/phpstan": "^1.10"
+    }
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 }

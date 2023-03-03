@@ -8,6 +8,11 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\Factory as QueueManager;
 use Illuminate\Database\DetectsLostConnections;
 use Illuminate\Queue\Events\JobExceptionOccurred;
+<<<<<<< HEAD
+=======
+use Illuminate\Queue\Events\JobPopped;
+use Illuminate\Queue\Events\JobPopping;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Queue\Events\JobReleasedAfterException;
@@ -342,13 +347,29 @@ class Worker
             return $connection->pop($queue);
         };
 
+<<<<<<< HEAD
         try {
             if (isset(static::$popCallbacks[$this->name])) {
                 return (static::$popCallbacks[$this->name])($popJobCallback, $queue);
+=======
+        $this->raiseBeforeJobPopEvent($connection->getConnectionName());
+
+        try {
+            if (isset(static::$popCallbacks[$this->name])) {
+                return tap(
+                    (static::$popCallbacks[$this->name])($popJobCallback, $queue),
+                    fn ($job) => $this->raiseAfterJobPopEvent($connection->getConnectionName(), $job)
+                );
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
             }
 
             foreach (explode(',', $queue) as $queue) {
                 if (! is_null($job = $popJobCallback($queue))) {
+<<<<<<< HEAD
+=======
+                    $this->raiseAfterJobPopEvent($connection->getConnectionName(), $job);
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
                     return $job;
                 }
             }
@@ -602,6 +623,34 @@ class Worker
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Raise the before job has been popped.
+     *
+     * @param  string  $connectionName
+     * @return void
+     */
+    protected function raiseBeforeJobPopEvent($connectionName)
+    {
+        $this->events->dispatch(new JobPopping($connectionName));
+    }
+
+    /**
+     * Raise the after job has been popped.
+     *
+     * @param  string  $connectionName
+     * @param  \Illuminate\Contracts\Queue\Job|null  $job
+     * @return void
+     */
+    protected function raiseAfterJobPopEvent($connectionName, $job)
+    {
+        $this->events->dispatch(new JobPopped(
+            $connectionName, $job
+        ));
+    }
+
+    /**
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * Raise the before queue job event.
      *
      * @param  string  $connectionName

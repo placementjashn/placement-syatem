@@ -246,6 +246,10 @@ class SmtpTransport extends AbstractTransport
 
     /**
      * @internal since version 6.1, to be made private in 7.0
+<<<<<<< HEAD
+=======
+     *
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * @final since version 6.1, to be made private in 7.0
      */
     protected function doHeloCommand(): void

@@ -400,10 +400,21 @@ final class DispatchingEmitter implements Emitter
      */
     public function testAssertionSucceeded(mixed $value, Constraint\Constraint $constraint, string $message): void
     {
+<<<<<<< HEAD
         $this->dispatcher->dispatch(
             new Test\AssertionSucceeded(
                 $this->telemetryInfo(),
                 '',
+=======
+        if (!$this->hasSubscriberFor(Test\AssertionSucceeded::class)) {
+            return;
+        }
+
+        $this->dispatcher->dispatch(
+            new Test\AssertionSucceeded(
+                $this->telemetryInfo(),
+                (new Exporter)->export($value),
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
                 $constraint->toString(),
                 $constraint->count(),
                 $message,
@@ -417,6 +428,13 @@ final class DispatchingEmitter implements Emitter
      */
     public function testAssertionFailed(mixed $value, Constraint\Constraint $constraint, string $message): void
     {
+<<<<<<< HEAD
+=======
+        if (!$this->hasSubscriberFor(Test\AssertionFailed::class)) {
+            return;
+        }
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
         $this->dispatcher->dispatch(
             new Test\AssertionFailed(
                 $this->telemetryInfo(),
@@ -1048,4 +1066,19 @@ final class DispatchingEmitter implements Emitter
 
         return $info;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @psalm-param class-string $className
+     */
+    private function hasSubscriberFor(string $className): bool
+    {
+        if (!$this->dispatcher instanceof SubscribableDispatcher) {
+            return true;
+        }
+
+        return $this->dispatcher->hasSubscriberFor($className);
+    }
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 }

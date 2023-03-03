@@ -1592,9 +1592,13 @@ trait HasAttributes
             return false;
         }
 
+<<<<<<< HEAD
         if (function_exists('enum_exists') && enum_exists($castType)) {
             return true;
         }
+=======
+        return enum_exists($castType);
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     }
 
     /**

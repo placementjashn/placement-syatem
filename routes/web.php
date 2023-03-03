@@ -1,8 +1,17 @@
 <?php
-
+use App\Http\Controllers\CompanyDashboard;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
+
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpprofileController;
+use App\Http\Controllers\postController;
+
+
+=======
+use App\Http\Controllers\StudentController;
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,29 +24,63 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('welcome');
+
 });
-// Open Student Dashboard //
+=======
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+
+Route::get('/company',[CompanyDashboard::class,'companyindex']);
+Route::get('/addemp',[CompanyDashboard::class,'empadd']);
+Route::post('/addemp',[CompanyDashboard::class,'empdata']);
+Route::get('/loginemp',[CompanyDashboard::class,'emplogin']);
+Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']);
+Route::get('/student',[StudentController::class,'studentindex']);
+
+
+
+
+<<<<<<< HEAD
+/* Route::get('/logins',function(){
+    /* session()->put('email',1);  
+    return redirect('/');  
+}); */
+Route::get('/logout',function(){
+    session()->forget('email'); 
+    return redirect('/loginemp');  
+
+=======
+Route::get('/', function () {
+    return view('welcome');
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-require __DIR__.'/auth.php';
-
-//open company dashboard
-Route::get('/company/dashboard', /* function () {
-    return view('company.dashboard'); */[EmployeeController::class,'companyindex']
-)->middleware(['auth:company', 'verified'])->name('company.dashboard');
-require __DIR__.'/companyauth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+<<<<<<< HEAD
+
 });
-//Company Dashboard
-//Route::get('/company/dashboard',[CompanyDashboard::class,'companyindex']);
-Route::get('/addemp',[EmployeeController::class,'empadd']);
-Route::post('/addemp',[EmployeeController::class,'empdata']);
-//::get('/loginemp',[EmployeeController::class,'emplogin']);
-//Route::post('/loginemp',[EmployeeController::class,'verifylogin']);
+
+//session
+/* Route::get('loginemp',function()
+{
+    $session =session()->all();
+    p($session);
+=======
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+});
+
+require __DIR__.'/auth.php';
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e

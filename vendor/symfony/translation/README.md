@@ -26,7 +26,11 @@ echo $translator->trans('Hello World!'); // outputs « Bonjour ! »
 Sponsor
 -------
 
+<<<<<<< HEAD
 The Translation component for Symfony 6.1 is [backed][1] by:
+=======
+The Translation component for Symfony 6.2 is [backed][1] by:
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 
  * [Crowdin][2], a cloud-based localization management software helping teams to go global and stay agile.
 

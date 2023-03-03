@@ -189,7 +189,11 @@ class Request
     protected $session;
 
     /**
+<<<<<<< HEAD
      * @var string
+=======
+     * @var string|null
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     protected $locale;
 
@@ -426,12 +430,21 @@ class Request
     /**
      * Clones a request and overrides some of its parameters.
      *
+<<<<<<< HEAD
      * @param array $query      The GET parameters
      * @param array $request    The POST parameters
      * @param array $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
      * @param array $cookies    The COOKIE parameters
      * @param array $files      The FILES parameters
      * @param array $server     The SERVER parameters
+=======
+     * @param array|null $query      The GET parameters
+     * @param array|null $request    The POST parameters
+     * @param array|null $attributes The request attributes (parameters parsed from the PATH_INFO, ...)
+     * @param array|null $cookies    The COOKIE parameters
+     * @param array|null $files      The FILES parameters
+     * @param array|null $server     The SERVER parameters
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     public function duplicate(array $query = null, array $request = null, array $attributes = null, array $cookies = null, array $files = null, array $server = null): static
     {
@@ -1367,7 +1380,11 @@ class Request
      */
     public function getLocale(): string
     {
+<<<<<<< HEAD
         return null === $this->locale ? $this->defaultLocale : $this->locale;
+=======
+        return $this->locale ?? $this->defaultLocale;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     }
 
     /**
@@ -1436,6 +1453,10 @@ class Request
      * @param bool $asResource If true, a resource will be returned
      *
      * @return string|resource
+<<<<<<< HEAD
+=======
+     *
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * @psalm-return ($asResource is true ? resource : string)
      */
     public function getContent(bool $asResource = false)

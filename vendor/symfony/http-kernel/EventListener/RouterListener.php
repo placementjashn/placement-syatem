@@ -17,7 +17,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+<<<<<<< HEAD
 use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;

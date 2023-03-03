@@ -123,8 +123,11 @@ class ProgressIndicator
 
     /**
      * Finish the indicator with message.
+<<<<<<< HEAD
      *
      * @param $message
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     public function finish(string $message)
     {

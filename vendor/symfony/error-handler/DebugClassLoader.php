@@ -1129,7 +1129,24 @@ EOTXT;
         }
 
         $end = $method->isGenerator() ? $i : $method->getEndLine();
+<<<<<<< HEAD
         for (; $i < $end; ++$i) {
+=======
+        $inClosure = false;
+        $braces = 0;
+        for (; $i < $end; ++$i) {
+            if (!$inClosure) {
+                $inClosure = str_contains($code[$i], 'function (');
+            }
+
+            if ($inClosure) {
+                $braces += substr_count($code[$i], '{') - substr_count($code[$i], '}');
+                $inClosure = $braces > 0;
+
+                continue;
+            }
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
             if ('void' === $returnType) {
                 $fixedCode[$i] = str_replace('    return null;', '    return;', $code[$i]);
             } elseif ('mixed' === $returnType || '?' === $returnType[0]) {

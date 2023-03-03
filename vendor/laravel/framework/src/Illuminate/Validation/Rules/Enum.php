@@ -38,7 +38,11 @@ class Enum implements Rule
             return true;
         }
 
+<<<<<<< HEAD
         if (is_null($value) || ! function_exists('enum_exists') || ! enum_exists($this->type) || ! method_exists($this->type, 'tryFrom')) {
+=======
+        if (is_null($value) || ! enum_exists($this->type) || ! method_exists($this->type, 'tryFrom')) {
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
             return false;
         }
 

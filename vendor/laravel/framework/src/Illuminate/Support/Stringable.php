@@ -2,6 +2,10 @@
 
 namespace Illuminate\Support;
 
+<<<<<<< HEAD
+=======
+use ArrayAccess;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 use Closure;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Traits\Conditionable;
@@ -10,7 +14,11 @@ use Illuminate\Support\Traits\Tappable;
 use JsonSerializable;
 use Symfony\Component\VarDumper\VarDumper;
 
+<<<<<<< HEAD
 class Stringable implements JsonSerializable
+=======
+class Stringable implements JsonSerializable, ArrayAccess
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 {
     use Conditionable, Macroable, Tappable;
 
@@ -441,6 +449,20 @@ class Stringable implements JsonSerializable
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Determine if a given string matches a given pattern.
+     *
+     * @param  string|iterable<string>  $pattern
+     * @return bool
+     */
+    public function isMatch($pattern)
+    {
+        return Str::isMatch($pattern, $this->value);
+    }
+
+    /**
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * Get the string matching the given pattern.
      *
      * @param  string  $pattern
@@ -1206,6 +1228,53 @@ class Stringable implements JsonSerializable
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Determine if the given offset exists.
+     *
+     * @param  mixed  $offset
+     * @return bool
+     */
+    public function offsetExists(mixed $offset): bool
+    {
+        return isset($this->value[$offset]);
+    }
+
+    /**
+     * Get the value at the given offset.
+     *
+     * @param  mixed  $offset
+     * @return string
+     */
+    public function offsetGet(mixed $offset): string
+    {
+        return $this->value[$offset];
+    }
+
+    /**
+     * Set the value at the given offset.
+     *
+     * @param  mixed  $offset
+     * @return void
+     */
+    public function offsetSet(mixed $offset, mixed $value): void
+    {
+        $this->value[$offset] = $value;
+    }
+
+    /**
+     * Unset the value at the given offset.
+     *
+     * @param  mixed  $offset
+     * @return void
+     */
+    public function offsetUnset(mixed $offset): void
+    {
+        unset($this->value[$offset]);
+    }
+
+    /**
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * Proxy dynamic properties onto methods.
      *
      * @param  string  $key

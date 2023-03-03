@@ -611,6 +611,35 @@ class Str
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Determine if a given string matches a given pattern.
+     *
+     * @param  string|iterable<string>  $pattern
+     * @param  string  $value
+     * @return bool
+     */
+    public static function isMatch($pattern, $value)
+    {
+        $value = (string) $value;
+
+        if (! is_iterable($pattern)) {
+            $pattern = [$pattern];
+        }
+
+        foreach ($pattern as $pattern) {
+            $pattern = (string) $pattern;
+
+            if (preg_match($pattern, $value) === 1) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * Get the string matching the given pattern.
      *
      * @param  string  $pattern

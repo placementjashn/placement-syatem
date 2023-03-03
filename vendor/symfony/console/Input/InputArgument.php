@@ -36,10 +36,17 @@ class InputArgument
     private string $description;
 
     /**
+<<<<<<< HEAD
      * @param string                           $name        The argument name
      * @param int|null                         $mode        The argument mode: self::REQUIRED or self::OPTIONAL
      * @param string                           $description A description text
      * @param string|bool|int|float|array|null $default     The default value (for self::OPTIONAL mode only)
+=======
+     * @param string                                                                        $name            The argument name
+     * @param int|null                                                                      $mode            The argument mode: self::REQUIRED or self::OPTIONAL
+     * @param string                                                                        $description     A description text
+     * @param string|bool|int|float|array|null                                              $default         The default value (for self::OPTIONAL mode only)
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * @param array|\Closure(CompletionInput,CompletionSuggestions):list<string|Suggestion> $suggestedValues The values used for input completion
      *
      * @throws InvalidArgumentException When argument mode is not valid

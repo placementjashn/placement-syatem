@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html>
+=======
+<html lang="en">
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 <head>
     <meta charset="<?= $this->charset; ?>" />
     <meta name="robots" content="noindex,nofollow,noarchive" />

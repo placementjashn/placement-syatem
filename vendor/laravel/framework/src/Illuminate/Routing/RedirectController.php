@@ -31,7 +31,11 @@ class RedirectController extends Controller
 
         $parameters = $parameters->only(
             $route->getCompiled()->getPathVariables()
+<<<<<<< HEAD
         )->toArray();
+=======
+        )->all();
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 
         $url = $url->toRoute($route, $parameters, false);
 

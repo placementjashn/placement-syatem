@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
+=======
+6.2.7
+-----
+
+ * [BC BREAK] The following data providers for `TransportFactoryTestCase` are now static:
+  `supportsProvider()`, `createProvider()`, `unsupportedSchemeProvider()`and `incompleteDsnProvider()`
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 6.2
 ---
 

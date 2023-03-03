@@ -261,6 +261,10 @@ final class JunitXmlLogger
 
         $this->currentTestCase = null;
         $this->time            = null;
+<<<<<<< HEAD
+=======
+        $this->prepared        = false;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     }
 
     /**

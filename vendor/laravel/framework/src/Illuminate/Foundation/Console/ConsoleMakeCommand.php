@@ -4,6 +4,10 @@ namespace Illuminate\Foundation\Console;
 
 use Illuminate\Console\Concerns\CreatesMatchingTest;
 use Illuminate\Console\GeneratorCommand;
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Str;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -45,7 +49,13 @@ class ConsoleMakeCommand extends GeneratorCommand
     {
         $stub = parent::replaceClass($stub, $name);
 
+<<<<<<< HEAD
         return str_replace(['dummy:command', '{{ command }}'], $this->option('command'), $stub);
+=======
+        $command = $this->option('command') ?: 'app:'.Str::of($name)->classBasename()->kebab()->value();
+
+        return str_replace(['dummy:command', '{{ command }}'], $command, $stub);
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     }
 
     /**
@@ -94,7 +104,11 @@ class ConsoleMakeCommand extends GeneratorCommand
     {
         return [
             ['force', 'f', InputOption::VALUE_NONE, 'Create the class even if the console command already exists'],
+<<<<<<< HEAD
             ['command', null, InputOption::VALUE_OPTIONAL, 'The terminal command that should be assigned', 'command:name'],
+=======
+            ['command', null, InputOption::VALUE_OPTIONAL, 'The terminal command that will be used to invoke the class'],
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
         ];
     }
 }

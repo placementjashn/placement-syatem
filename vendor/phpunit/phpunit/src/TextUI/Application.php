@@ -197,11 +197,16 @@ final class Application
         }
 
         printf(
+<<<<<<< HEAD
             '%s%sAn error occurred inside PHPUnit.%s%sMessage:  %s%sLocation: %s:%d%s%s%s%s',
+=======
+            '%s%sAn error occurred inside PHPUnit.%s%sMessage:  %s',
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
             PHP_EOL,
             PHP_EOL,
             PHP_EOL,
             PHP_EOL,
+<<<<<<< HEAD
             $message,
             PHP_EOL,
             $t->getFile(),
@@ -212,6 +217,29 @@ final class Application
             PHP_EOL
         );
 
+=======
+            $message
+        );
+
+        $first = true;
+
+        do {
+            printf(
+                '%s%s: %s:%d%s%s%s%s',
+                PHP_EOL,
+                $first ? 'Location' : 'Caused by',
+                $t->getFile(),
+                $t->getLine(),
+                PHP_EOL,
+                PHP_EOL,
+                $t->getTraceAsString(),
+                PHP_EOL
+            );
+
+            $first = false;
+        } while ($t = $t->getPrevious());
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
         exit(Result::CRASH);
     }
 

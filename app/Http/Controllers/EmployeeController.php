@@ -1,37 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\Employee;
-use DB;
+use App\Models\job;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
-    public function companyindex(){
-        $data = Employee::all();
-        return view('company.dashboard',['data'=>$data]);
+    public function company(){
+        return view('companydashboard');
     }
-
     public function empadd(){
         return view('addemployee');
-    }
+    } 
     
     public function empdata(Request $request){
+        /* p($request->all()); */
+     
         /* echo "<pre>";
         print_r($request->all()); */
 
+        /* return $request->input(); */
         $request->validate([
             'empname'=>'required',
-            'email'=>'required|email|unique:employees',
+            'email'=>'required|email|unique:employee',
             'password'=>'required|min:5|max:12',
             'gender'=>'required',
             'empimg'=>'required',
-            'phone'=>'required|unique:employees',
+            'phone'=>'required|unique:employee',
             'designation'=>'required' 
         ]);
-
         $emp = new Employee;
         $emp->empname = $request['empname'];
         $emp->designation = $request['designation'];
@@ -41,19 +40,21 @@ class EmployeeController extends Controller
         $emp->gender = $request['gender'];
         $emp->phone = $request['phone'];
         $emp->save();
-        $data=Employee::all();
-        return redirect('/company/dashboard'); 
-       
+         return redirect('/loginemp'); 
     }
-    //To Display employee list on Company Dashboard
 
-    
-    /* public function emplogin(){
+    public function emplogin(){
         return view('loginemp');
     }
 
     public function verifylogin(Request $request)
     {
+      /*   $session=session()->all(); */
+
+        $data=$request->input();
+        $request->session()->put('email',$data['email']);
+        echo session('email'); 
+        
         $request->validate([
             'email'=>'required|email',
             'password'=>'required'
@@ -64,7 +65,7 @@ class EmployeeController extends Controller
         {
             if(Hash::check($request->password ,$emp->password))
             {
-                return back()->with('success','You have logged succesfully');
+                return redirect('/employeedashborad');
             }
             else{
                 return back()->with('fail','password is incorrect');
@@ -74,6 +75,6 @@ class EmployeeController extends Controller
         {
             return back()->with('fail','This email is not registered');
         }
-    } */
+    }
+
 }
-?>

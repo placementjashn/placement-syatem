@@ -3,6 +3,7 @@ Process Component
 
 The Process component executes commands in sub-processes.
 
+<<<<<<< HEAD
 Sponsor
 -------
 
@@ -14,6 +15,8 @@ assistance to ensure the success of web application development projects.
 
 Help Symfony by [sponsoring][3] its development!
 
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 Resources
 ---------
 
@@ -22,7 +25,10 @@ Resources
  * [Report issues](https://github.com/symfony/symfony/issues) and
    [send Pull Requests](https://github.com/symfony/symfony/pulls)
    in the [main Symfony repository](https://github.com/symfony/symfony)
+<<<<<<< HEAD
 
 [1]: https://symfony.com/backers
 [2]: https://sensiolabs.com
 [3]: https://symfony.com/sponsor
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b

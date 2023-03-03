@@ -34,6 +34,17 @@ final class DeferringDispatcher implements SubscribableDispatcher
         $this->dispatcher->registerSubscriber($subscriber);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @psalm-param class-string $className
+     */
+    public function hasSubscriberFor(string $className): bool
+    {
+        return $this->dispatcher->hasSubscriberFor($className);
+    }
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     public function dispatch(Event $event): void
     {
         if ($this->recording) {

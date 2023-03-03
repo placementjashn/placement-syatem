@@ -75,11 +75,19 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
      */
     private static array $freshCache = [];
 
+<<<<<<< HEAD
     public const VERSION = '6.2.6';
     public const VERSION_ID = 60206;
     public const MAJOR_VERSION = 6;
     public const MINOR_VERSION = 2;
     public const RELEASE_VERSION = 6;
+=======
+    public const VERSION = '6.2.7';
+    public const VERSION_ID = 60207;
+    public const MAJOR_VERSION = 6;
+    public const MINOR_VERSION = 2;
+    public const RELEASE_VERSION = 7;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     public const EXTRA_VERSION = '';
 
     public const END_OF_MAINTENANCE = '07/2023';

@@ -138,7 +138,11 @@ class HeaderUtils
      * Decodes a quoted string.
      *
      * If passed an unquoted string that matches the "token" construct (as
+<<<<<<< HEAD
      * defined in the HTTP specification), it is passed through verbatimly.
+=======
+     * defined in the HTTP specification), it is passed through verbatim.
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     public static function unquote(string $s): string
     {

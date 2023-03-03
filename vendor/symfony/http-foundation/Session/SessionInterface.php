@@ -53,10 +53,17 @@ interface SessionInterface
      * Clears all session attributes and flashes and regenerates the
      * session and deletes the old session from persistence.
      *
+<<<<<<< HEAD
      * @param int $lifetime Sets the cookie lifetime for the session cookie. A null value
      *                      will leave the system settings unchanged, 0 sets the cookie
      *                      to expire with browser session. Time is in seconds, and is
      *                      not a Unix timestamp.
+=======
+     * @param int|null $lifetime Sets the cookie lifetime for the session cookie. A null value
+     *                           will leave the system settings unchanged, 0 sets the cookie
+     *                           to expire with browser session. Time is in seconds, and is
+     *                           not a Unix timestamp.
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     public function invalidate(int $lifetime = null): bool;
 
@@ -64,11 +71,19 @@ interface SessionInterface
      * Migrates the current session to a new session id while maintaining all
      * session attributes.
      *
+<<<<<<< HEAD
      * @param bool $destroy  Whether to delete the old session or leave it to garbage collection
      * @param int  $lifetime Sets the cookie lifetime for the session cookie. A null value
      *                       will leave the system settings unchanged, 0 sets the cookie
      *                       to expire with browser session. Time is in seconds, and is
      *                       not a Unix timestamp.
+=======
+     * @param bool     $destroy  Whether to delete the old session or leave it to garbage collection
+     * @param int|null $lifetime Sets the cookie lifetime for the session cookie. A null value
+     *                           will leave the system settings unchanged, 0 sets the cookie
+     *                           to expire with browser session. Time is in seconds, and is
+     *                           not a Unix timestamp.
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     public function migrate(bool $destroy = false, int $lifetime = null): bool;
 

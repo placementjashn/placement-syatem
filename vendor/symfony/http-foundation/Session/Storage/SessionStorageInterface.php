@@ -72,11 +72,19 @@ interface SessionStorageInterface
      * Otherwise session data could get lost again for concurrent requests with the
      * new ID. One result could be that you get logged out after just logging in.
      *
+<<<<<<< HEAD
      * @param bool $destroy  Destroy session when regenerating?
      * @param int  $lifetime Sets the cookie lifetime for the session cookie. A null value
      *                       will leave the system settings unchanged, 0 sets the cookie
      *                       to expire with browser session. Time is in seconds, and is
      *                       not a Unix timestamp.
+=======
+     * @param bool     $destroy  Destroy session when regenerating?
+     * @param int|null $lifetime Sets the cookie lifetime for the session cookie. A null value
+     *                           will leave the system settings unchanged, 0 sets the cookie
+     *                           to expire with browser session. Time is in seconds, and is
+     *                           not a Unix timestamp.
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      *
      * @throws \RuntimeException If an error occurs while regenerating this storage
      */

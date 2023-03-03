@@ -456,9 +456,17 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     /**
      * Get an item from the collection by key or add it to collection if it does not exist.
      *
+<<<<<<< HEAD
      * @param  mixed  $key
      * @param  mixed  $value
      * @return mixed
+=======
+     * @template TGetOrPutValue
+     *
+     * @param  mixed  $key
+     * @param  TGetOrPutValue|(\Closure(): TGetOrPutValue)  $value
+     * @return TValue|TGetOrPutValue
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      */
     public function getOrPut($key, $value)
     {
@@ -1568,6 +1576,19 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Flatten a multi-dimensional associative array with dots.
+     *
+     * @return static
+     */
+    public function dot()
+    {
+        return new static(Arr::dot($this->all()));
+    }
+
+    /**
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
      * Convert a flatten "dot" notation array into an expanded array.
      *
      * @return static

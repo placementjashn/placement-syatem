@@ -3703,11 +3703,15 @@ class Builder implements BuilderContract
      */
     public function castBinding($value)
     {
+<<<<<<< HEAD
         if (function_exists('enum_exists') && $value instanceof BackedEnum) {
             return $value->value;
         }
 
         return $value;
+=======
+        return $value instanceof BackedEnum ? $value->value : $value;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
     }
 
     /**

@@ -2,6 +2,23 @@
 
 All notable changes of the PHPUnit 10.0 release series are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+<<<<<<< HEAD
+=======
+## [10.0.14] - 2023-03-01
+
+### Changed
+
+* The `PHPUnit\Event\Test\AssertionSucceeded` and `PHPUnit\Event\Test\AssertionFailed` events are no longer emitted when they have no subscribers
+* The `PHPUnit\Event\Test\AssertionSucceeded::value()` method is no longer deprecated and returns the exported value again
+
+## [10.0.13] - 2023-02-27
+
+### Fixed
+
+* [#5186](https://github.com/sebastianbergmann/phpunit/issues/5186): SBOM does not validate
+* [#5258](https://github.com/sebastianbergmann/phpunit/issues/5258): JUnit logger crashes when test is skipped by missing PHP extension when running in separate process
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 ## [10.0.12] - 2023-02-25
 
 ### Changed
@@ -43,7 +60,11 @@ All notable changes of the PHPUnit 10.0 release series are documented in this fi
 
 ### Changed
 
+<<<<<<< HEAD
 * The `PHPUnit\Event\Test\AssertionSucceeded::value()` method is now deprecated and always returns `''`
+=======
+* The `PHPUnit\Event\Test\AssertionSucceeded::value()` method is now deprecated and always returns `''` (reverted in PHPUnit 10.0.14)
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 
 ### Fixed
 
@@ -221,6 +242,11 @@ All notable changes of the PHPUnit 10.0 release series are documented in this fi
 * PHP 7.3, PHP 7.4, and PHP 8.0 are no longer supported
 * `phpunit/php-code-coverage` [no longer supports PHPDBG and Xdebug 2](https://github.com/sebastianbergmann/php-code-coverage/blob/10.0.0/ChangeLog.md#1000---2023-02-03)
 
+<<<<<<< HEAD
+=======
+[10.0.14]: https://github.com/sebastianbergmann/phpunit/compare/10.0.13...10.0.14
+[10.0.13]: https://github.com/sebastianbergmann/phpunit/compare/10.0.12...10.0.13
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 [10.0.12]: https://github.com/sebastianbergmann/phpunit/compare/10.0.11...10.0.12
 [10.0.11]: https://github.com/sebastianbergmann/phpunit/compare/10.0.10...10.0.11
 [10.0.10]: https://github.com/sebastianbergmann/phpunit/compare/10.0.9...10.0.10

@@ -193,7 +193,11 @@ class Store implements StoreInterface
             if ($this->getPath($digest) !== $response->headers->get('X-Body-File')) {
                 throw new \RuntimeException('X-Body-File and X-Content-Digest do not match.');
             }
+<<<<<<< HEAD
             // Everything seems ok, omit writing content to disk
+=======
+        // Everything seems ok, omit writing content to disk
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
         } else {
             $digest = $this->generateContentDigest($response);
             $response->headers->set('X-Content-Digest', $digest);
