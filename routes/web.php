@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+<<<<<<< HEAD
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
 use App\Http\Controllers\postController;
+=======
+>>>>>>> 82f441809e30497d7f7f3ea15dfa36cab7e20ff1
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
@@ -21,6 +24,7 @@ use App\Http\Controllers\UserAuth;
 
 Route::get('/', function () {
     return view('welcome');
+<<<<<<< HEAD
 });
 
 Route::get('/addemployee',[EmployeeController::class,'empadd'])->middleware('guard') ;//employee
@@ -52,16 +56,25 @@ Route::get('/no-access',function(){
 Route::get('/logout',function(){
     session()->forget('email'); 
     return redirect('/loginemp');  
+=======
+>>>>>>> 82f441809e30497d7f7f3ea15dfa36cab7e20ff1
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+require __DIR__.'/auth.php';
+
+Route::get('/company/dashboard', function () {
+    return view('company.dashboard');
+})->middleware(['auth:company', 'verified'])->name('company.dashboard');
+require __DIR__.'/companyauth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+<<<<<<< HEAD
 });
 
 //session
@@ -83,3 +96,6 @@ Route::get('destroy-session',function(){
  return redirect('get-all-session');
 }); */
 require __DIR__.'/auth.php';
+=======
+});
+>>>>>>> 82f441809e30497d7f7f3ea15dfa36cab7e20ff1
