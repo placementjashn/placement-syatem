@@ -114,7 +114,15 @@ class TranslatorTest extends TestCase
         $this->assertEquals('en', $translator->getLocale());
     }
 
+<<<<<<< HEAD
     public static function getTransTests()
+=======
+<<<<<<< HEAD
+    public function getTransTests()
+=======
+    public static function getTransTests()
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['Symfony is great!', 'Symfony is great!', []],
@@ -122,7 +130,15 @@ class TranslatorTest extends TestCase
         ];
     }
 
+<<<<<<< HEAD
     public static function getTransChoiceTests()
+=======
+<<<<<<< HEAD
+    public function getTransChoiceTests()
+=======
+    public static function getTransChoiceTests()
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['There are no apples', '{0} There are no apples|{1} There is one apple|]1,Inf] There are %count% apples', 0],
@@ -137,7 +153,15 @@ class TranslatorTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
      * @dataProvider getInterval
+=======
+<<<<<<< HEAD
+     * @dataProvider getInternal
+=======
+     * @dataProvider getInterval
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function testInterval($expected, $number, $interval)
     {
@@ -146,7 +170,15 @@ class TranslatorTest extends TestCase
         $this->assertEquals($expected, $translator->trans($interval.' foo|[1,Inf[ bar', ['%count%' => $number]));
     }
 
+<<<<<<< HEAD
     public static function getInterval()
+=======
+<<<<<<< HEAD
+    public function getInternal()
+=======
+    public static function getInterval()
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['foo', 3, '{1,2, 3 ,4}'],
@@ -189,7 +221,15 @@ class TranslatorTest extends TestCase
         $translator->trans($id, ['%count%' => $number]);
     }
 
+<<<<<<< HEAD
     public static function getNonMatchingMessages()
+=======
+<<<<<<< HEAD
+    public function getNonMatchingMessages()
+=======
+    public static function getNonMatchingMessages()
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['{0} There are no apples|{1} There is one apple', 2],
@@ -199,7 +239,15 @@ class TranslatorTest extends TestCase
         ];
     }
 
+<<<<<<< HEAD
     public static function getChooseTests()
+=======
+<<<<<<< HEAD
+    public function getChooseTests()
+=======
+    public static function getChooseTests()
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['There are no apples', '{0} There are no apples|{1} There is one apple|]1,Inf] There are %count% apples', 0],
@@ -271,7 +319,7 @@ class TranslatorTest extends TestCase
             ['This is a text with a\nnew-line in it. Selector = 0.', '{0}This is a text with a\nnew-line in it. Selector = 0.|{1}This is a text with a\nnew-line in it. Selector = 1.|[1,Inf]This is a text with a\nnew-line in it. Selector > 1.', 0],
             // with double-quotes and id split accros lines
             ["This is a text with a\nnew-line in it. Selector = 1.", "{0}This is a text with a\nnew-line in it. Selector = 0.|{1}This is a text with a\nnew-line in it. Selector = 1.|[1,Inf]This is a text with a\nnew-line in it. Selector > 1.", 1],
-            // esacape pipe
+            // escape pipe
             ['This is a text with | in it. Selector = 0.', '{0}This is a text with || in it. Selector = 0.|{1}This is a text with || in it. Selector = 1.', 0],
             // Empty plural set (2 plural forms) from a .PO file
             ['', '|', 1],
@@ -315,7 +363,15 @@ class TranslatorTest extends TestCase
      *
      * As it is impossible to have this ever complete we should try as hard as possible to have it almost complete.
      */
+<<<<<<< HEAD
     public static function successLangcodes(): array
+=======
+<<<<<<< HEAD
+    public function successLangcodes(): array
+=======
+    public static function successLangcodes(): array
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['1', ['ay', 'bo', 'cgg', 'dz', 'id', 'ja', 'jbo', 'ka', 'kk', 'km', 'ko', 'ky']],
@@ -334,7 +390,15 @@ class TranslatorTest extends TestCase
      *
      * @return array with nplural together with langcodes
      */
+<<<<<<< HEAD
     public static function failingLangcodes(): array
+=======
+<<<<<<< HEAD
+    public function failingLangcodes(): array
+=======
+    public static function failingLangcodes(): array
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [
             ['1', ['fa']],

@@ -19,9 +19,21 @@ namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
 class NativeFileSessionHandler extends \SessionHandler
 {
     /**
+<<<<<<< HEAD
      * @param string|null $savePath Path of directory to save session files
      *                              Default null will leave setting as defined by PHP.
      *                              '/path', 'N;/path', or 'N;octal-mode;/path
+=======
+<<<<<<< HEAD
+     * @param string $savePath Path of directory to save session files
+     *                         Default null will leave setting as defined by PHP.
+     *                         '/path', 'N;/path', or 'N;octal-mode;/path
+=======
+     * @param string|null $savePath Path of directory to save session files
+     *                              Default null will leave setting as defined by PHP.
+     *                              '/path', 'N;/path', or 'N;octal-mode;/path
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      *
      * @see https://php.net/session.configuration#ini.session.save-path for further details.
      *
@@ -30,11 +42,7 @@ class NativeFileSessionHandler extends \SessionHandler
      */
     public function __construct(string $savePath = null)
     {
-        if (null === $savePath) {
-            $savePath = \ini_get('session.save_path');
-        }
-
-        $baseDir = $savePath;
+        $baseDir = $savePath ??= \ini_get('session.save_path');
 
         if ($count = substr_count($savePath, ';')) {
             if ($count > 2) {

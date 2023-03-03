@@ -68,15 +68,7 @@ class IcuResFileLoader implements LoaderInterface
      *
      * @param \ResourceBundle $rb       The ResourceBundle that will be flattened
      * @param array           $messages Used internally for recursive calls
-<<<<<<< HEAD
      * @param string|null     $path     Current path being parsed, used internally for recursive calls
-=======
-<<<<<<< HEAD
-     * @param string          $path     Current path being parsed, used internally for recursive calls
-=======
-     * @param string|null     $path     Current path being parsed, used internally for recursive calls
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     protected function flatten(\ResourceBundle $rb, array &$messages = [], string $path = null): array
     {

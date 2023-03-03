@@ -95,11 +95,10 @@ use function ksort;
 use function range;
 use function sort;
 use function sprintf;
+use function str_ends_with;
 use function str_replace;
-use function substr;
 use function token_get_all;
 use function trim;
-use PHPUnit\Runner\BaseTestRunner;
 use SebastianBergmann\CodeCoverage\Node\File as FileNode;
 use SebastianBergmann\CodeCoverage\Util\Percentage;
 use SebastianBergmann\Template\Template;
@@ -112,17 +111,9 @@ final class File extends Renderer
     /**
      * @psalm-var array<int,true>
      */
-    private static $keywordTokens = [];
-
-    /**
-     * @var array
-     */
-    private static $formattedSourceCache = [];
-
-    /**
-     * @var int
-     */
-    private $htmlSpecialCharsFlags = ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE;
+    private static array $keywordTokens        = [];
+    private static array $formattedSourceCache = [];
+    private int $htmlSpecialCharsFlags         = ENT_COMPAT | ENT_HTML401 | ENT_SUBSTITUTE;
 
     public function render(FileNode $node, string $file): void
     {
@@ -284,19 +275,19 @@ final class File extends Renderer
             $buffer .= $this->renderItemTemplate(
                 $template,
                 [
-                    'name'                            => $this->abbreviateClassName($name),
-                    'numClasses'                      => $numClasses,
-                    'numTestedClasses'                => $numTestedClasses,
-                    'numMethods'                      => $numMethods,
-                    'numTestedMethods'                => $numTestedMethods,
-                    'linesExecutedPercent'            => Percentage::fromFractionAndTotal(
+                    'name'                 => $this->abbreviateClassName($name),
+                    'numClasses'           => $numClasses,
+                    'numTestedClasses'     => $numTestedClasses,
+                    'numMethods'           => $numMethods,
+                    'numTestedMethods'     => $numTestedMethods,
+                    'linesExecutedPercent' => Percentage::fromFractionAndTotal(
                         $item['executedLines'],
                         $item['executableLines'],
                     )->asFloat(),
-                    'linesExecutedPercentAsString'    => $linesExecutedPercentAsString,
-                    'numExecutedLines'                => $item['executedLines'],
-                    'numExecutableLines'              => $item['executableLines'],
-                    'branchesExecutedPercent'         => Percentage::fromFractionAndTotal(
+                    'linesExecutedPercentAsString' => $linesExecutedPercentAsString,
+                    'numExecutedLines'             => $item['executedLines'],
+                    'numExecutableLines'           => $item['executableLines'],
+                    'branchesExecutedPercent'      => Percentage::fromFractionAndTotal(
                         $item['executedBranches'],
                         $item['executableBranches'],
                     )->asFloat(),
@@ -307,14 +298,14 @@ final class File extends Renderer
                         $item['executedPaths'],
                         $item['executablePaths']
                     )->asFloat(),
-                    'pathsExecutedPercentAsString'    => $pathsExecutedPercentAsString,
-                    'numExecutedPaths'                => $item['executedPaths'],
-                    'numExecutablePaths'              => $item['executablePaths'],
-                    'testedMethodsPercent'            => $testedMethodsPercentage->asFloat(),
-                    'testedMethodsPercentAsString'    => $testedMethodsPercentage->asString(),
-                    'testedClassesPercent'            => $testedClassesPercentage->asFloat(),
-                    'testedClassesPercentAsString'    => $testedClassesPercentage->asString(),
-                    'crap'                            => $item['crap'],
+                    'pathsExecutedPercentAsString' => $pathsExecutedPercentAsString,
+                    'numExecutedPaths'             => $item['executedPaths'],
+                    'numExecutablePaths'           => $item['executablePaths'],
+                    'testedMethodsPercent'         => $testedMethodsPercentage->asFloat(),
+                    'testedMethodsPercentAsString' => $testedMethodsPercentage->asString(),
+                    'testedClassesPercent'         => $testedClassesPercentage->asFloat(),
+                    'testedClassesPercentAsString' => $testedClassesPercentage->asString(),
+                    'crap'                         => $item['crap'],
                 ]
             );
 
@@ -384,7 +375,7 @@ final class File extends Renderer
         return $this->renderItemTemplate(
             $template,
             [
-                'name'                            => sprintf(
+                'name' => sprintf(
                     '%s<a href="#%d"><abbr title="%s">%s</abbr></a>',
                     $indent,
                     $item['startLine'],
@@ -898,7 +889,7 @@ final class File extends Renderer
         $result              = [''];
         $i                   = 0;
         $stringFlag          = false;
-        $fileEndsWithNewLine = substr($buffer, -1) === "\n";
+        $fileEndsWithNewLine = str_ends_with($buffer, "\n");
 
         unset($buffer);
 
@@ -1005,42 +996,21 @@ final class File extends Renderer
     {
         $testCSS = '';
 
-        if ($testData['fromTestcase']) {
-            switch ($testData['status']) {
-                case BaseTestRunner::STATUS_PASSED:
-                    switch ($testData['size']) {
-                        case 'small':
-                            $testCSS = ' class="covered-by-small-tests"';
+        switch ($testData['status']) {
+            case 'success':
+                $testCSS = match ($testData['size']) {
+                    'small'  => ' class="covered-by-small-tests"',
+                    'medium' => ' class="covered-by-medium-tests"',
+                    // no break
+                    default => ' class="covered-by-large-tests"',
+                };
 
-                            break;
+                break;
 
-                        case 'medium':
-                            $testCSS = ' class="covered-by-medium-tests"';
+            case 'failure':
+                $testCSS = ' class="danger"';
 
-                            break;
-
-                        default:
-                            $testCSS = ' class="covered-by-large-tests"';
-
-                            break;
-                    }
-
-                    break;
-
-                case BaseTestRunner::STATUS_SKIPPED:
-                case BaseTestRunner::STATUS_INCOMPLETE:
-                case BaseTestRunner::STATUS_RISKY:
-                case BaseTestRunner::STATUS_WARNING:
-                    $testCSS = ' class="warning"';
-
-                    break;
-
-                case BaseTestRunner::STATUS_FAILURE:
-                case BaseTestRunner::STATUS_ERROR:
-                    $testCSS = ' class="danger"';
-
-                    break;
-            }
+                break;
         }
 
         return sprintf(

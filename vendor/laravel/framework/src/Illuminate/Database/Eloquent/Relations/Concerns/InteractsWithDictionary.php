@@ -23,16 +23,7 @@ trait InteractsWithDictionary
                 return $attribute->__toString();
             }
 
-<<<<<<< HEAD
             if ($attribute instanceof UnitEnum) {
-=======
-<<<<<<< HEAD
-            if (function_exists('enum_exists') &&
-                $attribute instanceof UnitEnum) {
-=======
-            if ($attribute instanceof UnitEnum) {
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
                 return $attribute instanceof BackedEnum ? $attribute->value : $attribute->name;
             }
 

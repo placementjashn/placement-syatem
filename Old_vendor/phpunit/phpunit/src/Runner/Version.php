@@ -13,7 +13,7 @@ use function array_slice;
 use function dirname;
 use function explode;
 use function implode;
-use function strpos;
+use function str_contains;
 use SebastianBergmann\Version as VersionId;
 
 /**
@@ -21,15 +21,8 @@ use SebastianBergmann\Version as VersionId;
  */
 final class Version
 {
-    /**
-     * @var string
-     */
-    private static $pharVersion = '';
-
-    /**
-     * @var string
-     */
-    private static $version = '';
+    private static string $pharVersion = '';
+    private static string $version     = '';
 
     /**
      * Returns the current version of PHPUnit.
@@ -44,7 +37,11 @@ final class Version
 <<<<<<< HEAD
             self::$version = (new VersionId('10.0.14', dirname(__DIR__, 2)))->asString();
 =======
-            self::$version = (new VersionId('9.6.3', dirname(__DIR__, 2)))->getVersion();
+<<<<<<< HEAD
+            self::$version = (new VersionId('10.0.12', dirname(__DIR__, 2)))->asString();
+=======
+            self::$version = (new VersionId('10.0.14', dirname(__DIR__, 2)))->asString();
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 >>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         }
 
@@ -53,8 +50,8 @@ final class Version
 
     public static function series(): string
     {
-        if (strpos(self::id(), '-')) {
-            $version = explode('-', self::id())[0];
+        if (str_contains(self::id(), '-')) {
+            $version = explode('-', self::id(), 2)[0];
         } else {
             $version = self::id();
         }

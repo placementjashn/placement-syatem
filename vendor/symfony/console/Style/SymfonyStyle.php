@@ -23,14 +23,7 @@ use Symfony\Component\Console\Helper\TableCell;
 use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
-<<<<<<< HEAD
 use Symfony\Component\Console\Output\ConsoleSectionOutput;
-=======
-<<<<<<< HEAD
-=======
-use Symfony\Component\Console\Output\ConsoleSectionOutput;
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Output\TrimmedBufferOutput;
 use Symfony\Component\Console\Question\ChoiceQuestion;
@@ -306,20 +299,11 @@ class SymfonyStyle extends OutputStyle
         $answer = $this->questionHelper->ask($this->input, $this, $question);
 
         if ($this->input->isInteractive()) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             if ($this->output instanceof ConsoleSectionOutput) {
                 // add the new line of the `return` to submit the input to ConsoleSectionOutput, because ConsoleSectionOutput is holding all it's lines.
                 // this is relevant when a `ConsoleSectionOutput::clear` is called.
                 $this->output->addNewLineOfInputSubmit();
             }
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             $this->newLine();
             $this->bufferedOutput->write("\n");
         }

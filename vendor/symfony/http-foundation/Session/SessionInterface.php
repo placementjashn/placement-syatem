@@ -53,23 +53,10 @@ interface SessionInterface
      * Clears all session attributes and flashes and regenerates the
      * session and deletes the old session from persistence.
      *
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-     * @param int $lifetime Sets the cookie lifetime for the session cookie. A null value
-     *                      will leave the system settings unchanged, 0 sets the cookie
-     *                      to expire with browser session. Time is in seconds, and is
-     *                      not a Unix timestamp.
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * @param int|null $lifetime Sets the cookie lifetime for the session cookie. A null value
      *                           will leave the system settings unchanged, 0 sets the cookie
      *                           to expire with browser session. Time is in seconds, and is
      *                           not a Unix timestamp.
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function invalidate(int $lifetime = null): bool;
 
@@ -77,25 +64,11 @@ interface SessionInterface
      * Migrates the current session to a new session id while maintaining all
      * session attributes.
      *
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-     * @param bool $destroy  Whether to delete the old session or leave it to garbage collection
-     * @param int  $lifetime Sets the cookie lifetime for the session cookie. A null value
-     *                       will leave the system settings unchanged, 0 sets the cookie
-     *                       to expire with browser session. Time is in seconds, and is
-     *                       not a Unix timestamp.
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * @param bool     $destroy  Whether to delete the old session or leave it to garbage collection
      * @param int|null $lifetime Sets the cookie lifetime for the session cookie. A null value
      *                           will leave the system settings unchanged, 0 sets the cookie
      *                           to expire with browser session. Time is in seconds, and is
      *                           not a Unix timestamp.
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function migrate(bool $destroy = false, int $lifetime = null): bool;
 

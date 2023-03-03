@@ -604,16 +604,8 @@ class Process implements \IteratorAggregate
      *
      * @param int $flags A bit field of Process::ITER_* flags
      *
-<<<<<<< HEAD
      * @return \Generator<string, string>
      *
-=======
-<<<<<<< HEAD
-=======
-     * @return \Generator<string, string>
-     *
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * @throws LogicException in case the output has been disabled
      * @throws LogicException In case the process is not started
      */
@@ -882,15 +874,7 @@ class Process implements \IteratorAggregate
      * Stops the process.
      *
      * @param int|float $timeout The timeout in seconds
-<<<<<<< HEAD
      * @param int|null  $signal  A POSIX signal to send in case the process has not stop at timeout, default is SIGKILL (9)
-=======
-<<<<<<< HEAD
-     * @param int       $signal  A POSIX signal to send in case the process has not stop at timeout, default is SIGKILL (9)
-=======
-     * @param int|null  $signal  A POSIX signal to send in case the process has not stop at timeout, default is SIGKILL (9)
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      *
      * @return int|null The exit-code of the process or null if it's not running
      */

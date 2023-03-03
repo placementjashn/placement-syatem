@@ -25,12 +25,20 @@ use Twig\Environment;
 class HIncludeFragmentRenderer extends RoutableFragmentRenderer
 {
     private ?string $globalDefaultTemplate;
-    private $signer;
-    private $twig;
+    private ?UriSigner $signer;
+    private ?Environment $twig;
     private string $charset;
 
     /**
+<<<<<<< HEAD
      * @param string|null $globalDefaultTemplate The global default content (it can be a template name or the content)
+=======
+<<<<<<< HEAD
+     * @param string $globalDefaultTemplate The global default content (it can be a template name or the content)
+=======
+     * @param string|null $globalDefaultTemplate The global default content (it can be a template name or the content)
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function __construct(Environment $twig = null, UriSigner $signer = null, string $globalDefaultTemplate = null, string $charset = 'utf-8')
     {
@@ -49,8 +57,6 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
     }
 
     /**
-     * {@inheritdoc}
-     *
      * Additional available options:
      *
      *  * default:    The default content (it can be a template name or the content)
@@ -92,9 +98,6 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
         return new Response(sprintf('<hx:include src="%s"%s>%s</hx:include>', $uri, $renderedAttributes, $content));
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getName(): string
     {
         return 'hinclude';

@@ -20,9 +20,13 @@ use Symfony\Component\Finder\SplFileInfo;
  * @author Victor Berchet <victor@suumit.com>
 <<<<<<< HEAD
  *
- * @extends \RecursiveDirectoryIterator<string, SplFileInfo>
 =======
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
 >>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+ * @extends \RecursiveDirectoryIterator<string, SplFileInfo>
  */
 class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
 {
@@ -86,7 +90,7 @@ class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
             parent::getChildren();
 
             return true;
-        } catch (\UnexpectedValueException $e) {
+        } catch (\UnexpectedValueException) {
             // If directory is unreadable and finder is set to ignore it, skip children
             return false;
         }
