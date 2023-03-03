@@ -357,15 +357,7 @@ class DatabaseBatchRepository implements PrunableBatchRepository
             (int) $batch->total_jobs,
             (int) $batch->pending_jobs,
             (int) $batch->failed_jobs,
-<<<<<<< HEAD
             (array) json_decode($batch->failed_job_ids, true),
-=======
-<<<<<<< HEAD
-            json_decode($batch->failed_job_ids, true),
-=======
-            (array) json_decode($batch->failed_job_ids, true),
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             $this->unserialize($batch->options),
             CarbonImmutable::createFromTimestamp($batch->created_at),
             $batch->cancelled_at ? CarbonImmutable::createFromTimestamp($batch->cancelled_at) : $batch->cancelled_at,

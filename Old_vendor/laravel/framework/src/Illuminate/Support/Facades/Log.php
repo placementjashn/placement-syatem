@@ -31,16 +31,8 @@ namespace Illuminate\Support\Facades;
  * @method static \Psr\Log\LoggerInterface getLogger()
  * @method static \Illuminate\Contracts\Events\Dispatcher getEventDispatcher()
  * @method static void setEventDispatcher(\Illuminate\Contracts\Events\Dispatcher $dispatcher)
-<<<<<<< HEAD
  * @method static \Illuminate\Log\Logger|mixed when(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
  * @method static \Illuminate\Log\Logger|mixed unless(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
-=======
-<<<<<<< HEAD
-=======
- * @method static \Illuminate\Log\Logger|mixed when(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
- * @method static \Illuminate\Log\Logger|mixed unless(\Closure|mixed|null $value = null, callable|null $callback = null, callable|null $default = null)
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
  *
  * @see \Illuminate\Log\LogManager
  */

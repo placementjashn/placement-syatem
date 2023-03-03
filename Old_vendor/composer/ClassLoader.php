@@ -45,17 +45,6 @@ class ClassLoader
     /** @var \Closure(string):void */
     private static $includeFile;
 
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-    /** @var \Closure(string):void */
-    private static $includeFile;
-
-=======
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     /** @var ?string */
     private $vendorDir;
 
@@ -121,15 +110,6 @@ class ClassLoader
     {
         $this->vendorDir = $vendorDir;
         self::initializeIncludeClosure();
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-        self::initializeIncludeClosure();
-=======
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     }
 
     /**
@@ -451,17 +431,6 @@ class ClassLoader
         if ($file = $this->findFile($class)) {
             $includeFile = self::$includeFile;
             $includeFile($file);
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-            $includeFile = self::$includeFile;
-            $includeFile($file);
-=======
-            includeFile($file);
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
             return true;
         }
@@ -591,13 +560,6 @@ class ClassLoader
 
         return false;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
     /**
      * @return void
@@ -620,26 +582,4 @@ class ClassLoader
             include $file;
         }, null, null);
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-}
-
-/**
- * Scope isolated include.
- *
- * Prevents access to $this/self from included files.
- *
- * @param  string $file
- * @return void
- * @private
- */
-function includeFile($file)
-{
-    include $file;
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 }

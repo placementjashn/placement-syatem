@@ -1129,18 +1129,9 @@ EOTXT;
         }
 
         $end = $method->isGenerator() ? $i : $method->getEndLine();
-<<<<<<< HEAD
         $inClosure = false;
         $braces = 0;
         for (; $i < $end; ++$i) {
-=======
-<<<<<<< HEAD
-        for (; $i < $end; ++$i) {
-=======
-        $inClosure = false;
-        $braces = 0;
-        for (; $i < $end; ++$i) {
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             if (!$inClosure) {
                 $inClosure = str_contains($code[$i], 'function (');
             }
@@ -1152,10 +1143,6 @@ EOTXT;
                 continue;
             }
 
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             if ('void' === $returnType) {
                 $fixedCode[$i] = str_replace('    return null;', '    return;', $code[$i]);
             } elseif ('mixed' === $returnType || '?' === $returnType[0]) {

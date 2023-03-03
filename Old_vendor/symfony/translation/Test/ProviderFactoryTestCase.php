@@ -45,42 +45,17 @@ abstract class ProviderFactoryTestCase extends TestCase
     /**
      * @return iterable<array{0: bool, 1: string}>
      */
-<<<<<<< HEAD
-    abstract public static function supportsProvider(): iterable;
-=======
-<<<<<<< HEAD
-    abstract public function supportsProvider(): iterable;
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
-
-    /**
-     * @return iterable<array{0: string, 1: string}>
-     */
-<<<<<<< HEAD
-    abstract public static function createProvider(): iterable;
-=======
-    abstract public function createProvider(): iterable;
-=======
     abstract public static function supportsProvider(): iterable;
 
     /**
      * @return iterable<array{0: string, 1: string}>
      */
     abstract public static function createProvider(): iterable;
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
     /**
      * @return iterable<array{0: string, 1: string|null}>
      */
-<<<<<<< HEAD
     public static function unsupportedSchemeProvider(): iterable
-=======
-<<<<<<< HEAD
-    public function unsupportedSchemeProvider(): iterable
-=======
-    public static function unsupportedSchemeProvider(): iterable
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [];
     }
@@ -88,15 +63,7 @@ abstract class ProviderFactoryTestCase extends TestCase
     /**
      * @return iterable<array{0: string, 1: string|null}>
      */
-<<<<<<< HEAD
     public static function incompleteDsnProvider(): iterable
-=======
-<<<<<<< HEAD
-    public function incompleteDsnProvider(): iterable
-=======
-    public static function incompleteDsnProvider(): iterable
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [];
     }

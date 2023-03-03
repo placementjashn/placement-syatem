@@ -109,15 +109,7 @@ if (! function_exists('app')) {
      *
      * @param  string|null  $abstract
      * @param  array  $parameters
-<<<<<<< HEAD
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|mixed
-=======
-<<<<<<< HEAD
-     * @return mixed|\Illuminate\Contracts\Foundation\Application
-=======
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|mixed
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     function app($abstract = null, array $parameters = [])
     {

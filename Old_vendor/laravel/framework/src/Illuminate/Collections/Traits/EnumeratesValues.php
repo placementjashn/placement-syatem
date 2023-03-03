@@ -296,25 +296,11 @@ trait EnumeratesValues
     /**
      * Get a single key's value from the first matching item in the collection.
      *
-<<<<<<< HEAD
      * @template TValueDefault
      *
      * @param  string  $key
      * @param  TValueDefault|(\Closure(): TValueDefault)  $default
      * @return TValue|TValueDefault
-=======
-<<<<<<< HEAD
-     * @param  string  $key
-     * @param  mixed  $default
-     * @return mixed
-=======
-     * @template TValueDefault
-     *
-     * @param  string  $key
-     * @param  TValueDefault|(\Closure(): TValueDefault)  $default
-     * @return TValue|TValueDefault
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function value($key, $default = null)
     {
@@ -710,21 +696,10 @@ trait EnumeratesValues
     /**
      * Pass the collection into a new class.
      *
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-     * @param  class-string  $class
-     * @return mixed
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * @template TPipeIntoValue
      *
      * @param  class-string<TPipeIntoValue>  $class
      * @return TPipeIntoValue
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public function pipeInto($class)
     {

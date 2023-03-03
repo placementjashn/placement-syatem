@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="en">
-=======
-<<<<<<< HEAD
-<html>
-=======
-<html lang="en">
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 <head>
     <meta charset="<?= $this->charset; ?>" />
     <meta name="robots" content="noindex,nofollow,noarchive" />

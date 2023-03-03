@@ -67,11 +67,6 @@ final class DirectDispatcher implements SubscribableDispatcher
     }
 
     /**
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * @psalm-param class-string $className
      */
     public function hasSubscriberFor(string $className): bool
@@ -88,10 +83,6 @@ final class DirectDispatcher implements SubscribableDispatcher
     }
 
     /**
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * @throws UnknownEventTypeException
      */
     public function dispatch(Event $event): void
