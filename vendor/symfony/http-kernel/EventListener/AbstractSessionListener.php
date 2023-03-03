@@ -70,7 +70,14 @@ abstract class AbstractSessionListener implements EventSubscriberInterface, Rese
             $request->setSessionFactory(function () use (&$sess, $request) {
                 if (!$sess) {
                     $sess = $this->getSession();
+<<<<<<< HEAD
                     $request->setSession($sess);
+=======
+<<<<<<< HEAD
+=======
+                    $request->setSession($sess);
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
                     /*
                      * For supporting sessions in php runtime with runners like roadrunner or swoole, the session

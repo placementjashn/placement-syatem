@@ -108,10 +108,14 @@ if (PHP_VERSION_ID < 80000) {
         }
     }
 
+<<<<<<< HEAD
     if (
         (function_exists('stream_get_wrappers') && in_array('phpvfscomposer', stream_get_wrappers(), true))
         || (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper'))
     ) {
+=======
+    if (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper')) {
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         include("phpvfscomposer://" . __DIR__ . '/..'.'/symfony/yaml/Resources/bin/yaml-lint');
         exit(0);
     }

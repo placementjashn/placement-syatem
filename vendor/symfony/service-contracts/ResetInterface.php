@@ -26,8 +26,17 @@ namespace Symfony\Contracts\Service;
  */
 interface ResetInterface
 {
+<<<<<<< HEAD
     /**
      * @return void
      */
+=======
+<<<<<<< HEAD
+=======
+    /**
+     * @return void
+     */
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     public function reset();
 }

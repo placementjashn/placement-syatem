@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 6.2.7
 -----
 
@@ -19,6 +20,8 @@ CHANGELOG
  * Make `start()` and `stop()` methods public on `SmtpTransport`
  * Improve extensibility of `EsmtpTransport`
 
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 6.0
 ---
 

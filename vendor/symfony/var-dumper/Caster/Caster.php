@@ -115,7 +115,15 @@ class Caster
      * @param array    $a                The array containing the properties to filter
      * @param int      $filter           A bit field of Caster::EXCLUDE_* constants specifying which properties to filter out
      * @param string[] $listedProperties List of properties to exclude when Caster::EXCLUDE_VERBOSE is set, and to preserve when Caster::EXCLUDE_NOT_IMPORTANT is set
+<<<<<<< HEAD
      * @param int|null &$count           Set to the number of removed properties
+=======
+<<<<<<< HEAD
+     * @param int      &$count           Set to the number of removed properties
+=======
+     * @param int|null &$count           Set to the number of removed properties
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     public static function filter(array $a, int $filter, array $listedProperties = [], ?int &$count = 0): array
     {

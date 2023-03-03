@@ -1,5 +1,11 @@
 # Release Notes for 10.x
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+## [Unreleased](https://github.com/laravel/framework/compare/v10.1.1...10.x)
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 ## [Unreleased](https://github.com/laravel/framework/compare/v10.1.5...10.x)
 
 
@@ -35,6 +41,10 @@
 
 ### Reverted
 - Revert changes from `Arr::random()` ([cf3eb90](https://github.com/laravel/framework/commit/cf3eb90a6473444bb7a78d1a3af1e9312a62020d))
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
 
 ## [v10.1.1 (2023-02-21)](https://github.com/laravel/framework/compare/v10.1.0...v10.1.1)
@@ -67,7 +77,15 @@
 ## [v10.0.2 (2023-02-16)](https://github.com/laravel/framework/compare/v10.0.1...v10.0.2)
 
 ### Added
+<<<<<<< HEAD
 - Register policies automatically to the gate ([#46132](https://github.com/laravel/framework/pull/46132))
+=======
+<<<<<<< HEAD
+-  Register policies automatically to the gate ([#46132](https://github.com/laravel/framework/pull/46132))
+=======
+- Register policies automatically to the gate ([#46132](https://github.com/laravel/framework/pull/46132))
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 
 
 ## [v10.0.1 (2023-02-16)](https://github.com/laravel/framework/compare/v10.0.0...v10.0.1)

@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Uid\Ulid;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\VarDumper\Cloner\Stub;
-use Symfony\Component\VarExporter\Internal\LazyObjectState;
 
 /**
  * @final
@@ -38,7 +37,9 @@ class SymfonyCaster
         foreach (self::REQUEST_GETTERS as $prop => $getter) {
             $key = Caster::PREFIX_PROTECTED.$prop;
             if (\array_key_exists($key, $a) && null === $a[$key]) {
-                $clone ??= clone $request;
+                if (null === $clone) {
+                    $clone = clone $request;
+                }
                 $a[Caster::PREFIX_VIRTUAL.$prop] = $clone->{$getter}();
             }
         }
@@ -48,7 +49,7 @@ class SymfonyCaster
 
     public static function castHttpClient($client, array $a, Stub $stub, bool $isNested)
     {
-        $multiKey = sprintf("\0%s\0multi", $client::class);
+        $multiKey = sprintf("\0%s\0multi", \get_class($client));
         if (isset($a[$multiKey])) {
             $a[$multiKey] = new CutStub($a[$multiKey]);
         }
@@ -68,6 +69,7 @@ class SymfonyCaster
         return $a;
     }
 
+<<<<<<< HEAD
     public static function castLazyObjectState($state, array $a, Stub $stub, bool $isNested)
     {
         if (!$isNested) {
@@ -93,6 +95,8 @@ class SymfonyCaster
         return $a;
     }
 
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     public static function castUuid(Uuid $uuid, array $a, Stub $stub, bool $isNested)
     {
         $a[Caster::PREFIX_VIRTUAL.'toBase58'] = $uuid->toBase58();

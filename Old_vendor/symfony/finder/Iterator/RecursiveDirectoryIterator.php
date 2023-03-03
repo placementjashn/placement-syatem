@@ -18,8 +18,11 @@ use Symfony\Component\Finder\SplFileInfo;
  * Extends the \RecursiveDirectoryIterator to support relative paths.
  *
  * @author Victor Berchet <victor@suumit.com>
+<<<<<<< HEAD
  *
  * @extends \RecursiveDirectoryIterator<string, SplFileInfo>
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
  */
 class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
 {
@@ -83,7 +86,7 @@ class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
             parent::getChildren();
 
             return true;
-        } catch (\UnexpectedValueException) {
+        } catch (\UnexpectedValueException $e) {
             // If directory is unreadable and finder is set to ignore it, skip children
             return false;
         }

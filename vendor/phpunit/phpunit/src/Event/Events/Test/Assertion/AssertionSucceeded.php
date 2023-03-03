@@ -19,7 +19,14 @@ use PHPUnit\Event\Telemetry;
 final class AssertionSucceeded implements Event
 {
     private readonly Telemetry\Info $telemetryInfo;
+<<<<<<< HEAD
     private readonly string $value;
+=======
+<<<<<<< HEAD
+=======
+    private readonly string $value;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     private readonly string $constraint;
     private readonly int $count;
     private readonly string $message;
@@ -27,7 +34,14 @@ final class AssertionSucceeded implements Event
     public function __construct(Telemetry\Info $telemetryInfo, string $value, string $constraint, int $count, string $message)
     {
         $this->telemetryInfo = $telemetryInfo;
+<<<<<<< HEAD
         $this->value         = $value;
+=======
+<<<<<<< HEAD
+=======
+        $this->value         = $value;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         $this->constraint    = $constraint;
         $this->count         = $count;
         $this->message       = $message;
@@ -38,9 +52,24 @@ final class AssertionSucceeded implements Event
         return $this->telemetryInfo;
     }
 
+<<<<<<< HEAD
     public function value(): string
     {
         return $this->value;
+=======
+<<<<<<< HEAD
+    /**
+     * @deprecated https://github.com/sebastianbergmann/phpunit/issues/5183
+     */
+    public function value(): string
+    {
+        return '';
+=======
+    public function value(): string
+    {
+        return $this->value;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     }
 
     public function count(): int
@@ -65,9 +94,20 @@ final class AssertionSucceeded implements Event
         }
 
         return sprintf(
+<<<<<<< HEAD
             'Assertion Succeeded (Constraint: %s, Value: %s%s)',
             $this->constraint,
             $this->value,
+=======
+<<<<<<< HEAD
+            'Assertion Succeeded (Constraint: %s%s)',
+            $this->constraint,
+=======
+            'Assertion Succeeded (Constraint: %s, Value: %s%s)',
+            $this->constraint,
+            $this->value,
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             $message
         );
     }

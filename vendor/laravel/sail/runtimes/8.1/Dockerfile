@@ -19,7 +19,15 @@ RUN apt-get update \
     && echo "deb [signed-by=/usr/share/keyrings/ppa_ondrej_php.gpg] https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy main" > /etc/apt/sources.list.d/ppa_ondrej_php.list \
     && apt-get update \
     && apt-get install -y php8.1-cli php8.1-dev \
+<<<<<<< HEAD
        php8.1-pgsql php8.1-sqlite3 php8.1-gd php8.1-imagick \
+=======
+<<<<<<< HEAD
+       php8.1-pgsql php8.1-sqlite3 php8.1-gd \
+=======
+       php8.1-pgsql php8.1-sqlite3 php8.1-gd php8.1-imagick \
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
        php8.1-curl \
        php8.1-imap php8.1-mysql php8.1-mbstring \
        php8.1-xml php8.1-zip php8.1-bcmath php8.1-soap \

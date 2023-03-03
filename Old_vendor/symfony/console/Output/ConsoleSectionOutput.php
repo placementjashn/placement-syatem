@@ -24,8 +24,7 @@ class ConsoleSectionOutput extends StreamOutput
     private array $content = [];
     private int $lines = 0;
     private array $sections;
-    private Terminal $terminal;
-    private int $maxHeight = 0;
+    private $terminal;
 
     /**
      * @param resource               $stream
@@ -40,23 +39,6 @@ class ConsoleSectionOutput extends StreamOutput
     }
 
     /**
-     * Defines a maximum number of lines for this section.
-     *
-     * When more lines are added, the section will automatically scroll to the
-     * end (i.e. remove the first lines to comply with the max height).
-     */
-    public function setMaxHeight(int $maxHeight): void
-    {
-        // when changing max height, clear output of current section and redraw again with the new height
-        $existingContent = $this->popStreamContentUntilCurrentSection($this->maxHeight ? min($this->maxHeight, $this->lines) : $this->lines);
-
-        $this->maxHeight = $maxHeight;
-
-        parent::doWrite($this->getVisibleContent(), false);
-        parent::doWrite($existingContent, false);
-    }
-
-    /**
      * Clears previous output for this section.
      *
      * @param int $lines Number of lines to clear. If null, then the entire output of this section is cleared
@@ -68,7 +50,7 @@ class ConsoleSectionOutput extends StreamOutput
         }
 
         if ($lines) {
-            array_splice($this->content, -$lines);
+            array_splice($this->content, -($lines * 2)); // Multiply lines by 2 to cater for each new line added between content
         } else {
             $lines = $this->lines;
             $this->content = [];
@@ -76,7 +58,7 @@ class ConsoleSectionOutput extends StreamOutput
 
         $this->lines -= $lines;
 
-        parent::doWrite($this->popStreamContentUntilCurrentSection($this->maxHeight ? min($this->maxHeight, $lines) : $lines), false);
+        parent::doWrite($this->popStreamContentUntilCurrentSection($lines), false);
     }
 
     /**
@@ -93,20 +75,12 @@ class ConsoleSectionOutput extends StreamOutput
         return implode('', $this->content);
     }
 
-    public function getVisibleContent(): string
-    {
-        if (0 === $this->maxHeight) {
-            return $this->getContent();
-        }
-
-        return implode('', \array_slice($this->content, -$this->maxHeight));
-    }
-
     /**
      * @internal
      */
-    public function addContent(string $input, bool $newline = true): int
+    public function addContent(string $input)
     {
+<<<<<<< HEAD
         $width = $this->terminal->getWidth();
         $lines = explode(\PHP_EOL, $input);
         $linesAdded = 0;
@@ -143,14 +117,17 @@ class ConsoleSectionOutput extends StreamOutput
             }
 
             $linesAdded += (int) ceil($this->getDisplayLength($lineContent) / $width) ?: 1;
+=======
+        foreach (explode(\PHP_EOL, $input) as $lineContent) {
+            $this->lines += ceil($this->getDisplayLength($lineContent) / $this->terminal->getWidth()) ?: 1;
+            $this->content[] = $lineContent;
+            $this->content[] = \PHP_EOL;
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         }
-
-        $this->lines += $linesAdded;
-
-        return $linesAdded;
     }
 
     /**
+<<<<<<< HEAD
      * @internal
      */
     public function addNewLineOfInputSubmit()
@@ -159,6 +136,10 @@ class ConsoleSectionOutput extends StreamOutput
         ++$this->lines;
     }
 
+=======
+     * {@inheritdoc}
+     */
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     protected function doWrite(string $message, bool $newline)
     {
         if (!$this->isDecorated()) {
@@ -167,28 +148,11 @@ class ConsoleSectionOutput extends StreamOutput
             return;
         }
 
-        // Check if the previous line (last entry of `$this->content`) needs to be continued
-        // (i.e. does not end with a line break). In which case, it needs to be erased first.
-        $linesToClear = $deleteLastLine = ($lastLine = end($this->content) ?: '') && !str_ends_with($lastLine, \PHP_EOL) ? 1 : 0;
+        $erasedContent = $this->popStreamContentUntilCurrentSection();
 
-        $linesAdded = $this->addContent($message, $newline);
+        $this->addContent($message);
 
-        if ($lineOverflow = $this->maxHeight > 0 && $this->lines > $this->maxHeight) {
-            // on overflow, clear the whole section and redraw again (to remove the first lines)
-            $linesToClear = $this->maxHeight;
-        }
-
-        $erasedContent = $this->popStreamContentUntilCurrentSection($linesToClear);
-
-        if ($lineOverflow) {
-            // redraw existing lines of the section
-            $previousLinesOfSection = \array_slice($this->content, $this->lines - $this->maxHeight, $this->maxHeight - $linesAdded);
-            parent::doWrite(implode('', $previousLinesOfSection), false);
-        }
-
-        // if the last line was removed, re-print its content together with the new content.
-        // otherwise, just print the new content.
-        parent::doWrite($deleteLastLine ? $lastLine.$message : $message, true);
+        parent::doWrite($message, true);
         parent::doWrite($erasedContent, false);
     }
 
@@ -207,12 +171,7 @@ class ConsoleSectionOutput extends StreamOutput
             }
 
             $numberOfLinesToClear += $section->lines;
-            if ('' !== $sectionContent = $section->getVisibleContent()) {
-                if (!str_ends_with($sectionContent, \PHP_EOL)) {
-                    $sectionContent .= \PHP_EOL;
-                }
-                $erasedContent[] = $sectionContent;
-            }
+            $erasedContent[] = $section->getContent();
         }
 
         if ($numberOfLinesToClear > 0) {
