@@ -341,8 +341,8 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -3415,6 +3415,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'NunoMaduro\\Collision\\Exceptions\\InvalidStyleException' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/InvalidStyleException.php',
         'NunoMaduro\\Collision\\Exceptions\\ShouldNotHappen' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/ShouldNotHappen.php',
         'NunoMaduro\\Collision\\Exceptions\\TestException' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/TestException.php',
+        'NunoMaduro\\Collision\\Exceptions\\TestOutcome' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/TestOutcome.php',
         'NunoMaduro\\Collision\\Handler' => __DIR__ . '/..' . '/nunomaduro/collision/src/Handler.php',
         'NunoMaduro\\Collision\\Highlighter' => __DIR__ . '/..' . '/nunomaduro/collision/src/Highlighter.php',
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',

@@ -2911,6 +2911,7 @@ return array(
     'NunoMaduro\\Collision\\Exceptions\\InvalidStyleException' => $vendorDir . '/nunomaduro/collision/src/Exceptions/InvalidStyleException.php',
     'NunoMaduro\\Collision\\Exceptions\\ShouldNotHappen' => $vendorDir . '/nunomaduro/collision/src/Exceptions/ShouldNotHappen.php',
     'NunoMaduro\\Collision\\Exceptions\\TestException' => $vendorDir . '/nunomaduro/collision/src/Exceptions/TestException.php',
+    'NunoMaduro\\Collision\\Exceptions\\TestOutcome' => $vendorDir . '/nunomaduro/collision/src/Exceptions/TestOutcome.php',
     'NunoMaduro\\Collision\\Handler' => $vendorDir . '/nunomaduro/collision/src/Handler.php',
     'NunoMaduro\\Collision\\Highlighter' => $vendorDir . '/nunomaduro/collision/src/Highlighter.php',
     'NunoMaduro\\Collision\\Provider' => $vendorDir . '/nunomaduro/collision/src/Provider.php',
