@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInitb58129613160af753005f0a7ed4bebac
-=======
-class ComposerStaticInit23188a05380f5038a22b49ce18825b39
->>>>>>> 4d0ebcbb4135cc40bfaec8edbab8634647133a73
+class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -536,9 +532,13 @@ class ComposerStaticInit23188a05380f5038a22b49ce18825b39
         'App\\Http\\Controllers\\Companyauth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployeeController.php',
+        'App\\Http\\Controllers\\EmpprofileController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmpprofileController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
+        'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
+        'App\\Http\\Controllers\\postController' => __DIR__ . '/../..' . '/app/Http/Controllers/postController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
+        'App\\Http\\Middleware\\Employee' => __DIR__ . '/../..' . '/app/Http/Middleware/Employee.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -553,6 +553,7 @@ class ComposerStaticInit23188a05380f5038a22b49ce18825b39
         'App\\Models\\Company' => __DIR__ . '/../..' . '/app/Models/Company.php',
         'App\\Models\\Employee' => __DIR__ . '/../..' . '/app/Models/Employee.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\job' => __DIR__ . '/../..' . '/app/Models/job.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -2103,6 +2104,7 @@ class ComposerStaticInit23188a05380f5038a22b49ce18825b39
         'Illuminate\\Foundation\\Concerns\\ResolvesDumpSource' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Concerns/ResolvesDumpSource.php',
         'Illuminate\\Foundation\\Console\\AboutCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php',
         'Illuminate\\Foundation\\Console\\CastMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php',
+        'Illuminate\\Foundation\\Console\\ChannelListCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php',
         'Illuminate\\Foundation\\Console\\ChannelMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php',
         'Illuminate\\Foundation\\Console\\ClearCompiledCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php',
         'Illuminate\\Foundation\\Console\\CliDumper' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php',
@@ -2379,6 +2381,8 @@ class ComposerStaticInit23188a05380f5038a22b49ce18825b39
         'Illuminate\\Queue\\DatabaseQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php',
         'Illuminate\\Queue\\Events\\JobExceptionOccurred' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobExceptionOccurred.php',
         'Illuminate\\Queue\\Events\\JobFailed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobFailed.php',
+        'Illuminate\\Queue\\Events\\JobPopped' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobPopped.php',
+        'Illuminate\\Queue\\Events\\JobPopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobPopping.php',
         'Illuminate\\Queue\\Events\\JobProcessed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessed.php',
         'Illuminate\\Queue\\Events\\JobProcessing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessing.php',
         'Illuminate\\Queue\\Events\\JobQueued' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobQueued.php',
@@ -6278,17 +6282,10 @@ class ComposerStaticInit23188a05380f5038a22b49ce18825b39
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb58129613160af753005f0a7ed4bebac::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb58129613160af753005f0a7ed4bebac::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb58129613160af753005f0a7ed4bebac::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitb58129613160af753005f0a7ed4bebac::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit23188a05380f5038a22b49ce18825b39::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit23188a05380f5038a22b49ce18825b39::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit23188a05380f5038a22b49ce18825b39::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit23188a05380f5038a22b49ce18825b39::$classMap;
->>>>>>> 4d0ebcbb4135cc40bfaec8edbab8634647133a73
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -68,7 +68,7 @@ export default function DeleteUserForm({ className }) {
                     </p>
 
                     <div className="mt-6">
-                        <InputLabel htmlFor="password" value="Password" className="sr-only" />
+                        <InputLabel for="password" value="Password" className="sr-only" />
 
                         <TextInput
                             id="password"
@@ -76,7 +76,7 @@ export default function DeleteUserForm({ className }) {
                             name="password"
                             ref={passwordInput}
                             value={data.password}
-                            onChange={(e) => setData('password', e.target.value)}
+                            handleChange={(e) => setData('password', e.target.value)}
                             className="mt-1 block w-3/4"
                             isFocused
                             placeholder="Password"
@@ -88,7 +88,7 @@ export default function DeleteUserForm({ className }) {
                     <div className="mt-6 flex justify-end">
                         <SecondaryButton onClick={closeModal}>Cancel</SecondaryButton>
 
-                        <DangerButton className="ml-3" disabled={processing}>
+                        <DangerButton className="ml-3" processing={processing}>
                             Delete Account
                         </DangerButton>
                     </div>

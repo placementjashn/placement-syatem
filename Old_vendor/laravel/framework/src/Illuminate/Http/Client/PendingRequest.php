@@ -258,7 +258,7 @@ class PendingRequest
      * @param  string  $contentType
      * @return $this
      */
-    public function withBody($content, $contentType = 'application/json')
+    public function withBody($content, $contentType)
     {
         $this->bodyFormat('body');
 
@@ -437,7 +437,7 @@ class PendingRequest
     /**
      * Specify the user agent for the request.
      *
-     * @param  string|bool  $userAgent
+     * @param  string  $userAgent
      * @return $this
      */
     public function withUserAgent($userAgent)
