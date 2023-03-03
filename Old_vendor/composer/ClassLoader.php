@@ -42,9 +42,26 @@ namespace Composer\Autoload;
  */
 class ClassLoader
 {
+<<<<<<< HEAD
     /** @var \Closure(string):void */
     private static $includeFile;
 
+=======
+    /** @var \Closure(string):void */
+    private static $includeFile;
+
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+    /** @var \Closure(string):void */
+    private static $includeFile;
+
+=======
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
     /** @var ?string */
     private $vendorDir;
 
@@ -109,7 +126,20 @@ class ClassLoader
     public function __construct($vendorDir = null)
     {
         $this->vendorDir = $vendorDir;
+<<<<<<< HEAD
         self::initializeIncludeClosure();
+=======
+        self::initializeIncludeClosure();
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+        self::initializeIncludeClosure();
+=======
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
     }
 
     /**
@@ -429,8 +459,24 @@ class ClassLoader
     public function loadClass($class)
     {
         if ($file = $this->findFile($class)) {
+<<<<<<< HEAD
             $includeFile = self::$includeFile;
             $includeFile($file);
+=======
+            $includeFile = self::$includeFile;
+            $includeFile($file);
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+            $includeFile = self::$includeFile;
+            $includeFile($file);
+=======
+            includeFile($file);
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 
             return true;
         }
@@ -560,6 +606,16 @@ class ClassLoader
 
         return false;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 
     /**
      * @return void
@@ -582,4 +638,29 @@ class ClassLoader
             include $file;
         }, null, null);
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+}
+
+/**
+ * Scope isolated include.
+ *
+ * Prevents access to $this/self from included files.
+ *
+ * @param  string $file
+ * @return void
+ * @private
+ */
+function includeFile($file)
+{
+    include $file;
+>>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 }

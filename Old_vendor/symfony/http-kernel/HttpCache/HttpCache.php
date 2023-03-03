@@ -698,11 +698,24 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         $timeout = $entry->headers->getCacheControlDirective('stale-while-revalidate');
         $timeout ??= $this->options['stale_while_revalidate'];
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        return abs($entry->getTtl() ?? 0) < $timeout;
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
         $age = $entry->getAge();
         $maxAge = $entry->getMaxAge() ?? 0;
         $ttl = $maxAge - $age;
 
         return abs($ttl) < $timeout;
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     }
 
     /**

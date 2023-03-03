@@ -80,6 +80,24 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
     public const MAJOR_VERSION = 6;
     public const MINOR_VERSION = 2;
     public const RELEASE_VERSION = 7;
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+    public const VERSION = '6.2.6';
+    public const VERSION_ID = 60206;
+    public const MAJOR_VERSION = 6;
+    public const MINOR_VERSION = 2;
+    public const RELEASE_VERSION = 6;
+=======
+    public const VERSION = '6.2.7';
+    public const VERSION_ID = 60207;
+    public const MAJOR_VERSION = 6;
+    public const MINOR_VERSION = 2;
+    public const RELEASE_VERSION = 7;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
     public const EXTRA_VERSION = '';
 
     public const END_OF_MAINTENANCE = '07/2023';

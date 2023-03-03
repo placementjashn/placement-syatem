@@ -39,6 +39,16 @@ class Application extends Container implements ApplicationContract, CachesConfig
      * @var string
      */
     const VERSION = '10.2.0';
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+    const VERSION = '10.1.5';
+=======
+    const VERSION = '10.2.0';
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 
     /**
      * The base path for the Laravel installation.
@@ -571,10 +581,17 @@ class Application extends Container implements ApplicationContract, CachesConfig
     public function viewPath($path = '')
     {
         $viewPath = rtrim($this['config']->get('view.paths')[0], DIRECTORY_SEPARATOR);
+<<<<<<< HEAD
 
         return $this->joinPaths($viewPath, $path);
     }
 
+=======
+
+        return $this->joinPaths($viewPath, $path);
+    }
+
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
     /**
      * Join the given paths together.
      *

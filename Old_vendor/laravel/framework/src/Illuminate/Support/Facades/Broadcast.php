@@ -28,7 +28,14 @@ use Illuminate\Contracts\Broadcasting\Factory as BroadcastingFactoryContract;
  * @method static array|null resolveAuthenticatedUser(\Illuminate\Http\Request $request)
  * @method static void resolveAuthenticatedUserUsing(\Closure $callback)
  * @method static \Illuminate\Broadcasting\Broadcasters\Broadcaster channel(\Illuminate\Contracts\Broadcasting\HasBroadcastChannel|string $channel, callable|string $callback, array $options = [])
+<<<<<<< HEAD
  * @method static \Illuminate\Support\Collection getChannels()
+=======
+<<<<<<< HEAD
+=======
+ * @method static \Illuminate\Support\Collection getChannels()
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
  *
  * @see \Illuminate\Broadcasting\BroadcastManager
  * @see \Illuminate\Broadcasting\Broadcasters\Broadcaster

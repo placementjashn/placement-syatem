@@ -23,8 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/addemployee',[EmployeeController::class,'empadd'])->middleware('guard') ;//employee
-Route::post('/addemployee',[EmployeeController::class,'empdata'])->middleware('guard');//employee
+Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
+Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
 Route::post('/loginemp',[EmployeeController::class,'verifylogin']);//employee
 

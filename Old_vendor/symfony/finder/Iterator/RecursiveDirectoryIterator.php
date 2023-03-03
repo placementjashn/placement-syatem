@@ -19,6 +19,15 @@ use Symfony\Component\Finder\SplFileInfo;
  *
  * @author Victor Berchet <victor@suumit.com>
  *
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
  * @extends \RecursiveDirectoryIterator<string, SplFileInfo>
  */
 class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator

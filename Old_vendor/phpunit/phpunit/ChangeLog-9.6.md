@@ -2,6 +2,11 @@
 
 All notable changes of the PHPUnit 9.6 release series are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 ## [9.6.5] - 2023-MM-DD
 
 ### Fixed
@@ -14,6 +19,10 @@ All notable changes of the PHPUnit 9.6 release series are documented in this fil
 
 * [#5186](https://github.com/sebastianbergmann/phpunit/issues/5186): SBOM does not validate
 
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 ## [9.6.3] - 2023-02-04
 
 ### Fixed
@@ -42,8 +51,16 @@ All notable changes of the PHPUnit 9.6 release series are documented in this fil
 * [#5064](https://github.com/sebastianbergmann/phpunit/issues/5064): Deprecate `PHPUnit\Framework\TestCase::getMockClass()`
 * [#5132](https://github.com/sebastianbergmann/phpunit/issues/5132): Deprecate `Test` suffix for abstract test case classes
 
+<<<<<<< HEAD
 [9.6.5]: https://github.com/sebastianbergmann/phpunit/compare/9.6.4...9.6
 [9.6.4]: https://github.com/sebastianbergmann/phpunit/compare/9.6.3...9.6.4
+=======
+<<<<<<< HEAD
+=======
+[9.6.5]: https://github.com/sebastianbergmann/phpunit/compare/9.6.4...9.6
+[9.6.4]: https://github.com/sebastianbergmann/phpunit/compare/9.6.3...9.6.4
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 [9.6.3]: https://github.com/sebastianbergmann/phpunit/compare/9.6.2...9.6.3
 [9.6.2]: https://github.com/sebastianbergmann/phpunit/compare/9.6.1...9.6.2
 [9.6.1]: https://github.com/sebastianbergmann/phpunit/compare/9.6.0...9.6.1

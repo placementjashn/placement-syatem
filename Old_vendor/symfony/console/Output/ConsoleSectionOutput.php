@@ -115,8 +115,17 @@ class ConsoleSectionOutput extends StreamOutput
             // re-add the line break (that has been removed in the above `explode()` for
             // - every line that is not the last line
             // - if $newline is required, also add it to the last line
+<<<<<<< HEAD
             // - if it's not new line, but input ending with `\PHP_EOL`
             if ($i < $count || $newline || str_ends_with($input, \PHP_EOL)) {
+=======
+<<<<<<< HEAD
+            if ($i < $count || $newline) {
+=======
+            // - if it's not new line, but input ending with `\PHP_EOL`
+            if ($i < $count || $newline || str_ends_with($input, \PHP_EOL)) {
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
                 $lineContent .= \PHP_EOL;
             }
 
@@ -150,6 +159,14 @@ class ConsoleSectionOutput extends StreamOutput
         return $linesAdded;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
     /**
      * @internal
      */
@@ -159,6 +176,13 @@ class ConsoleSectionOutput extends StreamOutput
         ++$this->lines;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
     protected function doWrite(string $message, bool $newline)
     {
         if (!$this->isDecorated()) {
@@ -172,12 +196,21 @@ class ConsoleSectionOutput extends StreamOutput
         $linesToClear = $deleteLastLine = ($lastLine = end($this->content) ?: '') && !str_ends_with($lastLine, \PHP_EOL) ? 1 : 0;
 
         $linesAdded = $this->addContent($message, $newline);
+<<<<<<< HEAD
 
         if ($lineOverflow = $this->maxHeight > 0 && $this->lines > $this->maxHeight) {
             // on overflow, clear the whole section and redraw again (to remove the first lines)
             $linesToClear = $this->maxHeight;
         }
 
+=======
+
+        if ($lineOverflow = $this->maxHeight > 0 && $this->lines > $this->maxHeight) {
+            // on overflow, clear the whole section and redraw again (to remove the first lines)
+            $linesToClear = $this->maxHeight;
+        }
+
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
         $erasedContent = $this->popStreamContentUntilCurrentSection($linesToClear);
 
         if ($lineOverflow) {

@@ -2966,9 +2966,15 @@ class Builder implements BuilderContract
         $columnString = $column instanceof ExpressionContract
             ? $this->grammar->getValue($column)
             : $column;
+<<<<<<< HEAD
 
         $separator = str_contains(strtolower($columnString), ' as ') ? ' as ' : '\.';
 
+=======
+
+        $separator = str_contains(strtolower($columnString), ' as ') ? ' as ' : '\.';
+
+>>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
         return last(preg_split('~'.$separator.'~i', $columnString));
     }
 
@@ -3703,7 +3709,19 @@ class Builder implements BuilderContract
      */
     public function castBinding($value)
     {
+<<<<<<< HEAD
         return $value instanceof BackedEnum ? $value->value : $value;
+=======
+<<<<<<< HEAD
+        if (function_exists('enum_exists') && $value instanceof BackedEnum) {
+            return $value->value;
+        }
+
+        return $value;
+=======
+        return $value instanceof BackedEnum ? $value->value : $value;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     }
 
     /**

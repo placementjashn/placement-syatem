@@ -28,7 +28,14 @@ use Illuminate\Database\Console\TableCommand as DatabaseTableCommand;
 use Illuminate\Database\Console\WipeCommand;
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Foundation\Console\CastMakeCommand;
+<<<<<<< HEAD
 use Illuminate\Foundation\Console\ChannelListCommand;
+=======
+<<<<<<< HEAD
+=======
+use Illuminate\Foundation\Console\ChannelListCommand;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 use Illuminate\Foundation\Console\ChannelMakeCommand;
 use Illuminate\Foundation\Console\ClearCompiledCommand;
 use Illuminate\Foundation\Console\ComponentMakeCommand;
@@ -166,7 +173,14 @@ class ArtisanServiceProvider extends ServiceProvider implements DeferrableProvid
     protected $devCommands = [
         'CacheTable' => CacheTableCommand::class,
         'CastMake' => CastMakeCommand::class,
+<<<<<<< HEAD
         'ChannelList' => ChannelListCommand::class,
+=======
+<<<<<<< HEAD
+=======
+        'ChannelList' => ChannelListCommand::class,
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         'ChannelMake' => ChannelMakeCommand::class,
         'ComponentMake' => ComponentMakeCommand::class,
         'ConsoleMake' => ConsoleMakeCommand::class,
