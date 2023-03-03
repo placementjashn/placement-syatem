@@ -109,7 +109,15 @@ if (! function_exists('app')) {
      *
      * @param  string|null  $abstract
      * @param  array  $parameters
+<<<<<<< HEAD
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|mixed
+=======
+<<<<<<< HEAD
+     * @return mixed|\Illuminate\Contracts\Foundation\Application
+=======
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|mixed
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      */
     function app($abstract = null, array $parameters = [])
     {
@@ -407,22 +415,6 @@ if (! function_exists('dispatch_sync')) {
     }
 }
 
-if (! function_exists('dispatch_now')) {
-    /**
-     * Dispatch a command to its appropriate handler in the current process.
-     *
-     * @param  mixed  $job
-     * @param  mixed  $handler
-     * @return mixed
-     *
-     * @deprecated Will be removed in a future Laravel version.
-     */
-    function dispatch_now($job, $handler = null)
-    {
-        return app(Dispatcher::class)->dispatchNow($job, $handler);
-    }
-}
-
 if (! function_exists('encrypt')) {
     /**
      * Encrypt the given value.
@@ -644,7 +636,7 @@ if (! function_exists('public_path')) {
      */
     function public_path($path = '')
     {
-        return app()->make('path.public').($path ? DIRECTORY_SEPARATOR.ltrim($path, DIRECTORY_SEPARATOR) : $path);
+        return app()->publicPath($path);
     }
 }
 
@@ -1000,10 +992,10 @@ if (! function_exists('validator')) {
      * @param  array  $data
      * @param  array  $rules
      * @param  array  $messages
-     * @param  array  $customAttributes
+     * @param  array  $attributes
      * @return \Illuminate\Contracts\Validation\Validator|\Illuminate\Contracts\Validation\Factory
      */
-    function validator(array $data = [], array $rules = [], array $messages = [], array $customAttributes = [])
+    function validator(array $data = [], array $rules = [], array $messages = [], array $attributes = [])
     {
         $factory = app(ValidationFactory::class);
 
@@ -1011,7 +1003,7 @@ if (! function_exists('validator')) {
             return $factory;
         }
 
-        return $factory->make($data, $rules, $messages, $customAttributes);
+        return $factory->make($data, $rules, $messages, $attributes);
     }
 }
 

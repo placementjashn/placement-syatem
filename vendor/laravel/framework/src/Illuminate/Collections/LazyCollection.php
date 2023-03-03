@@ -1519,11 +1519,6 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
     }
 
     /**
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Flatten a multi-dimensional associative array with dots.
      *
      * @return static
@@ -1534,10 +1529,6 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
     }
 
     /**
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Convert a flatten "dot" notation array into an expanded array.
      *
      * @return static

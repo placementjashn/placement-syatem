@@ -473,11 +473,7 @@ class Str
      */
     public static function length($value, $encoding = null)
     {
-        if ($encoding) {
-            return mb_strlen($value, $encoding);
-        }
-
-        return mb_strlen($value);
+        return mb_strlen($value, $encoding);
     }
 
     /**
@@ -615,6 +611,11 @@ class Str
     }
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Determine if a given string matches a given pattern.
      *
      * @param  string|iterable<string>  $pattern
@@ -641,6 +642,10 @@ class Str
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Get the string matching the given pattern.
      *
      * @param  string  $pattern
@@ -745,6 +750,39 @@ class Str
         $lastWord = array_pop($parts);
 
         return implode('', $parts).self::plural($lastWord, $count);
+    }
+
+    /**
+     * Generate a random, secure password.
+     *
+     * @param  int  $length
+     * @param  bool  $letters
+     * @param  bool  $numbers
+     * @param  bool  $symbols
+     * @param  bool  $spaces
+     * @return string
+     */
+    public static function password($length = 32, $letters = true, $numbers = true, $symbols = true, $spaces = false)
+    {
+        return (new Collection)
+                ->when($letters, fn ($c) => $c->merge([
+                    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+                    'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+                    'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+                    'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+                    'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                ]))
+                ->when($numbers, fn ($c) => $c->merge([
+                    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                ]))
+                ->when($symbols, fn ($c) => $c->merge([
+                    '~', '!', '#', '$', '%', '^', '&', '*', '(', ')', '-',
+                    '_', '.', ',', '<', '>', '?', '/', '\\', '{', '}', '[',
+                    ']', '|', ':', ';',
+                ]))
+                ->when($spaces, fn ($c) => $c->merge([' ']))
+                ->pipe(fn ($c) => Collection::times($length, fn () => $c[random_int(0, $c->count() - 1)]))
+                ->implode('');
     }
 
     /**
@@ -1372,11 +1410,16 @@ class Str
     /**
      * Generate a ULID.
      *
+     * @param  \DateTimeInterface|null  $time
      * @return \Symfony\Component\Uid\Ulid
      */
-    public static function ulid()
+    public static function ulid($time = null)
     {
-        return new Ulid();
+        if ($time === null) {
+            return new Ulid();
+        }
+
+        return new Ulid(Ulid::generate($time));
     }
 
     /**

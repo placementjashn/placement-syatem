@@ -12,6 +12,7 @@
 namespace Symfony\Contracts\Service;
 
 use Psr\Container\ContainerInterface;
+use Symfony\Contracts\Service\Attribute\Required;
 use Symfony\Contracts\Service\Attribute\SubscribedService;
 
 /**
@@ -25,9 +26,6 @@ trait ServiceSubscriberTrait
     /** @var ContainerInterface */
     protected $container;
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getSubscribedServices(): array
     {
         $services = method_exists(get_parent_class(self::class) ?: '', __FUNCTION__) ? parent::getSubscribedServices() : [];
@@ -49,23 +47,43 @@ trait ServiceSubscriberTrait
                 throw new \LogicException(sprintf('Cannot use "%s" on methods without a return type in "%s::%s()".', SubscribedService::class, $method->name, self::class));
             }
 
-            $serviceId = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+            /* @var SubscribedService $attribute */
+            $attribute = $attribute->newInstance();
+            $attribute->key ??= self::class.'::'.$method->name;
+            $attribute->type ??= $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+            $attribute->nullable = $returnType->allowsNull();
 
-            if ($returnType->allowsNull()) {
-                $serviceId = '?'.$serviceId;
+            if ($attribute->attributes) {
+                $services[] = $attribute;
+            } else {
+                $services[$attribute->key] = ($attribute->nullable ? '?' : '').$attribute->type;
             }
-
-            $services[$attribute->newInstance()->key ?? self::class.'::'.$method->name] = $serviceId;
         }
 
         return $services;
     }
 
-    /**
-     * @required
-     */
+    #[Required]
     public function setContainer(ContainerInterface $container): ?ContainerInterface
     {
+<<<<<<< HEAD
+        $ret = null;
+=======
+<<<<<<< HEAD
+        $this->container = $container;
+
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+        if (method_exists(get_parent_class(self::class) ?: '', __FUNCTION__)) {
+            $ret = parent::setContainer($container);
+        }
+
+<<<<<<< HEAD
+        $this->container = $container;
+
+        return $ret;
+=======
+        return null;
+=======
         $ret = null;
         if (method_exists(get_parent_class(self::class) ?: '', __FUNCTION__)) {
             $ret = parent::setContainer($container);
@@ -74,5 +92,7 @@ trait ServiceSubscriberTrait
         $this->container = $container;
 
         return $ret;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     }
 }

@@ -7,14 +7,29 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Log\Events\MessageLogged;
+<<<<<<< HEAD
 use Illuminate\Support\Traits\Conditionable;
+=======
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Traits\Conditionable;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 
 class Logger implements LoggerInterface
 {
+<<<<<<< HEAD
     use Conditionable;
 
+=======
+<<<<<<< HEAD
+=======
+    use Conditionable;
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     /**
      * The underlying logger implementation.
      *

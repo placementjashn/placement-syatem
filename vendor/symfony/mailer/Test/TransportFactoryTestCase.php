@@ -37,40 +37,16 @@ abstract class TransportFactoryTestCase extends TestCase
 
     abstract public function getFactory(): TransportFactoryInterface;
 
-<<<<<<< HEAD
-    abstract public static function supportsProvider(): iterable;
-=======
-<<<<<<< HEAD
-    abstract public function supportsProvider(): iterable;
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
-
-    abstract public static function createProvider(): iterable;
-
-<<<<<<< HEAD
-    public static function unsupportedSchemeProvider(): iterable
-=======
-    public function unsupportedSchemeProvider(): iterable
-=======
     abstract public static function supportsProvider(): iterable;
 
     abstract public static function createProvider(): iterable;
 
     public static function unsupportedSchemeProvider(): iterable
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [];
     }
 
-<<<<<<< HEAD
     public static function incompleteDsnProvider(): iterable
-=======
-<<<<<<< HEAD
-    public function incompleteDsnProvider(): iterable
-=======
-    public static function incompleteDsnProvider(): iterable
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     {
         return [];
     }

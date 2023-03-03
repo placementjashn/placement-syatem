@@ -17,6 +17,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
@@ -41,10 +48,10 @@ use Symfony\Component\Routing\RequestContextAwareInterface;
  */
 class RouterListener implements EventSubscriberInterface
 {
-    private $matcher;
-    private $context;
-    private $logger;
-    private $requestStack;
+    private RequestMatcherInterface|UrlMatcherInterface $matcher;
+    private RequestContext $context;
+    private ?LoggerInterface $logger;
+    private RequestStack $requestStack;
     private ?string $projectDir;
     private bool $debug;
 
@@ -67,7 +74,7 @@ class RouterListener implements EventSubscriberInterface
         $this->debug = $debug;
     }
 
-    private function setCurrentRequest(Request $request = null)
+    private function setCurrentRequest(?Request $request)
     {
         if (null !== $request) {
             try {
@@ -82,7 +89,7 @@ class RouterListener implements EventSubscriberInterface
      * After a sub-request is done, we need to reset the routing context to the parent request so that the URL generator
      * operates on the correct context again.
      */
-    public function onKernelFinishRequest(FinishRequestEvent $event)
+    public function onKernelFinishRequest()
     {
         $this->setCurrentRequest($this->requestStack->getParentRequest());
     }
@@ -107,14 +114,12 @@ class RouterListener implements EventSubscriberInterface
                 $parameters = $this->matcher->match($request->getPathInfo());
             }
 
-            if (null !== $this->logger) {
-                $this->logger->info('Matched route "{route}".', [
-                    'route' => $parameters['_route'] ?? 'n/a',
-                    'route_parameters' => $parameters,
-                    'request_uri' => $request->getUri(),
-                    'method' => $request->getMethod(),
-                ]);
-            }
+            $this->logger?->info('Matched route "{route}".', [
+                'route' => $parameters['_route'] ?? 'n/a',
+                'route_parameters' => $parameters,
+                'request_uri' => $request->getUri(),
+                'method' => $request->getMethod(),
+            ]);
 
             $request->attributes->add($parameters);
             unset($parameters['_route'], $parameters['_controller']);

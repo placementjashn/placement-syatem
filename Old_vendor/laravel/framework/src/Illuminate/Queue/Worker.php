@@ -8,8 +8,16 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\Factory as QueueManager;
 use Illuminate\Database\DetectsLostConnections;
 use Illuminate\Queue\Events\JobExceptionOccurred;
+<<<<<<< HEAD
 use Illuminate\Queue\Events\JobPopped;
 use Illuminate\Queue\Events\JobPopping;
+=======
+<<<<<<< HEAD
+=======
+use Illuminate\Queue\Events\JobPopped;
+use Illuminate\Queue\Events\JobPopping;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Queue\Events\JobReleasedAfterException;
@@ -344,20 +352,44 @@ class Worker
             return $connection->pop($queue);
         };
 
+<<<<<<< HEAD
         $this->raiseBeforeJobPopEvent($connection->getConnectionName());
 
         try {
             if (isset(static::$popCallbacks[$this->name])) {
+=======
+<<<<<<< HEAD
+        try {
+            if (isset(static::$popCallbacks[$this->name])) {
+                return (static::$popCallbacks[$this->name])($popJobCallback, $queue);
+=======
+        $this->raiseBeforeJobPopEvent($connection->getConnectionName());
+
+        try {
+            if (isset(static::$popCallbacks[$this->name])) {
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
                 return tap(
                     (static::$popCallbacks[$this->name])($popJobCallback, $queue),
                     fn ($job) => $this->raiseAfterJobPopEvent($connection->getConnectionName(), $job)
                 );
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
             }
 
             foreach (explode(',', $queue) as $queue) {
                 if (! is_null($job = $popJobCallback($queue))) {
+<<<<<<< HEAD
                     $this->raiseAfterJobPopEvent($connection->getConnectionName(), $job);
 
+=======
+<<<<<<< HEAD
+=======
+                    $this->raiseAfterJobPopEvent($connection->getConnectionName(), $job);
+
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
                     return $job;
                 }
             }
@@ -611,6 +643,11 @@ class Worker
     }
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Raise the before job has been popped.
      *
      * @param  string  $connectionName
@@ -636,6 +673,10 @@ class Worker
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Raise the before queue job event.
      *
      * @param  string  $connectionName

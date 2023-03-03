@@ -108,26 +108,10 @@ if (PHP_VERSION_ID < 80000) {
         }
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
     if (
         (function_exists('stream_get_wrappers') && in_array('phpvfscomposer', stream_get_wrappers(), true))
         || (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper'))
     ) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-    if (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper')) {
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         include("phpvfscomposer://" . __DIR__ . '/..'.'/psy/psysh/bin/psysh');
         exit(0);
     }

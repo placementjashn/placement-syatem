@@ -2,7 +2,14 @@
 
 namespace Illuminate\Support;
 
+<<<<<<< HEAD
 use ArrayAccess;
+=======
+<<<<<<< HEAD
+=======
+use ArrayAccess;
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 use Closure;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Traits\Conditionable;
@@ -11,7 +18,15 @@ use Illuminate\Support\Traits\Tappable;
 use JsonSerializable;
 use Symfony\Component\VarDumper\VarDumper;
 
+<<<<<<< HEAD
 class Stringable implements JsonSerializable, ArrayAccess
+=======
+<<<<<<< HEAD
+class Stringable implements JsonSerializable
+=======
+class Stringable implements JsonSerializable, ArrayAccess
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
 {
     use Conditionable, Macroable, Tappable;
 
@@ -58,7 +73,7 @@ class Stringable implements JsonSerializable, ArrayAccess
     /**
      * Append the given values to the string.
      *
-     * @param  string  ...$values
+     * @param  array|string  ...$values
      * @return static
      */
     public function append(...$values)
@@ -442,6 +457,11 @@ class Stringable implements JsonSerializable, ArrayAccess
     }
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Determine if a given string matches a given pattern.
      *
      * @param  string|iterable<string>  $pattern
@@ -453,6 +473,10 @@ class Stringable implements JsonSerializable, ArrayAccess
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Get the string matching the given pattern.
      *
      * @param  string  $pattern
@@ -1218,6 +1242,11 @@ class Stringable implements JsonSerializable, ArrayAccess
     }
 
     /**
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Determine if the given offset exists.
      *
      * @param  mixed  $offset
@@ -1262,6 +1291,10 @@ class Stringable implements JsonSerializable, ArrayAccess
     }
 
     /**
+<<<<<<< HEAD
+=======
+>>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
+>>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
      * Proxy dynamic properties onto methods.
      *
      * @param  string  $key

@@ -4,19 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
-=======
-<<<<<<< HEAD
-class ComposerStaticInitb0200717217495ad811e0d67533a1302
-=======
-<<<<<<< HEAD
-class ComposerStaticInit91750e95f2b30d4ad9c0e91acb52a028
-=======
-class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -353,8 +341,8 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -544,14 +532,6 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
         'App\\Http\\Controllers\\Companyauth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployeeController.php',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
-        'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
-        'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
-=======
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         'App\\Http\\Controllers\\EmpprofileController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmpprofileController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
@@ -559,10 +539,6 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\Employee' => __DIR__ . '/../..' . '/app/Http/Middleware/Employee.php',
-<<<<<<< HEAD
-=======
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -577,14 +553,7 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
         'App\\Models\\Company' => __DIR__ . '/../..' . '/app/Models/Company.php',
         'App\\Models\\Employee' => __DIR__ . '/../..' . '/app/Models/Employee.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-<<<<<<< HEAD
         'App\\Models\\job' => __DIR__ . '/../..' . '/app/Models/job.php',
-=======
-<<<<<<< HEAD
-=======
-        'App\\Models\\job' => __DIR__ . '/../..' . '/app/Models/job.php',
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -2135,14 +2104,7 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
         'Illuminate\\Foundation\\Concerns\\ResolvesDumpSource' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Concerns/ResolvesDumpSource.php',
         'Illuminate\\Foundation\\Console\\AboutCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/AboutCommand.php',
         'Illuminate\\Foundation\\Console\\CastMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/CastMakeCommand.php',
-<<<<<<< HEAD
         'Illuminate\\Foundation\\Console\\ChannelListCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php',
-=======
-<<<<<<< HEAD
-=======
-        'Illuminate\\Foundation\\Console\\ChannelListCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ChannelListCommand.php',
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         'Illuminate\\Foundation\\Console\\ChannelMakeCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ChannelMakeCommand.php',
         'Illuminate\\Foundation\\Console\\ClearCompiledCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/ClearCompiledCommand.php',
         'Illuminate\\Foundation\\Console\\CliDumper' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Console/CliDumper.php',
@@ -2419,16 +2381,8 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
         'Illuminate\\Queue\\DatabaseQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/DatabaseQueue.php',
         'Illuminate\\Queue\\Events\\JobExceptionOccurred' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobExceptionOccurred.php',
         'Illuminate\\Queue\\Events\\JobFailed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobFailed.php',
-<<<<<<< HEAD
         'Illuminate\\Queue\\Events\\JobPopped' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobPopped.php',
         'Illuminate\\Queue\\Events\\JobPopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobPopping.php',
-=======
-<<<<<<< HEAD
-=======
-        'Illuminate\\Queue\\Events\\JobPopped' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobPopped.php',
-        'Illuminate\\Queue\\Events\\JobPopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobPopping.php',
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
         'Illuminate\\Queue\\Events\\JobProcessed' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessed.php',
         'Illuminate\\Queue\\Events\\JobProcessing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobProcessing.php',
         'Illuminate\\Queue\\Events\\JobQueued' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/JobQueued.php',
@@ -6328,31 +6282,10 @@ class ComposerStaticInit5df15e3a090e0bf0225f63101ba06976
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$classMap;
-=======
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb0200717217495ad811e0d67533a1302::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb0200717217495ad811e0d67533a1302::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb0200717217495ad811e0d67533a1302::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitb0200717217495ad811e0d67533a1302::$classMap;
-=======
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInit91750e95f2b30d4ad9c0e91acb52a028::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit91750e95f2b30d4ad9c0e91acb52a028::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit91750e95f2b30d4ad9c0e91acb52a028::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit91750e95f2b30d4ad9c0e91acb52a028::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit5df15e3a090e0bf0225f63101ba06976::$classMap;
->>>>>>> 5886d1baa4daf85cba795085b5f687c80898f98e
->>>>>>> b47e28794f4ada0b2f41405dd11295797f0ab85b
->>>>>>> cfc45212359e3c31e90a15df610051b13d41f46e
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$classMap;
 
         }, null, ClassLoader::class);
     }
