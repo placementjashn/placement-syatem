@@ -3,7 +3,15 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => '98b9166ea598bdd4d3009a62fb6e89644a645c70',
+=======
+<<<<<<< HEAD
+        'reference' => '44d9aaabb793ca6c030e2e6893941dbc0cf0493b',
+=======
+        'reference' => '8e5b0f758b3156f6498feaa6e9c87aff4de71735',
+>>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -86,9 +94,15 @@
             'dev_requirement' => true,
         ),
         'filp/whoops' => array(
+<<<<<<< HEAD
             'pretty_version' => '2.15.0',
             'version' => '2.15.0.0',
             'reference' => '3e8aebbca9f0ae6f618962c4ad514077fd365ab3',
+=======
+            'pretty_version' => '2.14.6',
+            'version' => '2.14.6.0',
+            'reference' => 'f7948baaa0330277c729714910336383286305da',
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
             'type' => 'library',
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
@@ -382,7 +396,15 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '98b9166ea598bdd4d3009a62fb6e89644a645c70',
+=======
+<<<<<<< HEAD
+            'reference' => '44d9aaabb793ca6c030e2e6893941dbc0cf0493b',
+=======
+            'reference' => '8e5b0f758b3156f6498feaa6e9c87aff4de71735',
+>>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -530,9 +552,15 @@
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v4.15.4',
             'version' => '4.15.4.0',
             'reference' => '6bb5176bc4af8bcb7d926f88718db9b96a2d4290',
+=======
+            'pretty_version' => 'v4.15.3',
+            'version' => '4.15.3.0',
+            'reference' => '570e980a201d8ed0236b0a62ddf2c9cbb2034039',
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
@@ -921,9 +949,15 @@
             'dev_requirement' => true,
         ),
         'spatie/backtrace' => array(
+<<<<<<< HEAD
             'pretty_version' => '1.4.0',
             'version' => '1.4.0.0',
             'reference' => 'ec4dd16476b802dbdc6b4467f84032837e316b8c',
+=======
+            'pretty_version' => '1.2.2',
+            'version' => '1.2.2.0',
+            'reference' => '7b34fee6c1ad45f8ee0498d17cd8ea9a076402c1',
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/backtrace',
             'aliases' => array(),

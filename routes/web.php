@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
@@ -24,14 +25,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 
+=======
+Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
 Route::post('/loginemp',[EmployeeController::class,'verifylogin']);//employee
 
 Route::get('/employeedashborad',[postController::class,'index'])->middleware('guard');//employee dashboard
-Route::get('/companydashboard',[EmployeeController::class,'company']);//company dashboard
+/* Route::get('/company/dashboard',[EmployeeController::class,'company']); *///company dashboard
 
 Route::get('/addpost',[postController::class,'addpost'])->middleware('guard');//post open addpost page
 Route::post('/addpost',[postController::class,'store'])->middleware('guard');//post store the data
@@ -47,6 +52,8 @@ Route::get('/no-access',function(){
     die; 
 });//route middleware
 
+Route::get('/companydata',[CompanyController::class,'companylist']);
+
 /* Route::get('/logins',function(){
     /* session()->put('email',1);  
     return redirect('/');  
@@ -61,6 +68,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
 
+<<<<<<< HEAD
 Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
@@ -75,6 +83,17 @@ Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');
  */require __DIR__.'/companyauth.php';
+=======
+/* Route::get('/company/dashboard', function () {
+    return view('company.dashboard');
+})->middleware(['auth:company', 'verified'])->name('company.dashboard');//company dashboard
+require __DIR__.'/companyauth.php'; */
+
+Route::get('/company/dashboard', /* function () {
+    return view('company.dashboard'); */[EmployeeController::class,'company']
+)->middleware(['auth:company', 'verified'])->name('company.dashboard');
+require __DIR__.'/companyauth.php';
+>>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
