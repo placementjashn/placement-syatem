@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Hash;
 class EmployeeController extends Controller
 {
     public function company(){
-        return view('companydashboard');
+        $data = Employee::all();
+        return view('company.dashboard',['data'=>$data]);
     }
     public function empadd(){
         return view('addemployee');
@@ -40,7 +41,9 @@ class EmployeeController extends Controller
         $emp->gender = $request['gender'];
         $emp->phone = $request['phone'];
         $emp->save();
-         return redirect('/loginemp'); 
+        $data=Employee::all();
+        return redirect('/company/dashboard');
+         /* return redirect('/loginemp');  */
     }
 
     public function emplogin(){
