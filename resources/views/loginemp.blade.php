@@ -121,14 +121,12 @@
         <div class="alert alert-danger">{{session::get('fail')}}</div>
         @endif
         @csrf
-                <fieldset><legend><img src="/webimg/log3.jpeg" height="90" width="100" class="rounded-circle"></legend>
+                <fieldset><legend><img src="/img/log3.jpeg" height="90" width="100" class="rounded-circle"></legend>
                 <div class="row">
                     <div class="col-sm-12">
                         <center><h1>Login</h1></center>
                     </div>
                 </div>
-
-                
                 <div class="row">
                     <div class="col-sm-12 input-Box">
                         <i class="fa fa-user-circle"></i><input type="email" size="25" autocomplete="off" placeholder="Enter Email" value="{{old('email')}}" class="form-group" name="email"/>

@@ -341,8 +341,8 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -3415,6 +3415,7 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         'NunoMaduro\\Collision\\Exceptions\\InvalidStyleException' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/InvalidStyleException.php',
         'NunoMaduro\\Collision\\Exceptions\\ShouldNotHappen' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/ShouldNotHappen.php',
         'NunoMaduro\\Collision\\Exceptions\\TestException' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/TestException.php',
+        'NunoMaduro\\Collision\\Exceptions\\TestOutcome' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/TestOutcome.php',
         'NunoMaduro\\Collision\\Handler' => __DIR__ . '/..' . '/nunomaduro/collision/src/Handler.php',
         'NunoMaduro\\Collision\\Highlighter' => __DIR__ . '/..' . '/nunomaduro/collision/src/Highlighter.php',
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
@@ -6270,6 +6271,9 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         'Whoops\\Handler\\PlainTextHandler' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Handler/PlainTextHandler.php',
         'Whoops\\Handler\\PrettyPageHandler' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php',
         'Whoops\\Handler\\XmlResponseHandler' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php',
+        'Whoops\\Inspector\\InspectorFactory' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Inspector/InspectorFactory.php',
+        'Whoops\\Inspector\\InspectorFactoryInterface' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Inspector/InspectorFactoryInterface.php',
+        'Whoops\\Inspector\\InspectorInterface' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Inspector/InspectorInterface.php',
         'Whoops\\Run' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Run.php',
         'Whoops\\RunInterface' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/RunInterface.php',
         'Whoops\\Util\\HtmlDumperOutput' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/HtmlDumperOutput.php',

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
 use App\Http\Controllers\postController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
@@ -23,8 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/addemployee',[EmployeeController::class,'empadd'])->middleware('guard') ;//employee
-Route::post('/addemployee',[EmployeeController::class,'empdata'])->middleware('guard');//employee
+
+Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
+Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
 Route::post('/loginemp',[EmployeeController::class,'verifylogin']);//employee
 
@@ -59,10 +61,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
 
+Route::get('/company/dashboard', /* function () {
+    return view('company.dashboard'); */[EmployeeController::class,'company']
+)->middleware(['auth:company', 'verified'])->name('company.dashboard');
+
+//student
+Route::get('/companystudlist',[StudentController::class,'display']);
+
+
+/* Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')->middleware('guard');//post delete */
+/* 
 Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');
-require __DIR__.'/companyauth.php';
+ */require __DIR__.'/companyauth.php';
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
