@@ -44,4 +44,7 @@ class Company extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    use HasFactory;
+    protected $table = 'companies';
+    protected $primaryKey  = "id";
 }

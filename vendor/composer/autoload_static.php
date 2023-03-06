@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
 class ComposerStaticInitaade27241b7b96e1d9f4227de1e38979
-=======
-class ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a
->>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -345,8 +341,8 @@ class ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -3419,6 +3415,7 @@ class ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a
         'NunoMaduro\\Collision\\Exceptions\\InvalidStyleException' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/InvalidStyleException.php',
         'NunoMaduro\\Collision\\Exceptions\\ShouldNotHappen' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/ShouldNotHappen.php',
         'NunoMaduro\\Collision\\Exceptions\\TestException' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/TestException.php',
+        'NunoMaduro\\Collision\\Exceptions\\TestOutcome' => __DIR__ . '/..' . '/nunomaduro/collision/src/Exceptions/TestOutcome.php',
         'NunoMaduro\\Collision\\Handler' => __DIR__ . '/..' . '/nunomaduro/collision/src/Handler.php',
         'NunoMaduro\\Collision\\Highlighter' => __DIR__ . '/..' . '/nunomaduro/collision/src/Highlighter.php',
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
@@ -6286,17 +6283,10 @@ class ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitf345427aa4b0e7f7a552f2592186d48a::$classMap;
->>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 
         }, null, ClassLoader::class);
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
@@ -44,6 +45,8 @@ Route::get('/no-access',function(){
     return "You're not access to the page";
     die; 
 });//route middleware
+
+Route::get('/companydata',[CompanyController::class,'companylist']);
 
 /* Route::get('/logins',function(){
     /* session()->put('email',1);  

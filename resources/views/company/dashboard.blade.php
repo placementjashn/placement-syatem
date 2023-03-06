@@ -31,9 +31,7 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
                     <div class="dropdown-menu">
                        
-                         @foreach ($data as $val)
-                            <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
-                        @endforeach
+                        
                         
                     </div>
                 </li>
