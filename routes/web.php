@@ -1,19 +1,19 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
 use App\Http\Controllers\postController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
+
 use App\Http\Controllers\CompanyDashboard;
 
-use App\Http\Controllers\StudentController;
 
-=======
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -53,6 +55,8 @@ Route::get('/no-access',function(){
     die; 
 });//route middleware
 
+Route::get('/companydata',[CompanyController::class,'companylist']);
+
 /* Route::get('/logins',function(){
     /* session()->put('email',1);  
     return redirect('/');  
@@ -67,6 +71,22 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
 
+
+Route::get('/company/dashboard', /* function () {
+    return view('company.dashboard'); */[EmployeeController::class,'company']
+)->middleware(['auth:company', 'verified'])->name('company.dashboard');
+
+//student
+Route::get('/companystudlist',[StudentController::class,'display']);
+
+
+/* Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')->middleware('guard');//post delete */
+/* 
+Route::get('/company/dashboard', function () {
+    return view('company.dashboard');
+})->middleware(['auth:company', 'verified'])->name('company.dashboard');
+ */require __DIR__.'/companyauth.php';
+
 /* Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');//company dashboard
@@ -76,6 +96,7 @@ Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
 require __DIR__.'/companyauth.php';
+
 
 Route::get('/company',[CompanyDashboard::class,'companyindex']);
 Route::get('/addemp',[CompanyDashboard::class,'empadd']);
@@ -89,9 +110,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-<<<<<<< HEAD
-?>
-=======
+
+
+
 
 //session
 /* Route::get('loginemp',function()
@@ -112,4 +133,4 @@ Route::get('destroy-session',function(){
  return redirect('get-all-session');
 }); */
 require __DIR__.'/auth.php';
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
+?>

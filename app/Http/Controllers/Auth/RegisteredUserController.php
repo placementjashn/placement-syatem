@@ -46,7 +46,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'contact' => $request->contact,
             'location' => $request->location,
-            'image' => $request->image,
+            /* 'image' => $request->image, */
+            $imagename = time().'.'.$request->image->getClientOriginalExtension(),
+            $request->image->move('img/student',$imagename),
+            'image' => $imagename,
             'resume' => $request->resume,
         ]);
 

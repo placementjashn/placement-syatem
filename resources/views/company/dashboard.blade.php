@@ -31,17 +31,21 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
                     <div class="dropdown-menu">
                        
+
+                        
+
                        {{--  @foreach ($data as $val)
                             <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
                         @endforeach  --}}
+
                         
                     </div>
                 </li>
                 <li class="nav-item">
-                    <i class="fa fa-user-plus"></i><a href="{{url('/addemp')}}" class="nav-link"> Add Employee </a>
+                    <i class="fa fa-user-plus"></i><a href="{{url('/addemployee')}}" class="nav-link"> Add Employee </a>
                 </li>
                 <li class="nav-item"> 
-                    <a href="#" class="nav-link">Student list</a>
+                    <a href="{{url('/companystudlist')}}" class="nav-link">All Student</a>
                 </li>
                 
                 <li class="nav-item">

@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
 class ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282
-=======
-class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -525,6 +521,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
         'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
+        'App\\Http\\Controllers\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/CompanyController.php',
         'App\\Http\\Controllers\\Companyauth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Companyauth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Companyauth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/EmailVerificationNotificationController.php',
@@ -1943,6 +1940,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'Illuminate\\Database\\Eloquent\\Concerns\\HasRelationships' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasTimestamps' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasTimestamps.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasUlids.php',
+        'Illuminate\\Database\\Eloquent\\Concerns\\HasUniqueIds' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasUniqueIds.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasUuids' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasUuids.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HidesAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HidesAttributes.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\QueriesRelationships' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php',
@@ -2554,6 +2552,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'Illuminate\\Support\\Facades\\Notification' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Notification.php',
         'Illuminate\\Support\\Facades\\ParallelTesting' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/ParallelTesting.php',
         'Illuminate\\Support\\Facades\\Password' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Password.php',
+        'Illuminate\\Support\\Facades\\Pipeline' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Pipeline.php',
         'Illuminate\\Support\\Facades\\Process' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Process.php',
         'Illuminate\\Support\\Facades\\Queue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Queue.php',
         'Illuminate\\Support\\Facades\\RateLimiter' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/RateLimiter.php',
@@ -6275,6 +6274,9 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'Whoops\\Handler\\PlainTextHandler' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Handler/PlainTextHandler.php',
         'Whoops\\Handler\\PrettyPageHandler' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php',
         'Whoops\\Handler\\XmlResponseHandler' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Handler/XmlResponseHandler.php',
+        'Whoops\\Inspector\\InspectorFactory' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Inspector/InspectorFactory.php',
+        'Whoops\\Inspector\\InspectorFactoryInterface' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Inspector/InspectorFactoryInterface.php',
+        'Whoops\\Inspector\\InspectorInterface' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Inspector/InspectorInterface.php',
         'Whoops\\Run' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Run.php',
         'Whoops\\RunInterface' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/RunInterface.php',
         'Whoops\\Util\\HtmlDumperOutput' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/HtmlDumperOutput.php',
@@ -6287,17 +6289,10 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$classMap;
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
 
         }, null, ClassLoader::class);
     }
