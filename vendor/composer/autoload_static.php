@@ -4,15 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
 class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
-=======
-<<<<<<< HEAD
-class ComposerStaticInitaade27241b7b96e1d9f4227de1e38979
-=======
-class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
->>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -529,6 +521,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
         'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
+        'App\\Http\\Controllers\\CompanyController' => __DIR__ . '/../..' . '/app/Http/Controllers/CompanyController.php',
         'App\\Http\\Controllers\\Companyauth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Companyauth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Companyauth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Companyauth/EmailVerificationNotificationController.php',
@@ -685,6 +678,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
+        'DeepCopy\\Filter\\ChainableFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Filter/ChainableFilter.php',
         'DeepCopy\\Filter\\Doctrine\\DoctrineCollectionFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineCollectionFilter.php',
         'DeepCopy\\Filter\\Doctrine\\DoctrineEmptyCollectionFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineEmptyCollectionFilter.php',
         'DeepCopy\\Filter\\Doctrine\\DoctrineProxyFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineProxyFilter.php',
@@ -1947,6 +1941,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'Illuminate\\Database\\Eloquent\\Concerns\\HasRelationships' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasRelationships.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasTimestamps' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasTimestamps.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasUlids' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasUlids.php',
+        'Illuminate\\Database\\Eloquent\\Concerns\\HasUniqueIds' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasUniqueIds.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HasUuids' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasUuids.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\HidesAttributes' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HidesAttributes.php',
         'Illuminate\\Database\\Eloquent\\Concerns\\QueriesRelationships' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php',
@@ -2558,6 +2553,7 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
         'Illuminate\\Support\\Facades\\Notification' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Notification.php',
         'Illuminate\\Support\\Facades\\ParallelTesting' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/ParallelTesting.php',
         'Illuminate\\Support\\Facades\\Password' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Password.php',
+        'Illuminate\\Support\\Facades\\Pipeline' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Pipeline.php',
         'Illuminate\\Support\\Facades\\Process' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Process.php',
         'Illuminate\\Support\\Facades\\Queue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/Queue.php',
         'Illuminate\\Support\\Facades\\RateLimiter' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Facades/RateLimiter.php',
@@ -6294,24 +6290,10 @@ class ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
             $loader->prefixLengthsPsr4 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$classMap;
-=======
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitaade27241b7b96e1d9f4227de1e38979::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit02aa2b2bb9ea721f52cce11b77f65b3d::$classMap;
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
->>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
 
         }, null, ClassLoader::class);
     }
