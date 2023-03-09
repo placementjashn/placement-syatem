@@ -25,11 +25,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 
-=======
+
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
->>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -68,7 +68,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
 
-<<<<<<< HEAD
+
 Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
@@ -83,7 +83,7 @@ Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');
  */require __DIR__.'/companyauth.php';
-=======
+
 /* Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');//company dashboard
@@ -93,7 +93,7 @@ Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
 require __DIR__.'/companyauth.php';
->>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

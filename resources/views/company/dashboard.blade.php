@@ -30,15 +30,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
                     <div class="dropdown-menu">
-                       
-<<<<<<< HEAD
-                        
-=======
-                       {{--  @foreach ($data as $val)
+
+                         @foreach ($data as $val)
                             <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
-                        @endforeach  --}}
->>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
-                        
+                        @endforeach  
+
                     </div>
                 </li>
                 <li class="nav-item">

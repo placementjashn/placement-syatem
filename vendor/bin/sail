@@ -23,11 +23,7 @@ if [ -d /proc/cygdrive ]; then
     esac
 fi
 
-<<<<<<< HEAD
-export COMPOSER_RUNTIME_BIN_DIR="$(cd "${self%[/\\]*}" > /dev/null; pwd)"
-=======
 export COMPOSER_RUNTIME_BIN_DIR=$(cd "${self%[/\\]*}" > /dev/null; pwd)
->>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 
 # If bash is sourcing this file, we have to source the target as well
 bashSource="$BASH_SOURCE"
