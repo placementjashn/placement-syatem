@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('empimg');
             $table->string('gender');
             $table->string('phone');
+            $table->string('companyemail');
             $table->timestamps();
         });
     }

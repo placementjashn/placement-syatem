@@ -46,5 +46,5 @@ class Company extends Authenticatable
     ];
     use HasFactory;
     protected $table = 'companies';
-    protected $primaryKey  = "id";
+    protected $primaryKey  = "company_id";
 }
