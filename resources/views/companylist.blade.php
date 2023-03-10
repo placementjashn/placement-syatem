@@ -1,48 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Company List</title>
 </head>
+
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 25%;
+    border-radius: 5px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  </style>
 <body>
-    <div class="row">
-        <table class="table">
-         {{--  <pre>
-            {{print_r($Addpost)}}
-          </pre> --}}
-          <thead>
-            <tr>
-              <th>Name </th>
-              <th>E-mail </th>
-              <th>Contact </th>
-              <th>Location </th>
-              <th>Image </th>
-            </tr>
-          </thead>
-          <tbody>
-            @foreach ($companies as $company)
-            <tr>
-              <td>{{$company->name}}</td>
-              <td>{{$company->email}}</td>
-              <td>{{$company->contact}}</td>
-              <td>{{$company->location}}</td>
-              <th>{{$company->vacancy}}</th>
-              {{-- <th><a href="{{route('delete',$addpost->job_id)}}"><button class="btn btn-danger">Delete</button></a></th>
-              <th><a href="{{route('edit',$addpost->job_id)}}"><button class="btn btn-info">Edit</button></a></th> --}}
-            </tr>
-            @endforeach
-            <tr>
-              <td>
-               
-            </td>
-            <td>
-                
-            </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <table cellpadding="15" cellspacing="10">
+   
+  @foreach ($companies as $company)
+        <tr>
+          <td> <img height="250px" width="250px" src="img/company/{{$company->image}}"></td>
+          <td>
+            <table>
+              <tr><td><h1>{{$company->name}}</h1  ></td></tr>
+              <tr><td>{{$company->location}}</td></tr>
+              <tr><td>{{$company->email}}</td></tr>
+              <tr><td><h4>{{$company->contact}}</h4><br></td></tr>
+              <tr><td><h4>{{$company->location}}</h4> <br></td></tr>
+            </table>
+          </td>
+    </tr>
+  @endforeach
+   
+  </table>
 </body>
 </html>

@@ -29,9 +29,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
                     <div class="dropdown-menu">
+1
                          @foreach ($data as $val)
                             <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
-                        @endforeach                     
+                        @endforeach                    
                     </div>
                 </li>
                 <li class="nav-item">
@@ -44,9 +45,7 @@
                 <li class="nav-item">
                     <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee Login </a>
                 </li>
-                
             </ul>
-               
         </form>
       </body>
     </html>

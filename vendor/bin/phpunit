@@ -116,11 +116,14 @@ if (PHP_VERSION_ID < 80000) {
         || (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper'))
     ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
     if (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper')) {
 >>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
 >>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
+=======
+>>>>>>> 88762545ab0b9cfa549b8bab34d086e8c58a5220
         include("phpvfscomposer://" . __DIR__ . '/..'.'/phpunit/phpunit/phpunit');
         exit(0);
     }

@@ -31,6 +31,8 @@ Route::get('/', function () {
 
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 
+Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -47,7 +49,6 @@ Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')-
 Route::get('/edit/{job_id}',[postController::class,'edit'])->name('edit')->middleware('guard');//post edit
 Route::post('/update/{job_id}',[postController::class,'update'])->name('update')->middleware('guard');//post update
 
-Route::get('/empprofile',[EmpprofileController::class,'index'])->middleware('guard');//empprofile
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 
@@ -61,7 +62,7 @@ Route::get('/companydata',[CompanyController::class,'companylist']);
 }); */
 Route::get('/logout',function(){
     session()->forget('email'); 
-    return redirect('/loginemp');  
+    return redirect('/company/dashboard');  
 });
 
 Route::get('/dashboard', function () {
@@ -96,6 +97,7 @@ Route::get('/company/dashboard', /* function () {
 require __DIR__.'/companyauth.php';
 
 
+
 Route::get('/company',[CompanyDashboard::class,'companyindex']);
 Route::get('/addemp',[CompanyDashboard::class,'empadd']);
 Route::post('/addemp',[CompanyDashboard::class,'empdata']);
@@ -127,5 +129,6 @@ Route::get('destroy-session',function(){
  session()->forget(['empname','empid']);
  return redirect('get-all-session');
 }); */
+
 require __DIR__.'/auth.php';
 ?>

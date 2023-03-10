@@ -96,6 +96,11 @@
                             <input type="text" name="designation" value="{{old('designation')}}" placeholder="Enter Designation" class="form-control form-group"/>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="hidden" name="companyemail" value="{{Auth::guard('company')->user()->email}}" class="form-control form-group" readonly/>
+                        </div>
+                    </div>
         
                     <div class="row">
                         <div class="col-sm-6">
