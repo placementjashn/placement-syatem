@@ -66,7 +66,10 @@ class EmployeeController extends Controller
             'password'=>'required'
         ]);
 
-        $emp=Employee::where('email','=',$request->input('email'))->first();
+       /*  $emp=Employee::where('email','=',$request->input('email'))->first(); */
+       $emp=Employee::select("*")
+       ->where([["companyemail", "=", Auth::guard('company')->user()->email],['email','=',$request->input('email')]])
+       ->first();
         if($emp)
         {
             if(Hash::check($request->password ,$emp->password))

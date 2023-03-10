@@ -99,7 +99,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" name="companyemail" value="{{Auth::guard('company')->user()->email}}" class="form-control form-group" readonly/>
+                            <input type="hidden" name="companyemail" value="{{Auth::guard('company')->user()->email}}" class="form-control form-group" readonly/>
                         </div>
                     </div>
         

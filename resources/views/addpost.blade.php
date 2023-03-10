@@ -28,7 +28,14 @@
       <div class="row form-group">
         <div class="col-sm-2">EmpName</div>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="email" value="{{session('email')}}" READONLY>
+          <input type="text" class="form-control" name="empemail" value="{{session('email')}}" READONLY>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2">Company</div>
+        <div class="col-sm-10">
+          
+          <input type="text" class="form-control" name="company_id" value="{{Auth::guard('company')->user()->company_id}}" READONLY>
         </div>
       </div>
       <div class="row form-group">
