@@ -9,8 +9,6 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CompanyDashboard;
-
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
 
@@ -110,9 +108,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
-
 
 //session
 /* Route::get('loginemp',function()
