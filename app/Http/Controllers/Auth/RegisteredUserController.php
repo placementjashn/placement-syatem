@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Barryvdh\DomPDF\Facade\PDF;
 
 class RegisteredUserController extends Controller
 {
@@ -50,7 +51,14 @@ class RegisteredUserController extends Controller
             $imagename = time().'.'.$request->image->getClientOriginalExtension(),
             $request->image->move('img/student',$imagename),
             'image' => $imagename,
-            'resume' => $request->resume,
+            $pdf = PDF::loadView('contract.contract-pdf', $data);
+            $pdf->save('contract.pdf');
+            $s3 =\Storage::disk('s3');
+            $s3->put('pdf/contract', new File('contract.pdf'), 'public');
+            /* $resume = time().'.'.$request->resume->getClientOriginalExtension(),
+            $request->resume->move('img/student',$resume),
+            'resume' => $resume, */
+            /* 'resume' => $request->resume, */
         ]);
 
         event(new Registered($user));

@@ -24,18 +24,23 @@
   }
   </style>
 <body>
-
+  <table cellpadding="15" cellspacing="10">
+   
   @foreach ($companies as $company)
-    <div  class="card">
-      <div class="container">
-          <img  style="width:100%" src="img/company/{{$company->image}}" >
-          <h2>{{$company->name}}</h2>
-          <h4>{{$company->email}}</h4>
-          <h4>{{$company->contact}}</h4>
-          <h4>{{$company->location}}</h4> 
-      </div>
-    </div>
+        <tr>
+          <td> <img height="250px" width="250px" src="img/company/{{$company->image}}"></td>
+          <td>
+            <table>
+              <tr><td><h1>{{$company->name}}</h1  ></td></tr>
+              <tr><td>{{$company->location}}</td></tr>
+              <tr><td>{{$company->email}}</td></tr>
+              <tr><td><h4>{{$company->contact}}</h4><br></td></tr>
+              <tr><td><h4>{{$company->location}}</h4> <br></td></tr>
+            </table>
+          </td>
+    </tr>
   @endforeach
-    
+   
+  </table>
 </body>
 </html>

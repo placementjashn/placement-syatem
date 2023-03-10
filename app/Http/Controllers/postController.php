@@ -36,7 +36,8 @@ class postController extends Controller
         $job->expirence = $request['expirence'] ;  
         $job->vacancy =$request['vacancy'];
         $job->time =$request['time'];
-        $job->email =$request['email'];
+        $job->empemail =$request['empemail'];
+        $job->company_id =$request['company_id'];
         $job->save();
         return redirect('/view');
         /* Session::put('name', $name); */
@@ -47,7 +48,7 @@ class postController extends Controller
     public function view()
     {
         $job = job::select("*")
-                ->where("email", "=", session('email'))
+                ->where("empemail", "=", session('email'))
                 ->get();
         return view('view', compact('job'));
     }

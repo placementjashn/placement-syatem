@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\job;
@@ -9,7 +10,8 @@ use Illuminate\Support\Facades\Hash;
 class EmployeeController extends Controller
 {
     public function company(){
-        $data = Employee::all();
+        $data=Employee::select("*")
+        ->where("companyemail", "=", Auth::guard('company')->user()->email)->get();
         return view('company.dashboard',['data'=>$data]);
     }
     public function empadd(){
@@ -40,6 +42,7 @@ class EmployeeController extends Controller
         $emp->empimg = $request['empimg'];
         $emp->gender = $request['gender'];
         $emp->phone = $request['phone'];
+        $emp->companyemail=$request['companyemail'];
         $emp->save();
         $data=Employee::all();
         return redirect('/company/dashboard');
@@ -63,7 +66,10 @@ class EmployeeController extends Controller
             'password'=>'required'
         ]);
 
-        $emp=Employee::where('email','=',$request->input('email'))->first();
+       /*  $emp=Employee::where('email','=',$request->input('email'))->first(); */
+       $emp=Employee::select("*")
+       ->where([["companyemail", "=", Auth::guard('company')->user()->email],['email','=',$request->input('email')]])
+       ->first();
         if($emp)
         {
             if(Hash::check($request->password ,$emp->password))

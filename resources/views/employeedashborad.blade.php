@@ -29,9 +29,14 @@
                 <a href="#tab5Id" class="nav-link">Student list 
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="{{url('/empprofile')}}" class="nav-link">Profile</a>
-            </li>
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+              <div class="dropdown-menu">
+                <a href="#" class="nav-link">Profile</a>
+                <a href="{{url('/logout')}}" class="nav-link" >Logout</a>
+              </div>
+          </li>
         </ul>
     </form>
   </body>

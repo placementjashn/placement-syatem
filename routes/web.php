@@ -24,12 +24,12 @@ use App\Http\Controllers\UserAuth;
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
+=======
 
-
-
-
+>>>>>>> 94bd75ff3e13c553f34f9fb7ff690b15f3231007
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
-
+Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -46,7 +46,6 @@ Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')-
 Route::get('/edit/{job_id}',[postController::class,'edit'])->name('edit')->middleware('guard');//post edit
 Route::post('/update/{job_id}',[postController::class,'update'])->name('update')->middleware('guard');//post update
 
-Route::get('/empprofile',[EmpprofileController::class,'index'])->middleware('guard');//empprofile
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 
@@ -60,14 +59,13 @@ Route::get('/companydata',[CompanyController::class,'companylist']);
 }); */
 Route::get('/logout',function(){
     session()->forget('email'); 
-    return redirect('/loginemp');  
+    return redirect('/company/dashboard');  
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
-
 
 Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
@@ -83,7 +81,6 @@ Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');
  */require __DIR__.'/companyauth.php';
-
 /* Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');//company dashboard
@@ -93,7 +90,6 @@ Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
 require __DIR__.'/companyauth.php';
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -119,4 +115,4 @@ Route::get('destroy-session',function(){
  session()->forget(['empname','empid']);
  return redirect('get-all-session');
 }); */
-require __DIR__.'/auth.php';
+require __DIR__.'/auth.php'; 

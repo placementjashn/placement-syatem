@@ -21,9 +21,10 @@ return new class extends Migration
             $table->string('vacancy');
             $table->text('description');
             $table->string('time');
-            $table->string('email');
-           /*  $table->unsignedBigInteger('id');
-            $table->foreign('id')->references('id')->on('employee'); */
+            $table->string('empemail');
+           /*  $table->id('company_id'); */
+            $table->unsignedBigInteger('company_id');
+            $table->foreign('company_id')->references('company_id')->on('companies');
             $table->timestamps();   
         });
     }
