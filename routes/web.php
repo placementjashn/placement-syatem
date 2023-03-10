@@ -24,6 +24,10 @@ use App\Http\Controllers\UserAuth;
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94bd75ff3e13c553f34f9fb7ff690b15f3231007
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
@@ -42,7 +46,6 @@ Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')-
 Route::get('/edit/{job_id}',[postController::class,'edit'])->name('edit')->middleware('guard');//post edit
 Route::post('/update/{job_id}',[postController::class,'update'])->name('update')->middleware('guard');//post update
 
-Route::get('/empprofile',[EmpprofileController::class,'index'])->middleware('guard');//empprofile
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 
@@ -56,7 +59,7 @@ Route::get('/companydata',[CompanyController::class,'companylist']);
 }); */
 Route::get('/logout',function(){
     session()->forget('email'); 
-    return redirect('/loginemp');  
+    return redirect('/company/dashboard');  
 });
 
 Route::get('/dashboard', function () {

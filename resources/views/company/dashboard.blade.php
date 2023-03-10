@@ -31,6 +31,7 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
                     <div class="dropdown-menu">
 <<<<<<< HEAD
+<<<<<<< HEAD
                        
                          @foreach ($data as $val)
                             <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
@@ -43,6 +44,11 @@
                         @endforeach  
 
 >>>>>>> bc5ef2906050e96268c06ba3addc1f75ad07e0b7
+=======
+                        @foreach ($data as $val)
+                            <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
+                        @endforeach 
+>>>>>>> 94bd75ff3e13c553f34f9fb7ff690b15f3231007
                     </div>
                 </li>
                 <li class="nav-item">
@@ -55,9 +61,7 @@
                 <li class="nav-item">
                     <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee Login </a>
                 </li>
-                
             </ul>
-               
         </form>
       </body>
     </html>
