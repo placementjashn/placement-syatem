@@ -25,7 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
@@ -44,7 +43,6 @@ Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')-
 Route::get('/edit/{job_id}',[postController::class,'edit'])->name('edit')->middleware('guard');//post edit
 Route::post('/update/{job_id}',[postController::class,'update'])->name('update')->middleware('guard');//post update
 
-Route::get('/empprofile',[EmpprofileController::class,'index'])->middleware('guard');//empprofile
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 
@@ -58,7 +56,7 @@ Route::get('/companydata',[CompanyController::class,'companylist']);
 }); */
 Route::get('/logout',function(){
     session()->forget('email'); 
-    return redirect('/loginemp');  
+    return redirect('/company/dashboard');  
 });
 
 Route::get('/dashboard', function () {
@@ -91,6 +89,7 @@ Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
 require __DIR__.'/companyauth.php';
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

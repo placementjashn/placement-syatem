@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Hash;
 class EmployeeController extends Controller
 {
     public function company(){
-        $job = job::select("*")
-        ->where("email", "=", session('email'))
-        ->get();
-       
         $data=Employee::select("*")
         ->where("companyemail", "=", Auth::guard('company')->user()->email)->get();
         return view('company.dashboard',['data'=>$data]);

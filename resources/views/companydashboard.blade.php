@@ -3,7 +3,6 @@
   <head>
     <title>Company Dashboard</title>
 
-    
     <!-- font - awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
