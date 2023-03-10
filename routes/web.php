@@ -24,10 +24,8 @@ use App\Http\Controllers\UserAuth;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-=======
 
->>>>>>> 94bd75ff3e13c553f34f9fb7ff690b15f3231007
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
