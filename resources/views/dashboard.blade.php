@@ -17,12 +17,11 @@
                   <li class="nav-item">
                       <a href="#tab1Id" class="nav-link active">Home</a>
                   </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Company & Job</a>
-                      <div class="dropdown-menu">
-                        <a href="{{url('/companydata')}}" class="nav-link"> Companylist </a>                        
-                      </div>
-                  </li>  
+
+                  <li class="nav-item">
+                     <a href="{{url('/companydata')}}" class="nav-link"> Companylist </a>                        
+                  </li> 
+                   
                   <li class="nav-item">
                      <a href="  " class="nav-link"> Applied Job List </a>
                   </li>

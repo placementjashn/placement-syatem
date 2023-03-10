@@ -25,6 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
+Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -111,4 +112,4 @@ Route::get('destroy-session',function(){
  session()->forget(['empname','empid']);
  return redirect('get-all-session');
 }); */
-require __DIR__.'/auth.php';
+require __DIR__.'/auth.php'; 
