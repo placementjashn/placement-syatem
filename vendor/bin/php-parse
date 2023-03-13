@@ -111,7 +111,10 @@ if (PHP_VERSION_ID < 80000) {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
+>>>>>>> ab03e746bd03bb8c15aca2ac02ff9c3b57c5df96
     if (
         (function_exists('stream_get_wrappers') && in_array('phpvfscomposer', stream_get_wrappers(), true))
         || (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper'))
@@ -121,7 +124,11 @@ if (PHP_VERSION_ID < 80000) {
 =======
     if (function_exists('stream_wrapper_register') && stream_wrapper_register('phpvfscomposer', 'Composer\BinProxyWrapper')) {
 >>>>>>> 81fc401745b988ca80ab15efab03fb1c940e6445
+<<<<<<< HEAD
+>>>>>>> 3f1866ef35930898314af9721873f5a0a14b8bc7
+=======
 >>>>>>> 5fa6ed445eb3aca77acd74938705ec10919cda36
+>>>>>>> ab03e746bd03bb8c15aca2ac02ff9c3b57c5df96
         include("phpvfscomposer://" . __DIR__ . '/..'.'/nikic/php-parser/bin/php-parse');
         exit(0);
     }

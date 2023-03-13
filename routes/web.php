@@ -7,8 +7,11 @@ use App\Http\Controllers\EmpprofileController;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\CompanyDashboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +30,9 @@ Route::get('/', function () {
 
 
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
+
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -65,6 +70,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
 
+
 Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
@@ -79,6 +85,7 @@ Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');
  */require __DIR__.'/companyauth.php';
+
 /* Route::get('/company/dashboard', function () {
     return view('company.dashboard');
 })->middleware(['auth:company', 'verified'])->name('company.dashboard');//company dashboard
@@ -88,6 +95,15 @@ Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
 require __DIR__.'/companyauth.php';
+
+
+
+Route::get('/company',[CompanyDashboard::class,'companyindex']);
+Route::get('/addemp',[CompanyDashboard::class,'empadd']);
+Route::post('/addemp',[CompanyDashboard::class,'empdata']);
+Route::get('/loginemp',[CompanyDashboard::class,'emplogin']);
+Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']);
+Route::get('/student',[StudentController::class,'studentindex']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -113,4 +129,6 @@ Route::get('destroy-session',function(){
  session()->forget(['empname','empid']);
  return redirect('get-all-session');
 }); */
-require __DIR__.'/auth.php'; 
+
+require __DIR__.'/auth.php';
+?>
