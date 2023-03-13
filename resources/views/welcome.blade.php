@@ -38,15 +38,17 @@
         <div>
             <ul class="nav nav-tabs" id="navId">
                 <li class="nav-item">
-                    <a href="" class="nav-link active">Home</a>
+                  <div>
+                    <a href="" class="nav-link active"> Home </a>
+                  </div>
                 </li>
                 <li>
                     @if(Route::has('login'))
                         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                             @auth
-                                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                                <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Dashboard </a>
                             @else
-                                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Student</a>
+                                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Student </a>
 
                                 {{-- @if (Route::has('register'))
                                     <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
@@ -60,9 +62,9 @@
                         @if (Route::has('company.login'))
                         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                             @auth('company')
-                                <a href="{{ url('/company/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Company Dashboard</a>
+                                <a href="{{ url('/company/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Company Dashboard </a>
                             @else
-                                <a href="{{ route('company.login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Company</a>
+                                <a href="{{ route('company.login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Company </a>
         
                                 {{-- @if (Route::has('company.register'))
                                     <a href="{{ route('company.register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline ocus:outline-2 focus:rounded-sm focus:outline-red-500">Company Register</a>
@@ -71,7 +73,9 @@
                         </div>
                     @endif
                     </div>  
-                    
+                  </li>
+                </ul>
+        </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
@@ -87,11 +91,11 @@
   <div class="row" style="background:#c7d6df;">
     <div class="col-sm-3">
       <div class="number">780</div>
-      <div class="">Projects</div>
+      <div class="">Placement Student</div>
     </div>
     <div class="col-sm-3">
       <div class="number">236</div>
-      <div class="">Clients</div>
+      <div class="">Company</div>
     </div>
     <div class="col-sm-3">
       <div class="number">430</div>
@@ -129,10 +133,10 @@
 
 </style>
 
-                </li>
-            </ul>
-        </div>
+                
         {{-- <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"> --}}
         
     </body>
 </html>
+
+
