@@ -8,7 +8,7 @@ use App\Http\Controllers\postController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\CompanyDashboard;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
 
@@ -98,11 +98,11 @@ require __DIR__.'/companyauth.php';
 
 
 
-Route::get('/company',[CompanyDashboard::class,'companyindex']);
+/* Route::get('/company',[CompanyDashboard::class,'companyindex']);
 Route::get('/addemp',[CompanyDashboard::class,'empadd']);
 Route::post('/addemp',[CompanyDashboard::class,'empdata']);
 Route::get('/loginemp',[CompanyDashboard::class,'emplogin']);
-Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']);
+Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']); */
 Route::get('/student',[StudentController::class,'studentindex']);
 
 Route::middleware('auth')->group(function () {
