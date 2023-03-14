@@ -102,4 +102,11 @@ class postController extends Controller
             $data=compact('job');
             return redirect('/view')->with($data); 
  */    }
+
+        public function joblist($company_id){
+            $jobs= job::select('*')
+            ->where('company_id', '=' , $company_id)
+            ->get();
+            return view('joblist',compact('jobs'));
+        }
 }
