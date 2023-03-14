@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
+class ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -3431,13 +3431,17 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         'PHPUnit\\Event\\Application\\StartedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/StartedSubscriber.php',
         'PHPUnit\\Event\\Code\\ClassMethod' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ClassMethod.php',
         'PHPUnit\\Event\\Code\\ComparisonFailure' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ComparisonFailure.php',
+        'PHPUnit\\Event\\Code\\ComparisonFailureBuilder' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ComparisonFailureBuilder.php',
         'PHPUnit\\Event\\Code\\Phpt' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/Phpt.php',
         'PHPUnit\\Event\\Code\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/Test.php',
         'PHPUnit\\Event\\Code\\TestCollection' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestCollection.php',
         'PHPUnit\\Event\\Code\\TestCollectionIterator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestCollectionIterator.php',
         'PHPUnit\\Event\\Code\\TestDox' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestDox.php',
+        'PHPUnit\\Event\\Code\\TestDoxBuilder' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestDoxBuilder.php',
         'PHPUnit\\Event\\Code\\TestMethod' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestMethod.php',
+        'PHPUnit\\Event\\Code\\TestMethodBuilder' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestMethodBuilder.php',
         'PHPUnit\\Event\\Code\\Throwable' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Throwable.php',
+        'PHPUnit\\Event\\Code\\ThrowableBuilder' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ThrowableBuilder.php',
         'PHPUnit\\Event\\CollectingDispatcher' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Dispatcher/CollectingDispatcher.php',
         'PHPUnit\\Event\\DeferringDispatcher' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Dispatcher/DeferringDispatcher.php',
         'PHPUnit\\Event\\DirectDispatcher' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Dispatcher/DirectDispatcher.php',
@@ -3517,6 +3521,7 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         'PHPUnit\\Event\\TestSuite\\Started' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/TestSuite/Started.php',
         'PHPUnit\\Event\\TestSuite\\StartedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/TestSuite/StartedSubscriber.php',
         'PHPUnit\\Event\\TestSuite\\TestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/TestSuite/TestSuite.php',
+        'PHPUnit\\Event\\TestSuite\\TestSuiteBuilder' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteBuilder.php',
         'PHPUnit\\Event\\TestSuite\\TestSuiteForTestClass' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForTestClass.php',
         'PHPUnit\\Event\\TestSuite\\TestSuiteForTestMethodWithDataProvider' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteForTestMethodWithDataProvider.php',
         'PHPUnit\\Event\\TestSuite\\TestSuiteWithName' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/TestSuite/TestSuiteWithName.php',
@@ -3599,6 +3604,8 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         'PHPUnit\\Event\\Test\\PreparationStartedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparationStartedSubscriber.php',
         'PHPUnit\\Event\\Test\\Prepared' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/Prepared.php',
         'PHPUnit\\Event\\Test\\PreparedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/PreparedSubscriber.php',
+        'PHPUnit\\Event\\Test\\PrintedUnexpectedOutput' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/PrintedUnexpectedOutput.php',
+        'PHPUnit\\Event\\Test\\PrintedUnexpectedOutputSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/PrintedUnexpectedOutputSubscriber.php',
         'PHPUnit\\Event\\Test\\Skipped' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Outcome/Skipped.php',
         'PHPUnit\\Event\\Test\\SkippedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Outcome/SkippedSubscriber.php',
         'PHPUnit\\Event\\Test\\TestProxyCreated' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/TestDouble/TestProxyCreated.php',
@@ -4115,6 +4122,7 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestFinishedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestFinishedSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestMarkedIncompleteSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestMarkedIncompleteSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestPreparedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestPreparedSubscriber.php',
+        'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestPrintedUnexpectedOutputSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestPrintedUnexpectedOutputSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestRunnerExecutionStartedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestSkippedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestSkippedSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestTriggeredDeprecationSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php',
@@ -6290,10 +6298,10 @@ class ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitb2f33a470ed5139b97f712e4bc453ce3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd0c9267c408288d06f9e9dc7bc17b282::$classMap;
 
         }, null, ClassLoader::class);
     }

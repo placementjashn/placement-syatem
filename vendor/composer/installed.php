@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '88762545ab0b9cfa549b8bab34d086e8c58a5220',
+        'reference' => '980c363e50cfdf6f2c1de404ca23164e06cef068',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -385,7 +385,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '88762545ab0b9cfa549b8bab34d086e8c58a5220',
+            'reference' => '980c363e50cfdf6f2c1de404ca23164e06cef068',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -629,12 +629,12 @@
             'dev_requirement' => true,
         ),
         'phpunit/phpunit' => array(
-            'pretty_version' => '10.0.15',
-            'version' => '10.0.15.0',
+            'pretty_version' => '10.0.16',
+            'version' => '10.0.16.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpunit/phpunit',
             'aliases' => array(),
-            'reference' => '9b0c2245ef173a3d9546f6a4393a85d60eabe071',
+            'reference' => '07d386a11ac7094032900f07cada1c8975d16607',
             'dev_requirement' => true,
         ),
         'psr/container' => array(
