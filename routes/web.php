@@ -49,6 +49,8 @@ Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')-
 Route::get('/edit/{job_id}',[postController::class,'edit'])->name('edit')->middleware('guard');//post edit
 Route::post('/update/{job_id}',[postController::class,'update'])->name('update')->middleware('guard');//post update
 
+Route::get('/joblist/{company_id}',[postController::class,'joblist'])->name('joblist'); //Open Job List
+
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 
