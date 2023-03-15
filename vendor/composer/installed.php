@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '980c363e50cfdf6f2c1de404ca23164e06cef068',
+        'reference' => 'dd2549396b87344fa8cb7b525eda6636753aaa4b',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -385,7 +385,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '980c363e50cfdf6f2c1de404ca23164e06cef068',
+            'reference' => 'dd2549396b87344fa8cb7b525eda6636753aaa4b',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(
@@ -539,12 +539,12 @@
             'dev_requirement' => false,
         ),
         'nunomaduro/collision' => array(
-            'pretty_version' => 'v7.1.0',
-            'version' => '7.1.0.0',
+            'pretty_version' => 'v7.1.1',
+            'version' => '7.1.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/collision',
             'aliases' => array(),
-            'reference' => '2b97fed4950cf0ff148c18b853975ec8ea135e90',
+            'reference' => 'ec91efc82a40ca4224a53494e7e93775cebc39e5',
             'dev_requirement' => true,
         ),
         'nunomaduro/termwind' => array(

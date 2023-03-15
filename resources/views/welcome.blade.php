@@ -8,11 +8,15 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
+
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" /> 
+
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
 
         <!-- Styles -->
         <style>
-       /*  background-image:url({{url('img/log.avif')}});    */
+         background-image:url({{url('img/log.avif')}});  
 
        
        body, html {
@@ -58,22 +62,6 @@
                     @endif
                 </li>
                 <li>
-                    <div class="max-w-7xl mx-auto p-6 lg:p-8">
-
-                        @if (Route::has('company.login'))
-                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-                            @auth('company')
-                                <a href="{{ url('/company/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Company Dashboard </a>
-                            @else
-                                <a href="{{ route('company.login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"> Company </a>
-        
-                                {{-- @if (Route::has('company.register'))
-                                    <a href="{{ route('company.register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline ocus:outline-2 focus:rounded-sm focus:outline-red-500">Company Register</a>
-                                @endif --}}
-                            @endauth
-                        </div>
-                    @endif
-
                       @if(Route::has('company.login'))
                       <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                           @auth
@@ -93,9 +81,15 @@
                 </ul>
         </div>
 
+
    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script> 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -103,7 +97,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
+
   <div class="container text-center">
+
+ <div class="container text-center">
+
   <div class="row" style="background:#c7d6df;">
     <div class="col-sm-3">
       <div class="number">780</div>
@@ -152,10 +150,14 @@
 
                 </li>
             </ul>
+
         </div> 
 
         {{-- <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"> --}}
-        
+
+        </div>
+         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+
     </body>
 </html>
 
