@@ -4,14 +4,11 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
-
-use App\Http\Controllers\frontend\HomeCssController;
-use App\Http\Controllers\frontend\AboutCssController;
 use App\Http\Controllers\postController;
+use App\Http\Controllers\Companyauth\RatingController;
+use App\Http\Controllers\frontend\HomeCssController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
-
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
 
@@ -27,13 +24,7 @@ use App\Http\Controllers\UserAuth;
 |
 */
 
-
-
 Route::get('/',[HomeCssController::class,'index']);//css
-Route::get('/about',[AboutCssController::class,'index']);//css
-
-
-
 
 
 /* Route::get('/', function () {
@@ -42,9 +33,7 @@ Route::get('/about',[AboutCssController::class,'index']);//css
 
 
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
-
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
-
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
@@ -63,17 +52,34 @@ Route::post('/update/{job_id}',[postController::class,'update'])->name('update')
 
 Route::get('/joblist/{company_id}',[postController::class,'joblist'])->name('joblist'); //Open Job List
 
+Route::get('/compare',[CompanyController::class,'compare']);//compare company 
+Route::get('/compare/{company_id}',[CompanyController::class,'records'])->name('compare');//Record display
+Route::get('/companydata',[CompanyController::class,'companylist']);
+
+//Compare list
+Route::post('/comparelist/module/store',[CompanyController::class,'storecomparelist'])->name('storecomparelist');
+Route::post('/comparelist/module/remove',[CompanyController::class,'removecomparelist'])->name('removecomparelist');
+Route::post('/comparelist/module/showcomparelist',[CompanyController::class,'showcomparelist'])->name('showcomparelist');
+
+//Applyed for Company by student
+Route::get('/appliedCompanyStudentList/{company_id}',[CompanyController::class,'applied']);
+Route::post('/appliedCompanyStudentList',[CompanyController::class,'applieddata']);
+Route::get('/appliedstudview',[CompanyController::class,'view']);
+
+//Rating & Review 
+Route::get('/rating',[RatingController::class,'rating']);
+Route::post('/update-rating-status',[RatingController::class,'updateRatingStatus']);
+
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 
 });//route middleware
 
-Route::get('/companydata',[CompanyController::class,'companylist']);
-
 /* Route::get('/logins',function(){
     /* session()->put('email',1);  
     return redirect('/');  
 }); */
+
 Route::get('/logout',function(){
     session()->forget('email'); 
     return redirect('/company/dashboard');  
@@ -89,9 +95,8 @@ Route::get('/company/dashboard', /* function () {
     return view('company.dashboard'); */[EmployeeController::class,'company']
 )->middleware(['auth:company', 'verified'])->name('company.dashboard');
 
-//student
-Route::get('/companystudlist',[StudentController::class,'display']);
-
+//student display in company dashborad
+Route::get('/companystudlist',[CompanyController::class,'display']);
 
 /* Route::get('/delete/{job_id}',[postController::class,'delete'])->name('delete')->middleware('guard');//post delete */
 /* 
@@ -119,6 +124,7 @@ Route::get('/loginemp',[CompanyDashboard::class,'emplogin']);
 Route::post('/loginemp',[CompanyDashboard::class,'verifylogin']); */
 Route::get('/student',[StudentController::class,'studentindex']);
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -145,4 +151,4 @@ Route::get('destroy-session',function(){
 }); */
 
 require __DIR__.'/auth.php';
-?>
+?> 
