@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class AboutCssController extends Controller
 {
     public function index(){
-    
+        return view('frontend.about');
     }
 }

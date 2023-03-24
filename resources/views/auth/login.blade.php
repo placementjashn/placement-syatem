@@ -44,7 +44,9 @@
             </x-primary-button>
         </div>
         <div>
-            <p>Not Registered yet?<a href="{{ route('register') }}">Sign Up</a></p>
+            <p>Not Registered yet? <a href="{{ route('register') }}"> Sign Up </a></p>
         </div>
     </form>
 </x-guest-layout>
+
+

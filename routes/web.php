@@ -4,6 +4,9 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EmpprofileController;
+
+use App\Http\Controllers\frontend\HomeCssController;
+use App\Http\Controllers\frontend\AboutCssController;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +27,18 @@ use App\Http\Controllers\UserAuth;
 |
 */
 
-Route::get('/', function () {
+
+
+Route::get('/',[HomeCssController::class,'index']);//css
+Route::get('/about',[AboutCssController::class,'index']);//css
+
+
+
+
+
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
