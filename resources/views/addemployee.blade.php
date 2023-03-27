@@ -18,7 +18,6 @@
   </style>
 
   <body>
-      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -42,6 +41,17 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h1 class=" text-center">Add Employee</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" name="companyemail" value="{{Auth::guard('company')->user()->email}}" class="form-control form-group" readonly/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control form-group" name="company_id" value="{{Auth::guard('company')->user()->company_id}}"> 
                         </div>
                     </div>
                     <div class="row">
@@ -75,7 +85,7 @@
                             <input type="radio" value="female" name="gender"/> Female
                         </div>
                     </div>
-        
+
                     <div class="row">
                         <div class="col-sm-12">
                             <span class="text-danger">@error('empimg') {{$message}} @enderror</span>

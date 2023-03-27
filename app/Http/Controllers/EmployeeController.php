@@ -43,6 +43,7 @@ class EmployeeController extends Controller
         $emp->gender = $request['gender'];
         $emp->phone = $request['phone'];
         $emp->companyemail=$request['companyemail'];
+        $emp->company_id=$request['company_id'];
         $emp->save();
         $data=Employee::all();
         return redirect('/company/dashboard');
@@ -66,10 +67,10 @@ class EmployeeController extends Controller
             'password'=>'required'
         ]);
 
-       /*  $emp=Employee::where('email','=',$request->input('email'))->first(); */
-       $emp=Employee::select("*")
+        $emp=Employee::where('email','=',$request->input('email'))->first();
+       /* $emp=Employee::select("*")
        ->where([["companyemail", "=", Auth::guard('company')->user()->email],['email','=',$request->input('email')]])
-       ->first();
+       ->first(); */
         if($emp)
         {
             if(Hash::check($request->password ,$emp->password))

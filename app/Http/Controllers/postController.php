@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Company;
 use App\Models\job;
 use Session;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,11 @@ class postController extends Controller
     public function addpost(){
         $url =url('/addpost');
         $title = "Add Post";
-        $data = compact('url','title');
+        $employees = Employee::select('company_id')
+        ->where('email', "=" , session('email'))
+        ->get();
+        $data = compact('url','title','employees');
+        /* die($employees); */
         return view('addpost')->with($data);
         /* $employee = Employee::all();
         return view('addpost')->with('$employee'); */
@@ -42,7 +47,6 @@ class postController extends Controller
         return redirect('/view');
         /* Session::put('name', $name); */
        /*  dd($name); */
-
     }
 
     public function view()
@@ -103,10 +107,13 @@ class postController extends Controller
             return redirect('/view')->with($data); 
  */    }
 
-        public function joblist($company_id){
-            $jobs= job::select('*')
-            ->where('company_id', '=' , $company_id)
-            ->get();
-            return view('joblist',compact('jobs'));
-        }
+ public function joblist($company_id){
+    $companies=Company::select('*')
+    ->where('company_id',"=", "$company_id")
+    ->get();
+    $jobs= job::select('*')
+    ->where('company_id', '=' , $company_id)
+    ->get();
+    return view('joblist',compact('jobs','companies'));
+}
 }

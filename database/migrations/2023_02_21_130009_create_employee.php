@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employee', function (Blueprint $table) {
-            $table->id('id');
+            $table->id('employee_id');
            /*  $table->foreignId('user_id')->constrained(); */
             $table->string('empname');
             $table->string('designation');
@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('gender');
             $table->string('phone');
             $table->string('companyemail');
+            $table->unsignedBigInteger('company_id');
+            $table->foreign('company_id')->references('company_id')->on('companies');
             $table->timestamps();
         });
     }

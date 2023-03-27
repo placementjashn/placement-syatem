@@ -44,7 +44,7 @@
                         <th>Image</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Contact No</th>
+                        <th>Post Name</th>
                         <th>Location</th>
                         <th>Resume</th>
                       </tr>
@@ -53,14 +53,14 @@
                     @foreach ($data as $user)
                     <tr>
                       <td>
-                      <img class="rounded-circle" width="35" src="img/student/{{$user->image}}">
+                      <img class="rounded-circle" width="35" src="img/company/{{$user['company']['image']}}">
                       </td>
-                      <td><strong>{{$user->name}}</strong></td>
+                      <td><strong>{{$user->username}}</strong></td>
                       <td><strong>{{$user->email}}</strong></td>
-                      <td><strong>{{$user->contact}}</strong></td>
-                      <td><strong>{{$user->location}}</strong></td>
-                      <td><strong><a width="35" href="img/student/{{$user->resume}}" target="_resume"><i class="fa fa-file"></i> {{$user->name}}</a></strong></td>
-                      <td><i class="fa fa-download"><a width="35" href="img/student/{{$user->resume}}" target="_resume"></a></td>
+                      <td><strong>{{$user->jobname}}</strong></td>
+                        {{-- <td><strong>{{$user->location}}</strong></td>
+                        <td><strong><a width="35" href="img/student/{{$user->resume}}" target="_resume"><i class="fa fa-file"></i> {{$user->name}}</a></strong></td>
+                        <td><i class="fa fa-download"><a width="35" href="img/student/{{$user->resume}}" target="_resume"></a></td> --}}
                     </tr>
                     @endforeach
                     </tbody>
@@ -90,9 +90,9 @@
             <div class="card-body pt-2">
                 <div class="text-center">
                     <div class="profile-photo">
-                      <img class="rounded-circle" width="100" src="img/student/{{$user->image}}">
+                      <img class="rounded-circle" width="100" src="img/company/{{$user['company']['image']}}">
                     </div>
-                    <h3 class="mt-4 mb-1">{{$user->name}}</h3>
+                    <h3 class="mt-4 mb-1">{{$user->username}}</h3>
                     <p class="text-muted">{{$user->email}}</p>
                     <ul class="list-group mb-3 list-group-flush">
                         <li class="list-group-item px-0 d-flex justify-content-between">
@@ -143,5 +143,4 @@
 </div>
 </body>
 </html>
-
 

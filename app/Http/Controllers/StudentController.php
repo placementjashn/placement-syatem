@@ -4,22 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
     public function studentindex()
     {
         return view('studentdashboard');
-    }
-
-    public function display(){
-        $data = User::all();
-        return view('companystudlist',['data'=>$data]);
-        /*
-        $job = job::select("*")
-        ->where("email", "=", session('email'))
-        ->get();
-        return view('view', compact('job')); */
     }
 
     public function upload(Request $request)

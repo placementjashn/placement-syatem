@@ -34,8 +34,9 @@
       <div class="row form-group">
         <div class="col-sm-2">Company</div>
         <div class="col-sm-10">
-          
-          <input type="text" class="form-control" name="company_id" value="{{Auth::guard('company')->user()->company_id}}" READONLY>
+          @foreach ($employees as $employee)
+            <input type="text" class="form-control" name="company_id" value="{{$employee->company_id}}" READONLY>
+          @endforeach
         </div>
       </div>
       <div class="row form-group">

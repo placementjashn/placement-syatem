@@ -45,14 +45,6 @@
               <th><a href="{{route('edit',$addpost->job_id)}}"><button class="btn btn-info">Edit</button></a></th>
             </tr>
             @endforeach
-            <tr>
-              <td>
-               
-            </td>
-            <td>
-                
-            </td>
-            </tr>
           </tbody>
         </table>
       </div>

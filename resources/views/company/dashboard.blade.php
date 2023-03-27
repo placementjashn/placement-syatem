@@ -19,8 +19,8 @@
         <form >
             <!-- Nav tabs --> 
             <ul class="nav nav-tabs">
-                <li>  
-                      <img src="/webimg/logo a.gif`" height="50px" width="50px" />
+                <li>
+                      <img src="/webimg/logo a.gif" height="50px" width="50px" />
                 </li>
                 <li class="nav-item">
                     <a href="#tab1Id" class="nav-link active">Home</a>
@@ -39,11 +39,7 @@
                 </li>
                 <li class="nav-item"> 
                     <a href="{{url('/companystudlist')}}" class="nav-link">All Student</a>
-                </li>
-                
-                <li class="nav-item">
-                    <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee Login </a>
-                </li>
+                </li> 
             </ul>
         </form>
       </body>

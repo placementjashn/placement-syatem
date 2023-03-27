@@ -64,7 +64,7 @@
 
      {{-- <h1 class="logo me-auto me-lg-0"><a href="index.html">Valera</a></h1> --}}
      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="        " class="logo me-auto me-lg-0"><img src="{{asset("frontend/assets/img/logo2.jpg")}}" alt="" class="img-fluid"></a>
+      <a href="" class="logo me-auto me-lg-0"><img src="{{asset("frontend/assets/img/logo.png")}}" alt="" class="img-fluid"></a>
 
 
      <nav id="navbar" class="navbar order-last order-lg-0">
@@ -110,7 +110,7 @@
              @endif
            </li>
            <li class="nav-item">
-             <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee Login </a>
+             <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee </a>
            </li>
 
 
