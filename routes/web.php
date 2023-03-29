@@ -9,6 +9,7 @@ use App\Http\Controllers\Companyauth\RatingController;
 use App\Http\Controllers\frontend\HomeCssController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\studentCss\StudentCssController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\UserAuth;
 
@@ -24,8 +25,10 @@ use App\Http\Controllers\UserAuth;
 |
 */
 
-Route::get('/',[HomeCssController::class,'index']);//css
+Route::get('/',[HomeCssController::class,'index']);//admincss
 
+Route::get('/stud',[StudentCssController::class,'index']);//studentcss
+Route::get('/about',[StudentCssController::class,'about']);
 
 /* Route::get('/', function () {
     return view('welcome');
