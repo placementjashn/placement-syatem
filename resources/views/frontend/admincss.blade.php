@@ -112,24 +112,12 @@
            <li class="nav-item">
              <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee </a>
            </li>
-
-
-            
-           
            </ul>
          </li>
          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
        </ul>
        <i class="bi bi-list mobile-nav-toggle"></i>
      </nav><!-- .navbar -->
-
-
-     <div class="header-social-links d-flex align-items-center">
-       <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-       <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-       <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-       <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-     </div>
 
 
    </div>
@@ -459,6 +447,22 @@
                <h4>Entrepreneur</h4>
              </div>
            </div><!-- End testimonial item -->
+
+
+           <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+              <img src="{{asset("frontend/assets/img/testimonials/testimonials-4.jpg")}}" class="testimonial-img" alt="">
+              <h3>Matt Brandon</h3>
+              <h4>Freelancer</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+
 
 
          </div>

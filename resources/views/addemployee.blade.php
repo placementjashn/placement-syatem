@@ -8,13 +8,20 @@
   </head>
   <style>
     body{
-        background-color: #98989b;
-    }
+    width: 100%;
+    height: 100vh;
+    background: url("/img/p7.jpg") top center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: -70px;
+}
     form{
-        margin: 15px 20px 15px 15px;
-        box-shadow: rgb(0, 2, 3);
-        border: #0c0c0c bold ;
+        margin-top: 30px;
+        width: 500px;
+        padding: 15px 20px 15px 15px;
+        background-color: rgba(252, 253, 253, 0.425);
     }
+    
   </style>
 
   <body>
@@ -24,7 +31,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <center>
     <div class="container">
+
         <form action="{{url('/addemployee')}}" method="post" enctype="multipart/form-data">
             @if(Session::has('success'))
             <div class="alert alert-success">{{session::get('success')}}</div>
@@ -34,10 +43,8 @@
             @endif    
             @csrf
             <div class="row">
-                <div class="col-sm-6">
-                    {{-- <img src="/img/p1.jpg" alt="logo"> --}}
-                </div>
-                <div class="col-sm-6">
+               
+                <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
                             <h1 class=" text-center">Add Employee</h1>
@@ -45,13 +52,13 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" name="companyemail" value="{{Auth::guard('company')->user()->email}}" class="form-control form-group" readonly/>
+                            <input type="hidden" name="companyemail" value="{{Auth::guard('company')->user()->email}}" class="form-control form-group" readonly/>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" class="form-control form-group" name="company_id" value="{{Auth::guard('company')->user()->company_id}}"> 
+                            <input type="hidden" class="form-control form-group" name="company_id" value="{{Auth::guard('company')->user()->company_id}}"> 
                         </div>
                     </div>
                     <div class="row">
@@ -124,6 +131,8 @@
                 </div>
             </div>
         </form>
+
     </div>
+</center>
     </body>
 </html>
