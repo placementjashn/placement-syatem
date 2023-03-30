@@ -26,9 +26,25 @@
                 <tr>
                   <td><img class="rounded-circle" width="200px" src="img/company/{{$datas['company']['image']}}"></td><br>
                     Company Name :<td>{{$datas['company']['name']}}</td><br>
-                    Job Name:<td>{{$datas['jobname']}}</td><br>
+                    Job Name:<td>{{$datas['job']['name']}}</td><br>
                     Qulification :<td>{{$datas['qulification']}}</td><br>
-                    Experience :<td>{{$datas['experience']}}</td><br>                    
+                    Experience :<td>{{$datas['experience']}}</td><br>     
+                    Status :
+                    @if($datas['user']['status'] == "0"  )
+                      <label>Padding</label>
+                    @endif
+
+                    @if($datas['user']['status'] == "1"  )
+                      <label>Selected</label>
+                    @endif
+                    {{-- 
+                    @if($datas['user']['status'] =="0")
+                        Applied
+                      @else
+                      {
+                        Rejected
+                      }
+                     --}}  {{-- {{$datas['user']['status']}}</td> --}}
                 </tr>
                 @endforeach
             </tbody>

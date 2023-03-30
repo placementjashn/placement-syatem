@@ -5,13 +5,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>UpConstruction Bootstrap Template - Services</title>
+  <title>Service</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +19,15 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/bootstrap-icons/bootstrap-icons.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/aos/aos.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/glightbox/css/glightbox.min.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.css")}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/css/main.css")}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.3.0
@@ -55,11 +53,11 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{url('/stud')}}">Home</a></li>
+          <li><a href="{{url('/about')}}">About</a></li>
+          <li><a href="{{url('/services')}}" class="active">Services</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li>
+          <li><a href="{{url('/blog')}}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -79,7 +77,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{url('/contact')}}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -89,12 +87,12 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("studentCss/assets/img/breadcrumbs-bg.jpg")}});">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>Services</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{url('/stud')}}">Home</a></li>
           <li>Services</li>
         </ol>
 
@@ -115,7 +113,7 @@
               <h3>Nesciunt Mete</h3>
               <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
                 tempore et consequatur.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -128,7 +126,7 @@
               <h3>Eosle Commodi</h3>
               <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
                 nesciunt dolorem.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -141,7 +139,7 @@
               <h3>Ledo Markt</h3>
               <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
                 eos earum corrupti.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -154,7 +152,7 @@
               <h3>Asperiores Commodit</h3>
               <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
                 adipisci neque.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -167,7 +165,7 @@
               <h3>Velit Doloremque</h3>
               <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
                 alias eius labore.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -180,7 +178,7 @@
               <h3>Dolori Architecto</h3>
               <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
                 recusandae ducimus enim.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -293,7 +291,7 @@
             </div><!-- End Icon Box -->
           </div>
 
-          <div class="col-lg-6 img-bg" style="background-image: url(assets/img/alt-services-2.jpg);" data-aos="zoom-in"
+          <div class="col-lg-6 img-bg" style="background-image:  url({{asset("studentCss/assets/img/alt-services-2.jpg")}});" data-aos="zoom-in"
             data-aos-delay="100"></div>
         </div>
 
@@ -305,7 +303,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row justify-content-around gy-4">
-          <div class="col-lg-6 img-bg" style="background-image: url(assets/img/alt-services.jpg);" data-aos="zoom-in"
+          <div class="col-lg-6 img-bg" style="background-image:  url({{asset("studentCss/assets/img/alt-services.jpg")}});" data-aos="zoom-in"
             data-aos-delay="100"></div>
 
           <div class="col-lg-5 d-flex flex-column justify-content-center">
@@ -371,7 +369,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-1.jpg")}}" class="testimonial-img" alt="">
                   <h3>Saul Goodman</h3>
                   <h4>Ceo &amp; Founder</h4>
                   <div class="stars">
@@ -391,7 +389,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-2.jpg")}}" class="testimonial-img" alt="">
                   <h3>Sara Wilsson</h3>
                   <h4>Designer</h4>
                   <div class="stars">
@@ -411,7 +409,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-3.jpg")}}" class="testimonial-img" alt="">
                   <h3>Jena Karlis</h3>
                   <h4>Store Owner</h4>
                   <div class="stars">
@@ -431,7 +429,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-4.jpg")}}" class="testimonial-img" alt="">
                   <h3>Matt Brandon</h3>
                   <h4>Freelancer</h4>
                   <div class="stars">
@@ -451,7 +449,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-5.jpg")}}" class="testimonial-img" alt="">
                   <h3>John Larson</h3>
                   <h4>Entrepreneur</h4>
                   <div class="stars">
@@ -577,16 +575,16 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{asset("studentCss/assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/aos/aos.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/glightbox/js/glightbox.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/isotope-layout/isotope.pkgd.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/purecounter/purecounter_vanilla.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/php-email-form/validate.js")}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{asset("studentCss/assets/js/main.js")}}"></script>
 
 </body>
 

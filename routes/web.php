@@ -29,6 +29,13 @@ Route::get('/',[HomeCssController::class,'index']);//admincss
 
 Route::get('/stud',[StudentCssController::class,'index']);//studentcss
 Route::get('/about',[StudentCssController::class,'about']);
+Route::get('/services',[StudentCssController::class,'services']);
+Route::get('/sdetail',[StudentCssController::class,'sdetail']);
+Route::get('/blog',[StudentCssController::class,'blog']);
+Route::get('/bdetail',[StudentCssController::class,'bdetail']);
+Route::get('/projects',[StudentCssController::class,'projects']);
+Route::get('/contact',[StudentCssController::class,'contact']);
+
 
 /* Route::get('/', function () {
     return view('welcome');
@@ -71,8 +78,13 @@ Route::get('/appliedstudview',[CompanyController::class,'view']);
 
 //Rating & Review 
 Route::get('/rating',[RatingController::class,'rating']);
-Route::post('/update-rating-status',[RatingController::class,'updateRatingStatus']);
+Route::get('/company/rating/status',[RatingController::class,'updateRatingStatus'])->name('company.rating.status');
+Route::get('/addrating',[RatingController::class,'ratingform']);
+Route::post('/ratingsuccess',[RatingController::class,'ratingdata']);
 
+
+//on-off
+Route::get('/status/update',[StudentController::class,'updateStatus'])->name('users.update.status');
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
     die; 

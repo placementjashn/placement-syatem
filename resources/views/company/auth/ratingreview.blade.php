@@ -2,22 +2,59 @@
 <html lang="en">
   <head>
     <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="csrf_token" content="{{ csrf_token() }}" />
-    {{-- <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> --}}
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- Bootstrap CSS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-   
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS ,then jQuery first, then Bootstrap JS ,awesome -->
+    {{-- cdn link --}}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>  --}}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {{-- switchery --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  </head>
+  <style>
+
+  </style>
+  <script>
+    $(document).ready( function(){
+    $('.switch').each(function() {
+        var checkbox = $(this).children('input[type=checkbox]');
+        var toggle = $(this).children('label.switch-toggle');
+
+        if (checkbox.length) {
+            checkbox.addClass('hidden');
+            toggle.removeClass('hidden');
+            if (checkbox[0].checked) {
+                toggle.addClass('on');
+                toggle.removeClass('off');
+                toggle.text(toggle.attr('data-on'));
+            } else {
+                toggle.addClass('off');
+                toggle.removeClass('on');
+                toggle.text(toggle.attr('data-off'));
+            };
+        }
+    });
+
+    $('.switch-toggle').click(function(){
+        var checkbox = $(this).siblings('input[type=checkbox]')[0];
+        var toggle = $(this);
+
+        if (checkbox.checked) {
+            toggle.addClass('off');
+            toggle.removeClass('on');
+            toggle.text(toggle.attr('data-off'));
+        } else {
+            toggle.addClass('on');
+            toggle.removeClass('off');
+            toggle.text(toggle.attr('data-on'));
+        };
+    });
+});
+  </script>
+  <body>
     <section class="content">
       <div class="row form-group">
         <div class="col-sm-12">
@@ -50,15 +87,10 @@
                     {{-- <tr><td colspan="2">{{$rating['rating_id']}}</td><tr> --}}
                     <tr><td colspan="2">{{$rating['rating']}}</td><tr>
                     <tr><td colspan="2">{{$rating['review']}}</td><tr>
-                    <tr><td colspan="2">
-                      @if($rating['status']==1)
-                        <a class="updateRatingStatus" id="rating-{{$rating['rating_id']}}" rating_id="{{$rating['rating_id']}}" href="javascript:void(0)"><i class="fa fa-toggle-on" aria-hidden="true" status="Active"></i> </a>
-                      @else
-                        <a class="updateRatingStatus" id="rating-{{$rating['rating_id']}}" rating_id="{{$rating['rating_id']}}" href="javascript:void(0)"><i class="fa fa-toggle-off" aria-hidden="true" status="Inactive"></i></a>
-                      @endif
-                    </td><tr>
-
-                   {{--  <tr><td colspan="2">{{$rating['status']}}</td><tr> --}}
+                    <tr><td colspan="2">{{$rating['status']}}</td><tr>
+                    <td>
+                      <input type="checkbox" data-rating_id="{{$rating['rating_id']}}" name="status" class="js-switch" {{$rating['status'] == 1 ? 'checked' : '' }}> 
+                    </td>
                   @endforeach
               </table>
               
@@ -69,37 +101,33 @@
       </div>
       <p id = "para"></p>
     </section>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        
-        $(document).on("click",".updateRatingStatus",function(){
-         
-         var status=$(this).children("i").attr("status");
-        var rating_id=$(this).attr("rating_id");
-          $.ajax({
-      
-          headers:{
-            'X-CSRF_TOKEN':$('meta[name="csrf-token"]').attr('content')
-          },
-          type:'post',
-          url:'/company/update-rating-status',
-          data:{status:status,rating_id:rating_id},
-          success:function(resp){
-            if(resp['status']==0)
-            {
-              $("#rating-"+rating_id).html("<i class="fa fa-toggle-off" aria-hidden="true" status="Inactive"></i>")
-            }
-            else if(resp['status']==1)
-            {
-              $("#rating-"+rating_id).html("<i class="fa fa-toggle-on" aria-hidden="true" status="Inactive"></i>")
-            }
-          },error:function(){
-            alert("Error");
-          }
-        });  
-      });
+    <script>let elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+      elems.forEach(function(html) {
+          let switchery = new Switchery(html,  { size: 'small' });
       });
 
-      </script>
+      $(document).ready(function(){
+        $('.js-switch').change(function () {
+            let status = $(this).prop('checked') === true ? 1 : 0;
+            alert(status);
+            let rating_id = $(this).data('rating_id');
+            alert(rating_id);
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: '{{ route('company.rating.status') }}',
+                data: {'status': status, 'rating_id': rating_id},
+                success: function (data) {
+                        toastr.options.closeButton = true;
+                        toastr.options.closeMethod = 'fadeOut';
+                        toastr.options.closeDuration = 100;
+                        toastr.success(data.message);
+                        console.log(data);
+                }
+            });
+        });
+    });  
+  </script>  
   </body>
 </html>

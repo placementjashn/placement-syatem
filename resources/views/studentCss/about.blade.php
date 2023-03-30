@@ -5,14 +5,11 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>UpConstruction Bootstrap Template - About</title>
+  <title>About</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="{{asset("studentCss/assets/img/favicon.png")}}" rel="icon">
-  <link href="{{asset("studentCss/assets/img/apple-touch-icon.png")}}" rel="apple-touch-icon">
-
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,8 +55,8 @@
           <li><a href="{{url('/stud')}}">Home</a></li>
           <li><a href="{{url('/about')}}" class="active">About</a></li>
           <li><a href="{{url('/services')}}">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li>
+          <li><a href="{{url('/blog')}}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>

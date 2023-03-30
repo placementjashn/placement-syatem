@@ -45,7 +45,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{url('/stud')}}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>UpConstruction<span>.</span></h1>
@@ -56,10 +56,10 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{{url('/stud')}}">Home</a></li>
-          <li><a href="{{url('/about')}}" class="active">About</a></li>
-          <li><a href="{{url('/services')}}">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{url('/about')}}">About</a></li>
+          <li><a href="{{url('/services')}}" class="active">Services</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li>
+          <li><a href="{{url('/blog')}}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -79,7 +79,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{url('/contact')}}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -90,7 +90,7 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("studentCss/assets/img/breadcrumbs-bg.jpg")}});">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>Service Details</h2>
@@ -123,7 +123,7 @@
           </div>
 
           <div class="col-lg-8">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
+            <img src="{{asset("studentCss/assets/img/services.jpg")}}" alt="" class="img-fluid services-img">
             <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
             <p>
               Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque

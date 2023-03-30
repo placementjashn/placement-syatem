@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>UpConstruction Bootstrap Template - Index</title>
+  <title>Student Dashborad</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -16,9 +16,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{{asset("studentCss/assets/vendor/bootstrap/css/bootstrap.css")}}" rel="stylesheet">
@@ -45,7 +43,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{url('/stud')}}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>UpConstruction<span>.</span></h1>
@@ -58,8 +56,8 @@
           <li><a href="{{url('/stud')}}" class="active">Home</a></li>
           <li><a href="{{url('/about')}}">About</a></li>
           <li><a href="{{url('/services')}}">Services</a></li>
-          <li><a href="projects.blade.php">Projects</a></li>
-          <li><a href="blog.blade.php">Blog</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li>
+          <li><a href="{{url('/blog')}}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -79,7 +77,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.blade.php">Contact</a></li>
+          <li><a href="{{url('/contact')}}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -196,7 +194,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/constructions-1.jpg);"></div>
+                  <div class="card-bg" style="background-image: url({{asset("studentCss/assets/img/constructions-1.jpg")}});"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -213,7 +211,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/constructions-2.jpg);"></div>
+                  <div class="card-bg" style="background-image: url({{asset("studentCss/assets/img/constructions-2.jpg")}});"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -231,7 +229,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/constructions-3.jpg);"></div>
+                  <div class="card-bg" style="background-image: url({{asset("studentCss/assets/img/constructions-3.jpg")}});"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -249,7 +247,7 @@
             <div class="card-item">
               <div class="row">
                 <div class="col-xl-5">
-                  <div class="card-bg" style="background-image: url(assets/img/constructions-4.jpg);"></div>
+                  <div class="card-bg" style="background-image: url({{asset("studentCss/assets/img/constructions-4.jpg")}});"></div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-center">
                   <div class="card-body">
@@ -288,7 +286,7 @@
               <h3>Nesciunt Mete</h3>
               <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
                 tempore et consequatur.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url("/sdetail")}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -301,7 +299,7 @@
               <h3>Eosle Commodi</h3>
               <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
                 nesciunt dolorem.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url("/sdetail")}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -314,7 +312,7 @@
               <h3>Ledo Markt</h3>
               <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
                 eos earum corrupti.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url("/sdetail")}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -327,7 +325,7 @@
               <h3>Asperiores Commodit</h3>
               <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
                 adipisci neque.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url("/sdetail")}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -340,7 +338,7 @@
               <h3>Velit Doloremque</h3>
               <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
                 alias eius labore.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url("/sdetail")}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -353,7 +351,7 @@
               <h3>Dolori Architecto</h3>
               <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
                 recusandae ducimus enim.</p>
-              <a href="service-details.html" class="readmore stretched-link">Learn more <i
+              <a href="{{url("/sdetail")}}" class="readmore stretched-link">Learn more <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -770,7 +768,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-1.jpg")}}" class="testimonial-img" alt="">
                   <h3>Saul Goodman</h3>
                   <h4>Ceo &amp; Founder</h4>
                   <div class="stars">
@@ -790,7 +788,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-2.jpg")}}" class="testimonial-img" alt="">
                   <h3>Sara Wilsson</h3>
                   <h4>Designer</h4>
                   <div class="stars">
@@ -810,7 +808,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-3.jpg")}}" class="testimonial-img" alt="">
                   <h3>Jena Karlis</h3>
                   <h4>Store Owner</h4>
                   <div class="stars">
@@ -830,7 +828,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-4.jpg")}}" class="testimonial-img" alt="">
                   <h3>Matt Brandon</h3>
                   <h4>Freelancer</h4>
                   <div class="stars">
@@ -850,7 +848,7 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                  <img src="{{asset("studentCss/assets/img/testimonials/testimonials-5.jpg")}}" class="testimonial-img" alt="">
                   <h3>John Larson</h3>
                   <h4>Entrepreneur</h4>
                   <div class="stars">
@@ -877,7 +875,7 @@
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-blog-posts" class="recent-blog-posts">
-      <div class="container" data-aos="fade-up"">
+      <div class="container" data-aos="fade-up">
 
     
     
@@ -892,7 +890,7 @@
           <div class="post-item position-relative h-100">
 
             <div class="post-img position-relative overflow-hidden">
-              <img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt="">
+              <img src="{{asset("studentCss/assets/img/blog/blog-1.jpg")}}" class="img-fluid" alt="">
               <span class="post-date">December 12</span>
             </div>
 
@@ -912,7 +910,7 @@
 
               <hr>
 
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+              <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
                   class="bi bi-arrow-right"></i></a>
 
             </div>
@@ -924,7 +922,7 @@
           <div class="post-item position-relative h-100">
 
             <div class="post-img position-relative overflow-hidden">
-              <img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt="">
+              <img src="{{asset("studentCss/assets/img/blog/blog-2.jpg")}}" class="img-fluid" alt="">
               <span class="post-date">July 17</span>
             </div>
 
@@ -944,7 +942,7 @@
 
               <hr>
 
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+              <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
                   class="bi bi-arrow-right"></i></a>
 
             </div>
@@ -956,7 +954,7 @@
           <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="300">
 
             <div class="post-img position-relative overflow-hidden">
-              <img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt="">
+              <img src="{{asset("studentCss/assets/img/blog/blog-3.jpg")}}" class="img-fluid" alt="">
               <span class="post-date">September 05</span>
             </div>
 
@@ -977,7 +975,7 @@
               <hr>
 
               <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                  class="bi bi-arrow-right"></i></a>
+                  class="{{url("/bdetail")}}"></i></a>
 
             </div>
 

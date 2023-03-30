@@ -10,10 +10,30 @@ class StudentController extends Controller
 {
     public function studentindex()
     {
+        $user = User::all();
         return view('studentdashboard');
     }
 
-    public function upload(Request $request)
+  //status 
+    public function updateStatus(Request $request)
+    {
+       /*  return view('statusUpdate'); */
+       /*  die('hiii'); */
+        $user = User::findOrFail($request->id);
+        $user->status = $request->status;
+        $user->save();
+        if($user->status == 0)
+        {
+            return response()->json(['message' => 'User Rejected Successfyull.']);
+        }
+        else
+        {
+            return response()->json(['message' => 'User selected successfully.']);   
+        }
+    }
+
+
+    /* public function upload(Request $request)
     {
         $user = new User;
         $user->name = $request->name;
@@ -30,5 +50,6 @@ class StudentController extends Controller
        
         $user->save();
         return redirect()->back();
-    }
+    } */
 }
+

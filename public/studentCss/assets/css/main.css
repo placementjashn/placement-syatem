@@ -18,9 +18,9 @@
 
 /* Colors */
 :root {
-  --color-default: #364d59;
-  --color-primary: #feb900;
-  --color-secondary: #52565e;
+  --color-default: #adb1b3;
+  --color-primary: #1c5d99;
+  --color-secondary: #ffffff;
 }
 
 /* Smooth scroll behavior */
@@ -188,7 +188,7 @@ section {
 }
 
 .scroll-top:hover {
-  background: #ffc732;
+  background: #1c5d99b4;
   color: #fff;
 }
 
@@ -668,7 +668,7 @@ section {
 }
 
 .get-started .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background: #1c5d99;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1044,13 +1044,13 @@ section {
 }
 
 .testimonials .testimonial-item .stars i {
-  color: #ffc107;
+  color: #1c5d99;
   margin: 0 1px;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #ffd565;
+  color: #1c5d99;
   font-size: 26px;
   line-height: 0;
 }
@@ -1514,7 +1514,7 @@ section {
 }
 
 .project-details .portfolio-info .btn-visit:hover {
-  background: #ffc019;
+  background: #1c5d99;
 }
 
 .project-details .portfolio-description h2 {
@@ -1559,7 +1559,7 @@ section {
 
 .project-details .portfolio-description .testimonial-item .quote-icon-left,
 .project-details .portfolio-description .testimonial-item .quote-icon-right {
-  color: #ffd565;
+  color: #1c5d99;
   font-size: 26px;
   line-height: 0;
 }
@@ -1666,7 +1666,7 @@ section {
   line-height: 0;
   color: var(--color-primary);
   border-radius: 50%;
-  border: 2px dotted #ffd565;
+  border: 2px dotted #1c5d99;
 }
 
 .contact .info-item h3 {
@@ -1766,7 +1766,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background: #1c5d9969;
 }
 
 @keyframes animate-loading {
@@ -2367,7 +2367,7 @@ section {
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background: #1c5d994f;
 }
 
 .blog .sidebar .categories ul {
@@ -2545,7 +2545,7 @@ section {
 
 .blog .comments .reply-form input:focus {
   box-shadow: none;
-  border-color: rgba(254, 185, 0, 0.8);
+  border-color: #1c5d9969;
 }
 
 .blog .comments .reply-form textarea {
@@ -2556,7 +2556,7 @@ section {
 
 .blog .comments .reply-form textarea:focus {
   box-shadow: none;
-  border-color: rgba(254, 185, 0, 0.8);
+  border-color: #1c5d9971;
 }
 
 .blog .comments .reply-form .form-group {

@@ -17,9 +17,33 @@ class StudentCssController extends Controller
 
     }
 
-    public function service(){
-        return view('studentCss.service');
+    public function services(){
+        return view('studentCss.services');
 
     }
 
+    public function sdetail(){
+        return view('studentCss.service-details');
+
+    }
+    public function blog(){
+        return view('studentCss.blog');
+
+    }
+
+    public function bdetail(){
+        return view('studentCss.blog-details');
+
+    }
+
+    public function projects(){
+        return view('studentCss.projects');
+
+    }
+     
+    public function contact(){
+        return view('studentCss.contact');
+
+    }
+    
 }

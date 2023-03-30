@@ -8,11 +8,41 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         form{
             width:700px;
         }
     </style>
+        <script>
+            function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            }
+        </script>
+{{-- 
+         $(document).ready(function()
+        {
+           /*  alert('helooo'); 
+           var jobname =$('#jobname').val();
+           /* alert(jobname); 
+           var qulification =$('#qulification').val();
+           var experience =$('#experience').val();
+
+            $('#btnsubmit').click(function () {
+                alert("okay");
+                if(jobname == "")
+                {
+                    alert('submit first');
+                    return false;
+                }
+            });
+        });  --}}
   </head>
   <body>
       
@@ -21,7 +51,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <form method="POST" action="{{url('/appliedCompanyStudentList')}}" >
+    <form method="POST" action="{{url('/appliedCompanyStudentList')}}" name="myForm">
         @csrf
         <div class="container">
             <div></div>
@@ -46,10 +76,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <select class="form-control" name="jobname" required>
-                        <option selected disabled>Selected</option>
+                    <select class="form-control" name="job_id" id="job_id" required>
+                        <option selected disabled >Selected</option>
                         @foreach($jobs as $job)
-                            <option>{{$job->name}}</option>
+                            <option value="{{$job->job_id}}">{{$job->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -63,15 +93,15 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" name="username" value="{{Auth::User()->name }}" required/>
+                    <input type="text" class="form-control" name="username" value="{{Auth::User()->name }}" readonly/>
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="contact" value="{{Auth::User()->contact }}" required/>
+                    <input type="text" class="form-control" name="contact" value="{{Auth::User()->contact }}" readonly/>
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="email" value="{{Auth::User()->email}}" required/>
+                    <input type="text" class="form-control" name="email" value="{{Auth::User()->email}}" readonly/>
                 </div>
             </div>
             <hr>
@@ -83,7 +113,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-6">
-                    <select class="form-control" name="qulification" required>
+                    <select class="form-control" name="qulification" id="qulification" required>
                         <option selected disabled>Highest Completed Qualification</option>
                         <option>Under Graduate</option>
                         <option>Graduate</option>
@@ -91,7 +121,7 @@
                     </select>
                 </div>
                 <div class="col-sm-6">
-                    <select class="form-control" name="experience" required>
+                    <select class="form-control" name="experience" id="experience" required>
                         <option selected disabled>Years of Experience</option>
                         <option>Freshers</option>
                         <option>0 - 3</option>
@@ -102,12 +132,12 @@
             </div>
             <div class="row form-group">
                 <div class="col-sm-12">
-                    id<input type="text" class="form-control" name="id" value="{{Auth::User()->id }}" required/>
+                    <input type="hidden" class="form-control" name="id" value="{{Auth::User()->id }}" required/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="submit" id="btnsubmit" class="btn btn-primary">submit
                 </div>
             </div>
         </div>

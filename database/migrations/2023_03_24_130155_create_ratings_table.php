@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('rating_id');
             $table->integer('rating');
             $table->text('review');
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->default(0);
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('company_id')->on('companies');
             $table->unsignedBigInteger('id');

@@ -9,11 +9,7 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
+    <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -21,15 +17,15 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/bootstrap-icons/bootstrap-icons.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/aos/aos.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/glightbox/css/glightbox.min.css")}}" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.css")}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{{asset("studentCss/assets/css/main.css")}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.3.0
@@ -55,11 +51,11 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{{url('/stud')}}">Home</a></li>
+          <li><a href="{{url('/about')}}">About</a></li>
+          <li><a href="{{url('/services')}}">Services</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li>
+          <li><a href="{{url('/blog')}}"  class="active">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -79,7 +75,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="{{url('/contact')}}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -89,12 +85,12 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("studentCss/assets/img/breadcrumbs-bg.jpg")}});">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>Blog Details</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{url('/stud')}}">Home</a></li>
           <li>Blog Details</li>
         </ol>
 
@@ -112,7 +108,7 @@
             <article class="blog-details">
 
               <div class="post-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img src="{{asset("studentCss/assets/img/blog/blog-1.jpg")}}" alt="" class="img-fluid">
               </div>
 
               <h2 class="title">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
@@ -169,7 +165,7 @@
                   Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam
                   voluptatem voluptatem accusamus mollitia aut atque aut.
                 </p>
-                <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
+                <img src="{{asset("studentCss/assets/img/blog/blog-inside-post.jpg")}}" class="img-fluid" alt="">
 
                 <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
                 <p>
@@ -203,7 +199,7 @@
             </article><!-- End blog post -->
 
             <div class="post-author d-flex align-items-center">
-              <img src="assets/img/blog/blog-author.jpg" class="rounded-circle flex-shrink-0" alt="">
+              <img src="{{asset("studentCss/assets/img/blog/blog-author.jpg")}}" class="rounded-circle flex-shrink-0" alt="">
               <div>
                 <h4>Jane Smith</h4>
                 <div class="social-links">
@@ -224,7 +220,7 @@
 
               <div id="comment-1" class="comment">
                 <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+                  <div class="comment-img"><img src="{{asset("studentCss/assets/img/blog/comments-1.jpg")}}" alt=""></div>
                   <div>
                     <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                         Reply</a></h5>
@@ -240,7 +236,7 @@
 
               <div id="comment-2" class="comment">
                 <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+                  <div class="comment-img"><img src="{{asset("studentCss/assets/img/blog/comments-2.jpg")}}" alt=""></div>
                   <div>
                     <h5><a href="">Aron Alvarado</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                         Reply</a></h5>
@@ -254,7 +250,7 @@
 
                 <div id="comment-reply-1" class="comment comment-reply">
                   <div class="d-flex">
-                    <div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
+                    <div class="comment-img"><img src="{{asset("studentCss/assets/img/blog/comments-3.jpg")}}" alt=""></div>
                     <div>
                       <h5><a href="">Lynda Small</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                           Reply</a></h5>
@@ -276,7 +272,7 @@
 
                   <div id="comment-reply-2" class="comment comment-reply">
                     <div class="d-flex">
-                      <div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
+                      <div class="comment-img"><img src="{{asset("studentCss/assets/img/blog/comments-4.jpg")}}" alt=""></div>
                       <div>
                         <h5><a href="">Sianna Ramsay</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                             Reply</a></h5>
@@ -297,7 +293,7 @@
 
               <div id="comment-3" class="comment">
                 <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-5.jpg" alt=""></div>
+                  <div class="comment-img"><img src="{{asset("studentCss/assets/img/blog/comments-5.jpg")}}" alt=""></div>
                   <div>
                     <h5><a href="">Nolan Davidson</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i>
                         Reply</a></h5>
@@ -317,7 +313,7 @@
 
               <div id="comment-4" class="comment">
                 <div class="d-flex">
-                  <div class="comment-img"><img src="assets/img/blog/comments-6.jpg" alt=""></div>
+                  <div class="comment-img"><img src="{{asset("studentCss/assets/img/blog/comments-6.jpg")}}" alt=""></div>
                   <div>
                     <h5><a href="">Kay Duggan</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
                     </h5>
@@ -394,41 +390,41 @@
                 <div class="mt-3">
 
                   <div class="post-item mt-3">
-                    <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+                    <img src="{{asset("studentCss/assets/img/blog/blog-recent-1.jpg")}}" alt="">
                     <div>
-                      <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
+                      <h4><a href="{{url("/bdetail")}}">Nihil blanditiis at in nihil autem</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
 
                   <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+                    <img src="{{asset("studentCss/assets/img/blog/blog-recent-2.jpg")}}" alt="">
                     <div>
-                      <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
+                      <h4><a href="{{url("/bdetail")}}">Quidem autem et impedit</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
 
                   <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+                    <img src="{{asset("studentCss/assets/img/blog/blog-recent-3.jpg")}}" alt="">
                     <div>
-                      <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                      <h4><a href="{{url("/bdetail")}}">Id quia et et ut maxime similique occaecati ut</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
 
                   <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+                    <img src="{{asset("studentCss/assets/img/blog/blog-recent-4.jpg")}}" alt="">
                     <div>
-                      <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
+                      <h4><a href="{{url("/bdetail")}}">Laborum corporis quo dara net para</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
 
                   <div class="post-item">
-                    <img src="assets/img/blog/blog-recent-5.jpg" alt="">
+                    <img src="{{asset("studentCss/assets/img/blog/blog-recent-5.jpg")}}" alt="">
                     <div>
-                      <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                      <h4><a href="{{url("/bdetail")}}">Et dolores corrupti quae illo quod dolor</a></h4>
                       <time datetime="2020-01-01">Jan 1, 2020</time>
                     </div>
                   </div><!-- End recent post item-->
@@ -562,16 +558,16 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{asset("studentCss/assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/aos/aos.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/glightbox/js/glightbox.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/isotope-layout/isotope.pkgd.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/purecounter/purecounter_vanilla.js")}}"></script>
+  <script src="{{asset("studentCss/assets/vendor/php-email-form/validate.js")}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{asset("studentCss/assets/js/main.js")}}"></script>
 
 </body>
 

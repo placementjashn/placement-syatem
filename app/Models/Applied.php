@@ -13,5 +13,11 @@ class Applied extends Model
 
      public function company(){
         return $this->belongsTo('App\Models\Company','company_id');
+    }
+    public function user(){
+        return $this->belongsTo('App\Models\User','id');
+    }  
+    public function job(){
+        return $this->belongsTo('App\Models\job','job_id');
     }  
 }

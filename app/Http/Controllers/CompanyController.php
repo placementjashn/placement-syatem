@@ -56,7 +56,7 @@ class CompanyController extends Controller
     }
     public function applieddata(Request $request){
         $applied = new Applied;
-        $applied->jobname =$request['jobname'];
+        $applied->job_id =$request['job_id'];
         $applied->username =$request['username'];
         $applied->contact =$request['contact'];
         $applied->company_id =$request['company_id'];
@@ -70,19 +70,19 @@ class CompanyController extends Controller
     //company side student
     public function display(){
         $data = Applied::select('*')
-        ->where('company_id','=',Auth::guard('company')->user()->company_id)->get();
+        ->where('company_id','=',Auth::guard('company')->user()->company_id)->with('user')->get()->toArray();
         return view('companystudlist')->with(compact('data')); 
         /*
         $job = job::select("*")
         ->where("email", "=", session('email'))
         ->get();
-        return view('view', compact('job')); */
+        return view('view', compact('job')); */                 
     }
     //apllied student side
     public function view()
     {
             $data = Applied::select('*')
-            ->where('id','=',Auth::User()->id)->with('company')->get()->toArray();
+            ->where('id','=',Auth::User()->id)->with('company','user','job')->get()->toArray();
             /* dd($data); */
             return view('appliedstudview')->with(compact('data')); 
     }
