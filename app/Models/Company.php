@@ -24,6 +24,7 @@ class Company extends Authenticatable
         'contact',
         'location',
         'image',
+        'description',
     ];
 
     /**

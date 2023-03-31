@@ -108,12 +108,15 @@ class postController extends Controller
  */    }
 
  public function joblist($company_id){
+    $users = User::select("*")
+    ->where("id","=",Auth::User()->id)
+    ->get();
     $companies=Company::select('*')
     ->where('company_id',"=", "$company_id")
     ->get();
     $jobs= job::select('*')
     ->where('company_id', '=' , $company_id)
     ->get();
-    return view('joblist',compact('jobs','companies'));
+    return view('joblist',compact('jobs','companies','users'));
 }
 }

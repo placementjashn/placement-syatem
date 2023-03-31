@@ -42,23 +42,27 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
+      @foreach($users as $user)
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>UpConstruction<span>.</span></h1>
+        <h1>{{$user->name}}<span></span></h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{url('/stud')}}">Home</a></li>
+          <li><a href="{{url('/stud')}}" class="active">Home</a></li>
+         
+          <li><a href="{{url('/blog')}}">Company List</a></li>
+          <li><a href="{{url('/services')}}">Applied Job List</a></li>
+          {{--<li><a href="{{url('/stud')}}">Home</a></li>
           <li><a href="{{url('/about')}}">About</a></li>
-          <li><a href="{{url('/services')}}" class="active">Services</a></li>
-          <li><a href="{{url('/projects')}}">Projects</a></li>
+           <li><a href="{{url('/services')}}" class="active">Services</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li> 
           <li><a href="{{url('/blog')}}">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -77,10 +81,10 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="{{url('/contact')}}">Contact</a></li>
+          <li><a href="{{url('/contact')}}">Contact</a></li>--}}
         </ul>
       </nav><!-- .navbar -->
-
+      @endforeach
     </div>
   </header><!-- End Header -->
 
@@ -101,95 +105,51 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
+     
       <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-mountain-city"></i>
-              </div>
-              <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
-                tempore et consequatur.</p>
-              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
+        <div class="card">
+          <div class="crad-header">
+            <h2 class="card-title"><b><center>Applied Job List </center></b></h2>
+          </div>
+           <div class="card-body">
+              <div class="table-responsive">
+                <table id="example3" class="display" style="min-width :845px" cellpadding="7">
+                    
+                    <hr>
+                    <tbody> 
+                    @foreach ($data as $datas)
+                    <tr>
+                      <td>
+                        <img class="rounded-circle" width="200px" src="img/company/{{$datas['company']['image']}}">
+                      </td>
+                      <td><strong>{{$datas['company']['name']}}</strong></td>
+                      <td><strong>{{$datas['job']['name']}}</strong></td>
+                      <td><strong>{{$datas['qulification']}}</strong></td>
+                      <td><strong>{{$datas['experience']}}</strong></td>
+                      <td><strong>
+                        Status :
+                        @if($datas['user']['status'] == "0"  )
+                          <label>Pending</label>
+                        @endif
+    
+                        @if($datas['user']['status'] == "1"  )
+                          <label>Selected</label>
+                        @endif
+                      </strong>
+                      </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-              </div>
-              <h3>Eosle Commodi</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
-                nesciunt dolorem.</p>
-              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-compass-drafting"></i>
-              </div>
-              <h3>Ledo Markt</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
-                eos earum corrupti.</p>
-              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-trowel-bricks"></i>
-              </div>
-              <h3>Asperiores Commodit</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
-                adipisci neque.</p>
-              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-helmet-safety"></i>
-              </div>
-              <h3>Velit Doloremque</h3>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem
-                alias eius labore.</p>
-              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-              </div>
-              <h3>Dolori Architecto</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti
-                recusandae ducimus enim.</p>
-              <a href="{{url('/sdetail')}}" class="readmore stretched-link">Learn more <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
+          </div>
+      </div>
+    </div> 
       </div>
     </section><!-- End Services Section -->
 
     <!-- ======= Servie Cards Section ======= -->
-    <section id="services-cards" class="services-cards">
+    {{-- <section id="services-cards" class="services-cards">
       <div class="container" data-aos="fade-up">
 
         <div class="row gy-4">
@@ -296,7 +256,7 @@
         </div>
 
       </div>
-    </section><!-- End Alt Services Section 2 -->
+    </section> --}}<!-- End Alt Services Section 2 -->
 
     <!-- ======= Alt Services Section ======= -->
     <section id="alt-services" class="alt-services">

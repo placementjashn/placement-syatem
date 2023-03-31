@@ -8,10 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
-    public function studentindex()
+    public function student()
     {
-        $user = User::all();
-        return view('studentdashboard');
+        $users = User::select("*")
+        ->where("id","=",Auth::User()->id)->get();
+       /*  die($user); */
+        return view('dashboard',['users'=>$users]);
     }
 
   //status 

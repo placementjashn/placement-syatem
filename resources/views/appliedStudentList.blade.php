@@ -137,7 +137,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <input type="submit" id="btnsubmit" class="btn btn-primary">submit
+                    <input type="submit" id="btnsubmit" class="btn btn-primary" value="Submit">
                 </div>
             </div>
         </div>

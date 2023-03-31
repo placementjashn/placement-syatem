@@ -30,6 +30,7 @@ Route::get('/',[HomeCssController::class,'index']);//admincss
 Route::get('/stud',[StudentCssController::class,'index']);//studentcss
 Route::get('/about',[StudentCssController::class,'about']);
 Route::get('/services',[StudentCssController::class,'services']);
+Route::post('/appliedCompanyStudentList',[StudentCssController::class,'applieddata']);
 Route::get('/sdetail',[StudentCssController::class,'sdetail']);
 Route::get('/blog',[StudentCssController::class,'blog']);
 Route::get('/bdetail',[StudentCssController::class,'bdetail']);
@@ -73,7 +74,7 @@ Route::post('/comparelist/module/showcomparelist',[CompanyController::class,'sho
 
 //Applyed for Company by student
 Route::get('/appliedCompanyStudentList/{company_id}',[CompanyController::class,'applied']);
-Route::post('/appliedCompanyStudentList',[CompanyController::class,'applieddata']);
+
 Route::get('/appliedstudview',[CompanyController::class,'view']);
 
 //Rating & Review 
@@ -82,6 +83,10 @@ Route::get('/company/rating/status',[RatingController::class,'updateRatingStatus
 Route::get('/addrating',[RatingController::class,'ratingform']);
 Route::post('/ratingsuccess',[RatingController::class,'ratingdata']);
 
+Route::get('/studlogout',function(){
+    Auth::guard('web')->logout();
+    return redirect('/');
+});
 
 //on-off
 Route::get('/status/update',[StudentController::class,'updateStatus'])->name('users.update.status');
@@ -97,12 +102,12 @@ Route::get('/no-access',function(){
 
 Route::get('/logout',function(){
     session()->forget('email'); 
-    return redirect('/company/dashboard');  
+    return redirect('/');  
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', /* function () {
+    return view('dashboard'); */[StudentController::class,'student']
+)->middleware(['auth', 'verified'])->name('dashboard');
 require __DIR__.'/auth.php';
 
 

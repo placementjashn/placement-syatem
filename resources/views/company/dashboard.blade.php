@@ -8,7 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      </head>
+        <style>
+            body{
+                overflow-x: hidden;
+            }
+        </style>
+    </head>
       <body>
           
         <!-- Optional JavaScript -->
@@ -23,7 +28,7 @@
                       <img src="/webimg/logo a.gif" height="50px" width="50px" />
                 </li>
                 <li class="nav-item">
-                    <a href="#tab1Id" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Home</a>
                 </li>
     
                 <li class="nav-item dropdown">
@@ -41,6 +46,9 @@
                     <a href="{{url('/companystudlist')}}" class="nav-link">All Student</a>
                 </li> 
             </ul>
+            <div class="row">
+                <img src="/img/p1.jpg" height="780px" width="1300px" >
+            </div>
         </form>
       </body>
     </html>

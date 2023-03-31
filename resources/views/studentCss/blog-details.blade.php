@@ -53,10 +53,10 @@
         <ul>
           <li><a href="{{url('/stud')}}">Home</a></li>
           <li><a href="{{url('/about')}}">About</a></li>
-          <li><a href="{{url('/services')}}">Services</a></li>
-          <li><a href="{{url('/projects')}}">Projects</a></li>
+          {{-- <li><a href="{{url('/services')}}">Services</a></li>
+          <li><a href="{{url('/projects')}}">Projects</a></li> --}}
           <li><a href="{{url('/blog')}}"  class="active">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+          {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -74,7 +74,7 @@
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
-          </li>
+          </li> --}}
           <li><a href="{{url('/contact')}}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->

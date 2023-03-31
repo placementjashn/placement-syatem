@@ -49,6 +49,7 @@ class RegisteredUserController extends Controller
             $imagename = time().'.'.$request->image->getClientOriginalExtension(),
             $request->image->move('img/company',$imagename),
             'image' => $imagename,
+            'description'=>$request->description,
         ]);
 
         event(new Registered($company));

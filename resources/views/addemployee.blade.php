@@ -21,6 +21,9 @@
         padding: 15px 20px 15px 15px;
         background-color: rgba(252, 253, 253, 0.425);
     }
+    a{
+        color: white;
+    }
     
   </style>
 
@@ -32,7 +35,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <center>
-    <div class="container">
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li>
+                  <img src="/webimg/logo a.gif" height="50px" width="50px" />
+            </li>
+            <li class="nav-item">
+                <a href="{{url('/company/dashboard')}}" class="nav-link">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
+                <div class="dropdown-menu">
+                    {{--  @foreach ($data as $val)
+                        <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
+                    @endforeach   --}}
+                </div>
+            </li>
+            <li class="nav-item">
+                <i class="fa fa-user-plus"></i><a href="{{url('/addemployee')}}" class="nav-link"> Add Employee </a>
+            </li>
+            <li class="nav-item"> 
+                <a href="{{url('/companystudlist')}}" class="nav-link">All Student</a>
+            </li> 
+        </ul>
 
         <form action="{{url('/addemployee')}}" method="post" enctype="multipart/form-data">
             @if(Session::has('success'))

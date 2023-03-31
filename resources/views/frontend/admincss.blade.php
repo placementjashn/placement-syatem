@@ -7,10 +7,14 @@
  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
- <title>User Dashboard</title>
+ <title>CSS</title>
  <meta content="" name="description">
  <meta content="" name="keywords">
 
+
+ <!-- Favicons -->
+ <link href="{{asset("frontend/assets/img/favicon.png")}}" rel="icon">
+ <link href="{{asset("frontend/assets/img/apple-touch-icon.png")}}" rel="apple-touch-icon">
 
 
  <!-- Google Fonts -->
@@ -28,7 +32,11 @@
 
  <!-- Template Main CSS File -->
  <link href="{{asset("frontend/assets/css/style.css")}}" rel="stylesheet">
-
+<style>
+  body{
+    overflow-x: hidden;
+  }
+</style>
 
  <!-- =======================================================
  * Template Name: Valera
@@ -47,7 +55,7 @@
  <section id="hero">
    <div class="hero-container">
      <h1>Welcome to Jashn</h1>
-     <h2>Placement a is a am  jashn a is  placement a is website student</h2>
+     <h2>Welcome to All of you in Jashn Placement</h2>
      <a href="#about" class="btn-get-started scrollto">Get Started</a>
    </div>
  </section><!-- End Hero -->
@@ -68,8 +76,8 @@
          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
          <li><a class="nav-link scrollto" href="#about">About</a></li>
          <li><a class="nav-link scrollto" href="#services">Company</a></li>
-         <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-         <li><a class="nav-link scrollto" href="#team">Team</a></li>
+         {{-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> 
+         <li><a class="nav-link scrollto" href="#team">Team</a></li>--}}
          <li class="dropdown"><a href="#"><span>login</span> <i class="bi bi-chevron-down"></i></a>
            <ul>
              <li>
@@ -108,12 +116,23 @@
            <li class="nav-item">
              <i class="fa fa-sign-in"></i><a href="{{url('/loginemp')}}" class="nav-link"> Employee </a>
            </li>
+
+
+           
            </ul>
          </li>
          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
        </ul>
        <i class="bi bi-list mobile-nav-toggle"></i>
      </nav><!-- .navbar -->
+
+
+     {{-- <div class="header-social-links d-flex align-items-center">
+       <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+       <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+       <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+       <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+     </div> --}}
 
 
    </div>
@@ -135,26 +154,41 @@
 
        <div class="row content">
          <div class="col-lg-6">
-           <p>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-             magna aliqua.
+          <p>
+            The  Placement  Management  System  is  to  manage  the  details  of  the  Student  and  Placement  Cell,  to  reduce  manual  work  and  time.
            </p>
            <ul>
-             <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-             <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-             <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-           </ul>
+             <li><i class="ri-check-double-line"></i> Placement management  system  makes  students’  data  more  confidential.</li>
+             <li><i class="ri-check-double-line"></i> Lot of  time  is  saveds for  training  and  placement  company  is  also  reduced.</li>
+            {{-- s --}} </ul>
          </div>
          <div class="col-lg-6 pt-4 pt-lg-0">
            <p>
-             Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-             velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-             culpa qui officia deserunt mollit anim id est laborum.
+            Manual Training  and  Placement  which  is  done  at  various  colleges  is  by  human  intervention  due  to  which  there  is  a  maximum  chance  of  errors.  Employees have  to  manage  all  information  of  various  jobs  of  the  company.  Multiple companies  can  login  in  the  system  and  place  their  jobs  by  multiple  employee  pr  department  wise.  Students entered  in  the  system  and  submit  their  information.
            </p>
-           <a href="#" class="btn-learn-more">Learn More</a>
+           <a href="#"  class="btn-learn-more">Learn More</a>
          </div>
        </div>
 
+
+      {{-- <div class="row content">
+        <div class="col-lg-6">
+          <p>
+           The  Placement  Management  System  is  to  manage  the  details  of  the  Student  and  Placement  Cell,  to  reduce  manual  work  and  time.
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i>	Placement management  system  makes  students’  data  more  confidential.</li>
+            <li><i class="ri-check-double-line"></i> Lot of  time  is  saved  &  workload  for  training  and  placement  company  is  also  reduced.</li>
+             <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li> 
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <p>
+           Manual Training  and  Placement  which  is  done  at  various  colleges  is  by  human  intervention  due  to  which  there  is  a  maximum  chance  of  errors.  Employees have  to  manage  all  information  of  various  jobs  of  the  company.  Multiple companies  can  login  in  the  system  and  place  their  jobs  by  multiple  employee  pr  department  wise.  Students entered  in  the  system  and  submit  their  information.  
+          </p>
+      <a href="#" class="btn-learn-more">Learn More</a>
+        </div>
+      </div>--}}
 
      </div>
    </section><!-- End About Section -->
@@ -168,28 +202,28 @@
        <div class="row counters">
 
 
-         <div class="col-lg-3 col-6 text-center">
-           <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
+         <div class="col-lg-4 col-6 text-center">
+           <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
            <p>Company</p>
          </div>
 
 
-         <div class="col-lg-3 col-6 text-center">
-           <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+         <div class="col-lg-4 col-6 text-center">
+           <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
            <p>Placement</p>
          </div>
 
 
-         <div class="col-lg-3 col-6 text-center">
-           <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+         <div class="col-lg-4 col-6 text-center">
+           <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
            <p>Student</p>
          </div>
 
 
-         <div class="col-lg-3 col-6 text-center">
+         {{-- <div class="col-lg-3 col-6 text-center">
            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
            <p>Hard Workers</p>
-         </div>
+         </div> --}}
 
 
        </div>
@@ -204,7 +238,7 @@
      <div class="container">
 
 
-       <div class="row">
+       {{-- <div class="row">
          <div class="col-md-6 d-flex align-items-stretch">
            <div class="card" style='background-image: url({{asset("frontend/assets/img/our-values-1.jpg")}});'>
              <div class="card-body">
@@ -244,7 +278,7 @@
            </div>
          </div>
        </div>
-
+ --}}
 
      </div>
    </section><!-- End Our Values Section -->
@@ -256,14 +290,17 @@
 
 
        <div class="row">
+        @foreach($companies as $company)
+        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+          <img src="/img/company/{{$company->image}}" class="img-fluid" alt="">
+          
+        </div>
 
+        @endforeach
 
-         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-           <img src="{{asset("frontend/assets/img/clients/client-1.png")}}" class="img-fluid" alt="">
-         </div>
+         
 
-
-         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+         {{-- <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
            <img src="{{asset("frontend/assets/img/clients/client-2.png")}}" class="img-fluid" alt="">
          </div>
 
@@ -286,7 +323,7 @@
          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
            <img src="{{asset("frontend/assets/img/clients/client-6.png")}}" class="img-fluid" alt="">
          </div>
-
+ --}}
 
        </div>
 
@@ -302,19 +339,21 @@
 
        <div class="section-title">
          <h2>Company</h2>
-         <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+         <p>Top Comapny which selected By user by giving Rating & Review.</p>
        </div>
 
 
        <div class="row">
-         <div class="col-lg-4 col-md-6">
+        @foreach($companies as $company)
+         <div class="col-lg-4 col-md-6 mt-4">
            <div class="icon-box">
-             <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
-             <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+             <div class="icon"><img height="50px" width="80px" src="/img/company/{{$company->image}}"></i></div>
+             <h4 class="title"><a href="">{{$company->name}}</a></h4>
+             <p class="description">{{$company->description}}</p>
            </div>
          </div>
-         <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+         @endforeach
+         {{-- <div class="col-lg-4 col-md-6 mt-4 ">
            <div class="icon-box">
              <div class="icon"><i class="bi bi-card-checklist" style="color: #e9bf06;"></i></div>
              <h4 class="title"><a href="">Dolor Sitema</a></h4>
@@ -323,7 +362,7 @@
          </div>
 
 
-         <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+         <div class="col-lg-4 col-md-6 mt-4 ">
            <div class="icon-box">
              <div class="icon"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
@@ -352,8 +391,7 @@
              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
            </div>
-         </div>
-       </div>
+         </div> --}}
 
 
      </div>
@@ -361,7 +399,7 @@
 
 
    <!-- ======= Testimonials Section ======= -->
-   <section id="testimonials" class="testimonials section-bg">
+   {{--<section id="testimonials" class="testimonials section-bg">
      <div class="container">
 
 
@@ -445,22 +483,6 @@
            </div><!-- End testimonial item -->
 
 
-           <div class="swiper-slide">
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="{{asset("frontend/assets/img/testimonials/testimonials-4.jpg")}}" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-            </div>
-          </div><!-- End testimonial item -->
-
-
-
-
          </div>
          <div class="swiper-pagination"></div>
        </div>
@@ -487,7 +509,7 @@
 
 
    <!-- ======= Portfolio Section ======= -->
-   <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio">
      <div class="container">
 
 
@@ -612,9 +634,9 @@
 
      </div>
    </section><!-- End Portfolio Section -->
+ --}}
 
-
-   <!-- ======= Team Section ======= -->
+    {{--<!-- ======= Team Section ======= -->
    <section id="team" class="team section-bg">
      <div class="container">
 
@@ -802,11 +824,11 @@
 
 
      </div>
-   </section><!-- End Pricing Section -->
+   </section><!-- End Pricing Section --> --}}
 
 
    <!-- ======= Frequently Asked Questions Section ======= -->
-   <section id="faq" class="faq section-bg">
+   {{-- <section id="faq" class="faq section-bg">
      <div class="container">
 
 
@@ -874,10 +896,10 @@
 
      </div>
    </section><!-- End Frequently Asked Questions Section -->
-
+ --}}
 
    <!-- ======= Contact Section ======= -->
-   <section id="contact" class="contact">
+   {{-- <section id="contact" class="contact">
      <div class="container">
 
 
@@ -959,7 +981,7 @@
 
      </div>
    </section><!-- End Contact Section -->
-
+ --}}
 
  </main><!-- End #main -->
 
@@ -976,28 +998,28 @@
 
        <div class="row  justify-content-center">
          <div class="col-lg-6">
-           <h3>Valera</h3>
-           <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-         </div>
+           <h3>Jashn Placement</h3>
+           {{-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+         --}} </div>
        </div>
 
 
-       <div class="row footer-newsletter justify-content-center">
+      {{-- <div class="row footer-newsletter justify-content-center">
          <div class="col-lg-6">
-           <form action="" method="post">
+            <form action="" method="post">
              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
-           </form>
+           </form> 
          </div>
-       </div>
+       </div>--}}
 
 
-       <div class="social-links">
+      {{--  <div class="social-links">
          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-       </div>
+       </div> --}}
 
 
      </div>
@@ -1006,14 +1028,14 @@
 
    <div class="container footer-bottom clearfix">
      <div class="copyright">
-       &copy; Copyright <strong><span>Valera</span></strong>. All Rights Reserved
+       &copy; Copyright <strong><span>Jashn</span></strong>. All Rights Reserved
      </div>
      <div class="credits">
        <!-- All the links in the footer should remain intact. -->
        <!-- You can delete the links only if you purchased the pro version. -->
        <!-- Licensing information: https://bootstrapmade.com/license/ -->
        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/valera-free-bootstrap-theme/ -->
-       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+       Designed by JASHN
      </div>
    </div>
  </footer><!-- End Footer -->

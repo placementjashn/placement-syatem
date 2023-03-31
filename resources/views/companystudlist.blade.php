@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <style>
+    #bg{
+      background-image: url("/img/p9.jpg");
+    }
     a{
     color: black; 
     }
@@ -34,6 +37,9 @@
     }
     label.switch-toggle.hidden {
         display: none;
+    }
+    .view{
+      width:170px;
     }
   </style>
   <script>
@@ -73,17 +79,45 @@
     });
 });
   </script>
-  <body>
+  <body id="bg"> 
+   
 <form method="GET" name="myform">
+  
   @csrf
 <!-- Toggleable / Dynamic Tabs -->
-<div class="container">
-<div class="row">
+<div class="container-fluid">
+  <div class="row form-group" style="background-color: rgba(68, 70, 70,0.6)">
+  <ul class="nav nav-tabs" >
+    <li>
+          <img src="/webimg/logo a.gif" height="50px" width="50px" />
+    </li>
+    <li class="nav-item">
+        <a href="{{url('/company/dashboard')}}" class="nav-link">Home</a>
+    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employee List</a>
+        <div class="dropdown-menu">
+            {{--  @foreach ($data as $val)
+                <a class="dropdown-item" value="{{$val->id}}" href="">{{$val->empname}}</a>
+            @endforeach   --}}
+        </div>
+    </li>
+    <li class="nav-item">
+        <a href="{{url('/addemployee')}}" class="nav-link"> Add Employee </a>
+    </li>
+    <li class="nav-item"> 
+        <a href="{{url('/companystudlist')}}" class="nav-link">All Student</a>
+    </li> 
+</ul>
+  </div>
+
+<div class="row form-group">
   <div class="col-lg-12">
     <ul class="nav nav-pills mb-3">
     <nav class="nav nav-tabs nav-justified">
-    <a class="nav-item nav-link btn-primary mr-1" data-toggle="tab" href="#list-view">List View</a>
-    <a class="nav-item nav-link btn-primary" data-toggle="tab" href="#grid-view">Grid View</a>
+    <a class="nav-item nav-link btn-primary mr-1 view" data-toggle="tab" href="#list-view">List View</a>
+    <a class="nav-item nav-link btn-primary view" data-toggle="tab" href="#grid-view">Grid View</a>
   </nav>
   </ul>
   </div>
@@ -119,7 +153,7 @@
                       </td>
                       <td><strong>{{$user['username']}}</strong></td>
                       <td><strong>{{$user['email']}}</strong></td>
-                      <td><strong>{{$user['jobname']}}</strong></td>
+                      <td><strong>{{$user['job']['name']}}</strong></td>
                       <td><strong>{{$user['qulification']}}</strong></td>
                       <td><strong>{{$user['experience']}}</strong></td>
                       <td><strong>{{$user['user']['location']}}</strong></td>

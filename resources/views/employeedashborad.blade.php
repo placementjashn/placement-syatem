@@ -4,6 +4,11 @@
     <title>employee dashborad</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+  </style>
   </head>
   <body>
       
@@ -14,6 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Nav tabs -->
     <form>
+      <div class="row">
         <ul class="nav nav-tabs" id="navId">
           <li class="nav-item">
             <a href="#tab1Id" class="nav-link active">Home</a>
@@ -38,6 +44,10 @@
               </div>
           </li>
         </ul>
+      </div>
+      <div class="row">
+        <img src="/img/p7.jpg" height="520px" width="1230px" >
+      </div>
     </form>
   </body>
 </html>

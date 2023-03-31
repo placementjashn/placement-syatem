@@ -52,25 +52,12 @@ class CompanyController extends Controller
         ->where('company_id',"=", "$company_id")
         ->get();
         /* die($jobs); */
-        return view('appliedStudentList',['jobs'=>$jobs]);
-    }
-    public function applieddata(Request $request){
-        $applied = new Applied;
-        $applied->job_id =$request['job_id'];
-        $applied->username =$request['username'];
-        $applied->contact =$request['contact'];
-        $applied->company_id =$request['company_id'];
-        $applied->email =$request['email'];
-        $applied->qulification =$request['qulification'];
-        $applied->experience =$request['experience'];
-        $applied->id=$request['id'];
-        $applied->save();
-        return redirect('appliedstudview'); 
+        return view('appliedStudentlist',['jobs'=>$jobs]);
     }
     //company side student
     public function display(){
         $data = Applied::select('*')
-        ->where('company_id','=',Auth::guard('company')->user()->company_id)->with('user')->get()->toArray();
+        ->where('company_id','=',Auth::guard('company')->user()->company_id)->with('user','job')->get()->toArray();
         return view('companystudlist')->with(compact('data')); 
         /*
         $job = job::select("*")

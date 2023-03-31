@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('contact');
             $table->string('location');
             $table->text('image');
+            $table->text('description');
             $table->rememberToken();
             $table->timestamps();
         });
