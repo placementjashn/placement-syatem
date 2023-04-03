@@ -47,13 +47,7 @@ class CompanyController extends Controller
 
     } */
 
-    public function applied($company_id){
-        $jobs = job::select('*')
-        ->where('company_id',"=", "$company_id")
-        ->get();
-        /* die($jobs); */
-        return view('appliedStudentlist',['jobs'=>$jobs]);
-    }
+    
     //company side student
     public function display(){
         $data = Applied::select('*')
@@ -66,11 +60,40 @@ class CompanyController extends Controller
         return view('view', compact('job')); */                 
     }
     //apllied student side
+    public function applied($company_id){
+        $jobs = job::select('*')
+        ->where('company_id',"=", "$company_id")
+        ->get();
+        /* die($jobs); */
+        return view('appliedStudentform',['jobs'=>$jobs]);
+    }
+    public function applieddata(Request $request){
+        $applied = new Applied;
+        $applied->job_id =$request['job_id'];
+        $applied->username =$request['username'];
+        $applied->contact =$request['contact'];
+        $applied->company_id =$request['company_id'];
+        $applied->email =$request['email'];
+        $applied->qulification =$request['qulification'];
+        $applied->experience =$request['experience'];
+        $applied->id=$request['id'];
+        $applied->save();
+        return redirect('/appliedstudview'); 
+    }
     public function view()
     {
+        $users = User::select("*")
+        ->where("id","=",Auth::User()->id)->get();
             $data = Applied::select('*')
             ->where('id','=',Auth::User()->id)->with('company','user','job')->get()->toArray();
             /* dd($data); */
-            return view('appliedstudview')->with(compact('data')); 
+            return view('appliedstudview')->with(compact('data','users')); 
+    }
+    public function cancleappliedjob($applied_id){
+        $applied = Applied::find($applied_id);
+        if(!is_null($applied)){
+            $applied->delete();
+        }
+        return redirect()->back();
     }
 }

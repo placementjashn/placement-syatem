@@ -113,14 +113,23 @@
           </div>
            <div class="card-body">
               <div class="table-responsive">
-                <table id="example3" class="display" style="min-width :845px" cellpadding="7">
-                    
+                <table id="example3" class="display" style="min-width :845px" cellpadding="7" border="1">
                     <hr>
-                    <tbody> 
+                    <thead>
+                      <tr>
+                        <th style="padding-left: 5%">Photo</th>
+                        <th>Comapny Name</th>
+                        <th>Post</th>
+                        <th>Graduation</th>
+                        <th>Experience</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
                     @foreach ($data as $datas)
                     <tr>
                       <td>
-                        <img class="rounded-circle" width="200px" src="img/company/{{$datas['company']['image']}}">
+                        <img class="rounded-circle" height="100px" width="120px" src="img/company/{{$datas['company']['image']}}">
                       </td>
                       <td><strong>{{$datas['company']['name']}}</strong></td>
                       <td><strong>{{$datas['job']['name']}}</strong></td>
@@ -137,7 +146,9 @@
                         @endif
                       </strong>
                       </td>
+                      <td><a href="{{url('/cancleapply',$datas['applied_id'])}}" class="btn btn-primary">Cancle</a></td>
                     </tr>
+                    
                     @endforeach
                     </tbody>
                 </table>

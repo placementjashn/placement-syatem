@@ -284,7 +284,7 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .navbar {
     padding: 0;
   }
@@ -315,7 +315,7 @@ section {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(7, 7, 7, 0.6);
     text-transform: uppercase;
     white-space: nowrap;
     transition: 0.3s;
@@ -353,7 +353,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color: #0d4598;
   }
 
   .navbar .dropdown ul {

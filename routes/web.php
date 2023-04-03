@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
@@ -27,10 +27,10 @@ use App\Http\Controllers\UserAuth;
 
 Route::get('/',[HomeCssController::class,'index']);//admincss
 
-Route::get('/stud',[StudentCssController::class,'index']);//studentcss
+Route::get('/stud',[StudentCssController::class,'index'])->name('studentCss.studentcss');//studentcss
 Route::get('/about',[StudentCssController::class,'about']);
 Route::get('/services',[StudentCssController::class,'services']);
-Route::post('/appliedCompanyStudentList',[StudentCssController::class,'applieddata']);
+
 Route::get('/sdetail',[StudentCssController::class,'sdetail']);
 Route::get('/blog',[StudentCssController::class,'blog']);
 Route::get('/bdetail',[StudentCssController::class,'bdetail']);
@@ -74,8 +74,9 @@ Route::post('/comparelist/module/showcomparelist',[CompanyController::class,'sho
 
 //Applyed for Company by student
 Route::get('/appliedCompanyStudentList/{company_id}',[CompanyController::class,'applied']);
-
+Route::post('/appliedCompanyStudentList',[CompanyController::class,'applieddata']);
 Route::get('/appliedstudview',[CompanyController::class,'view']);
+Route::get('/cancleapply/{applied_id}',[CompanyController::class,'cancleappliedjob']);
 
 //Rating & Review 
 Route::get('/rating',[RatingController::class,'rating']);
@@ -92,7 +93,7 @@ Route::get('/studlogout',function(){
 Route::get('/status/update',[StudentController::class,'updateStatus'])->name('users.update.status');
 Route::get('/no-access',function(){ 
     return "You're not access to the page";
-    die; 
+    die(); 
 });//route middleware
 
 /* Route::get('/logins',function(){

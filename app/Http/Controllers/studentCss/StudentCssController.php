@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 class StudentCssController extends Controller
 {
     public function index(){
-        return view('studentCss.studentcss');
+        $users = User::select("*")
+        ->where("id","=",Auth::User()->id)->get();
+        return view('studentCss.studentcss')->with(compact('users'));
 
     }
 
@@ -21,27 +23,14 @@ class StudentCssController extends Controller
     }
 
     public function services(){
-        $users = User::select("*")
-        ->where("id","=",Auth::User()->id)->get();
+        
         $data = Applied::select('*')
         ->where('id','=',Auth::User()->id)->with('company','user','job')->get()->toArray();
         /*  dd($data);  */
         return view('studentCss.services')->with(compact('data','users')); 
 
     }
-    public function applieddata(Request $request){
-        $applied = new Applied;
-        $applied->job_id =$request['job_id'];
-        $applied->username =$request['username'];
-        $applied->contact =$request['contact'];
-        $applied->company_id =$request['company_id'];
-        $applied->email =$request['email'];
-        $applied->qulification =$request['qulification'];
-        $applied->experience =$request['experience'];
-        $applied->id=$request['id'];
-        $applied->save();
-        return redirect('/services'); 
-    }
+    
     
 
     public function sdetail(){
