@@ -22,15 +22,15 @@ class StudentCssController extends Controller
 
     }
 
-    public function services(){
+   /*  public function services(){
         
         $data = Applied::select('*')
         ->where('id','=',Auth::User()->id)->with('company','user','job')->get()->toArray();
-        /*  dd($data);  */
+        /*  dd($data);  
         return view('studentCss.services')->with(compact('data','users')); 
 
     }
-    
+    */ 
     
 
     public function sdetail(){

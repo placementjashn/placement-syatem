@@ -88,7 +88,7 @@
           <li><a href="{{url('/dashboard')}}" class="active">Home</a></li>
          
           <li><a href="{{url('/blog')}}">Company List</a></li>
-          <li><a href="{{url('/services')}}">Applied Job List</a></li>
+          <li><a href="{{url('/appliedstudview')}}">Applied Job List</a></li>
           <li><a href="{{url('/studlogout')}}">Log Out</a></li>
           <li><div class="hidden sm:flex sm:items-center sm:ml-6">
             <x-dropdown align="right" width="48">
