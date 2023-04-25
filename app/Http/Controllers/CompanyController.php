@@ -78,7 +78,7 @@ class CompanyController extends Controller
     } 
 
     public function applieddata(Request $request){
-        $applied = new Applied;
+        $applied = new Applied; 
         $applied->company_id =$request['company_id'];
         $applied->job_id =$request['job_id'];
         $applied->jobname=$request['job_name'];

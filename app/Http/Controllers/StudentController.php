@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,8 +14,10 @@ class StudentController extends Controller
         $users = User::select("*")
         ->where("id","=",Auth::User()->id)->get();
        /*  die($user); */
-        return view('dashboard',['users'=>$users]);
+       $companies = Company::all() ;
+        return view('dashboard',['users'=>$users],['companies'=>$companies]);
     }
+
 
   //status 
     public function updateStatus(Request $request)
@@ -34,7 +37,7 @@ class StudentController extends Controller
         }
     }
 
-
+    
     /* public function upload(Request $request)
     {
         $user = new User;

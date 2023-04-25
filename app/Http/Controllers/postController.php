@@ -49,6 +49,13 @@ class postController extends Controller
        /*  dd($name); */
     }
 
+    public function posts(){
+        $jobs=job::where('company_id','=',Auth::guard('company')->user()->company_id)->get();
+        /* dd($jobs); */
+        return view('companyCss.postDisplay', compact('jobs'));
+    }
+
+    
     public function view()
     {
         $job = job::select("*")

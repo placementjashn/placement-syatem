@@ -47,11 +47,29 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{url('/stud')}}" class="active">Home</a></li>
-         
+          <li><a href="{{url('/dashboard')}}" class="active">Home</a></li>         
           <li><a href="{{url('/blog')}}">Company List</a></li>
-          <li><a href="{{url('/services')}}">Applied Job List</a></li>
-        </ul>
+          <li><a href="{{url('/appliedstudview')}}">Applied Job List</a></li>
+          <li><a href="{{route('showcompareList')}}"> Comapre Company List</a></li>
+          {{-- <li><a href="{{url('/studlogout')}}">Log Out</a></li> --}}
+          <li class="dropdown"><a href="#"><img class="rounded-circle" height="45px" width="45px" src="{{asset('img/student/'.Auth::user()->image)}}" alt="{{ Auth::user()->image }}"></a>
+            <ul>
+              <li><x-dropdown-link :href="route('profile.edit')">
+                  {{ __('Profile') }}
+                  </x-dropdown-link>
+              </li>
+              <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                  
+              </li>
+            </ul>
       </nav><!-- .navbar -->
       @endforeach 
     </div>
@@ -60,7 +78,7 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("studentCss/assets/img/breadcrumbs-bg.jpg")}});">
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("/img/student/header.jpeg")}});">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>Company List</h2>
@@ -116,6 +134,17 @@
 
       </div>
     </section><!-- End Blog Section -->
+    <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>JashnPlacement</span></strong>. All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
   </main><!-- End #main -->
 

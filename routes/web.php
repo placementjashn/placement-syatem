@@ -28,7 +28,7 @@ use App\Http\Controllers\UserAuth;
 
 Route::get('/',[HomeCssController::class,'index']);//admincss
 
-Route::get('/stud',[StudentCssController::class,'index'])->name('studentCss.studentcss');//studentcss
+//studentcss
 Route::get('/about',[StudentCssController::class,'about']);
 /* Route::get('/services',[StudentCssController::class,'services']); */
 /* Route::get('/sdetail',[StudentCssController::class,'sdetail']); */
@@ -51,6 +51,7 @@ Route::get('/companyreservation',[CompanyCssController::class,'reservation']);
 }); */
 
 
+Route::get('/employee',[EmployeeController::class,'employeelist']);
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
 Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
@@ -74,6 +75,9 @@ Route::get('/joblist/{company_id}',[postController::class,'joblist'])->name('job
 Route::get('/compare',[CompanyController::class,'compare']);//compare company 
 Route::get('/compare/{company_id}',[CompanyController::class,'records'])->name('compare');//Record display
 Route::get('/companydata',[CompanyController::class,'companylist']);
+
+Route::get('/allpost',[postController::class,'posts']);
+
 
 //Compare list
 Route::post('/comparelist/module/store',[CompanyController::class,'storecompareList'])->name('storecompareList');

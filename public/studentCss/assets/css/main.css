@@ -1,4 +1,4 @@
-/**
+ /**
 * Template Name: UpConstruction - v1.3.0
 * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
 * Author: BootstrapMade.com
@@ -28,12 +28,25 @@
   scroll-behavior: smooth;
 }
 
+/*-----------------------------------
+#tbody applied font blur
+/*------------------------------------*/
+tbody{
+  color: var(--color-default);
+}
+
+thead{
+  background-color: lightgray;
+}
+table, th, td {
+    border: 1px solid;
+    
+  }
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
-  color: var(--color-default);
   overflow-x: hidden;
 }
 
@@ -121,7 +134,7 @@ section {
 
 .breadcrumbs:before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   inset: 0;
 }
@@ -2581,7 +2594,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   color: #fff;
-  background: url("../img/footer-bg.jpg") top center no-repeat;
+  background: url("/img/student/footer.jpeg") top center no-repeat;
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;
