@@ -2,12 +2,14 @@
     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
+
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
+
 
         <!-- Email Address -->
         <div class="mt-4">
@@ -16,61 +18,90 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
+
             <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
+                            type="password" 
+                            
                             name="password"
                             required autocomplete="new-password" />
 
+
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
+
 
         <!-- Confirm Password -->
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
+
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                             type="password"
                             name="password_confirmation" required autocomplete="new-password" />
 
+
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+
         <!-- Contact -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="contact" :value="__('Contact')" />
-            <x-text-input id="contact" class="block mt-1 w-full" type="text" name="contact" :value="old('contact')" required autofocus autocomplete="contact" />
+            <x-text-input id="contact" class="block mt-1 w-full" type="text" pattern="[6-9]{1}[0-9]{9}" 
+            title="Phone number with 6-9 and remaing 9 digit with 0-9" name="contact" :value="old('contact')" required autofocus autocomplete="contact" />
             <x-input-error :messages="$errors->get('contact')" class="mt-2" />
         </div>
 
+
         <!-- Location -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="location" :value="__('Location')" />
             <x-text-input id="location" class="block mt-1 w-full" type="text" name="location" :value="old('location')" required autofocus autocomplete="location" />
             <x-input-error :messages="$errors->get('location')" class="mt-2" />
         </div>
-        
+       
         <!-- Resume -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="resume" :value="__('Resume')" />
-            <x-text-input id="resume" class="block mt-1 w-full" accept=".pdf" type="file" name="resume" :value="old('resume')" required autofocus  />
+            <x-text-input id="resume" class="block mt-1 w-full" accept=".pdf" type="file" name="resume" required multiple/>
             <x-input-error :messages="$errors->get('resume')" class="mt-2" />
         </div>
 
+
         <!-- Image -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="image" :value="__('Image')" />
             <x-text-input id="image" class="block mt-1 w-full" accept=".jpg,.png,.jpeg,.webp" type="file" name="image" :value="old('image')" required autofocus autocomplete="image" />
             <x-input-error :messages="$errors->get('image')" class="mt-2" />
         </div>
 
+
+        <div class="mt-4">
+            <x-input-label for="image" :value="__('Stream')" />
+            <x-splade-select id="select" class="block w-full" name="stream">
+                <option value="" selected disabled hidden>{{ __('Choose an option') }}</option>
+                <option value="BCA">Bachelor Of Computer Application</option>
+                <option value="BBA">Bachelor of Business Administration</option>
+            </x-splade-select>
+        </div>
+        <div class="mt-4">
+            <x-input-label for="university" :value="__('University')" />
+            <x-splade-select id="select" class="block w-full" name="university">
+                <option value="" selected disabled hidden>{{ __('Choose an option') }}</option>
+                <option value="Veer narmad South gujarat University">Veer narmad South gujarat University 'VNSGU'</option>
+                <option value="Gujarat University">Gujarat University</option>
+            </x-splade-select>
+        </div>
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
+
 
             <x-primary-button class="ml-4">
                 {{ __('Register') }}

@@ -78,50 +78,39 @@
       <a href="" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>{{$user->name}}<span></span></h1>
+        {{-- <h1>{{$user->name}}</h1> --}}
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{url('/dashboard')}}" class="active">Home</a></li>
-         
+          <li><a href="{{url('/dashboard')}}" class="active">Home</a></li>         
           <li><a href="{{url('/blog')}}">Company List</a></li>
           <li><a href="{{url('/appliedstudview')}}">Applied Job List</a></li>
-          <li><a href="{{url('/studlogout')}}">Log Out</a></li>
-          <li><div class="hidden sm:flex sm:items-center sm:ml-6">
-            <x-dropdown align="right" width="48">
-                <x-slot name="trigger">
-                    <button>
-                        <div><img class="rounded-circle" height="35px" width="35px" src="{{asset('img/student/'.Auth::user()->image)}}" alt="{{ Auth::user()->image }}"></div>
-
-                        <div class="ml-1">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                    </button>
-                </x-slot>
-
-                <x-slot name="content">
-                    <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
-                    </x-dropdown-link>
-
-                    <!-- Authentication -->
+          <li><a href="{{route('showcompareList')}}"> Comapre Company List</a></li>
+          {{-- <li><a href="{{url('/studlogout')}}">Log Out</a></li> --}}
+          <li class="dropdown"><a href="#"><img class="rounded-circle" height="45px" width="45px" src="{{asset('img/student/'.Auth::user()->image)}}" alt="{{ Auth::user()->image }}"></a>
+            <ul>
+              <li><x-dropdown-link :href="route('profile.edit')">
+                  {{ __('Profile') }}
+                  </x-dropdown-link>
+              </li>
+              <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-dropdown-link>
                     </form>
-                </x-slot>
-            </x-dropdown>
-        </div></li>
+                  
+              </li>
+            </ul>
+          </li>
+          
+          
           {{-- <li><a href="{{url('/about')}}">About</a></li>
            
            <li><a href="{{url('/projects')}}">Projects</a></li> --}}
@@ -158,7 +147,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down">Welcome <span> {{$user->name}} </span></h2>
+            <h2 data-aos="fade-down">Welcome <br><span> {{$user->name}} </span></h2>
             {{-- <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
               laboris nisi ut aliquip ex ea commodo consequat.</p> --}}
@@ -169,10 +158,11 @@
     </div>
      @endforeach 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-      <div class="carousel-item active" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/it1.jfif")}})"></div>
-      <div class="carousel-item" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/it2.jfif")}})"></div>
-      <div class="carousel-item" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/student.jfif")}})"></div>
-      <div class="carousel-item" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/student2.jpg")}})"></div>
+      <div class="carousel-item active" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/4.png")}})"></div>
+      <div class="carousel-item" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/2.jpg")}})"></div>
+      <div class="carousel-item" style="background-image: url({{asset("studentCss/assets/img/hero-carousel/3.jpg")}})"></div>
+      <div class="carousel-item " style="background-image: url({{asset("studentCss/assets/img/hero-carousel/5.webp")}})"></div>
+      
 
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>

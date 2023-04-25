@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+
   <title>UpConstruction Bootstrap Template - </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+
 
     <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +18,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="{{asset("studentCss/assets/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
@@ -24,8 +28,10 @@
   <link href="{{asset("studentCss/assets/vendor/glightbox/css/glightbox.min.css")}}" rel="stylesheet">
   <link href="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.css")}}" rel="stylesheet">
 
+
   <!-- Template Main CSS File -->
   <link href="{{asset("studentCss/assets/css/main.css")}}" rel="stylesheet">
+
 
   <!-- =======================================================
   * Template Name: UpConstruction - v1.3.0
@@ -33,7 +39,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style> 
+  <style>
     a{
       color:black;
       text-decoration:none;
@@ -128,10 +134,12 @@
             color: #c59b08;
             }
     </style>
-  
+ 
 </head>
 
+
 <body>
+
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
@@ -142,6 +150,7 @@
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>{{$user->name}}<span></span></h1>
       </a>
+
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -154,7 +163,7 @@
           {{--<li><a href="{{url('/stud')}}">Home</a></li>
           <li><a href="{{url('/about')}}">About</a></li>
            <li><a href="{{url('/services')}}">Services</a></li>
-           <li><a href="{{url('/projects')}}">Projects</a></li> 
+           <li><a href="{{url('/projects')}}">Projects</a></li>
           <li><a href="{{url('/blog')}}"  class="active">Companylist</a></li>
            <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -174,19 +183,22 @@
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
-          </li> 
+          </li>
           <li><a href="{{url('/contact')}}">Contact</a></li>--}}
         </ul>
       </nav><!-- .navbar -->
-      @endforeach 
+      @endforeach
     </div>
   </header><!-- End Header -->
 
+
   <main id="main">
+
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("studentCss/assets/img/breadcrumbs-bg.jpg")}});">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
 
         <h2>Job of Company</h2>
         <ol>
@@ -194,8 +206,10 @@
           <li>Job</li>
         </ol>
 
+
       </div>
     </div><!-- End Breadcrumbs -->
+
 
     <!-- ======= Blog Details Section ======= -->
     <section id="blog" class="blog">
@@ -213,7 +227,7 @@
                   <tr><td>{{$company->email}}</td></tr>
                   <tr><td><h4>{{$company->contact}}</h4><br></td></tr>
                   <tr><td><h4>{{$company->location}}</h4> <br></td></tr>
-                  <th><a href="{{url('/appliedCompanyStudentList',$company->company_id)}}" class="btn btn-primary">Apply</a></th>
+                 
                 </table>
               </td>
             </tr>
@@ -265,6 +279,7 @@
                       <tr><td>{{$job->vacancy}}</td></tr>
                       <tr><td><h4>{{$job->experience}}</h4><br></td></tr>
                       <tr><td><h4>{{$job->description}}</h4> <br></td></tr>
+                      <th><a href="{{url('/appliedCompanyStudentList',$job->job_id)}}" class="btn btn-primary">Apply</a></th>
                       <hr>
                     </table>
                 </td>
@@ -276,14 +291,18 @@
       </div>
     </section><!-- End Blog Details Section -->
 
+
   </main><!-- End #main -->
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
+
     <div class="footer-content position-relative">
       <div class="container">
         <div class="row">
+
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
@@ -303,6 +322,7 @@
             </div>
           </div><!-- End footer info column-->
 
+
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -313,6 +333,7 @@
               <li><a href="#">Privacy policy</a></li>
             </ul>
           </div><!-- End footer links column-->
+
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Our Services</h4>
@@ -325,6 +346,7 @@
             </ul>
           </div><!-- End footer links column-->
 
+
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Hic solutasetp</h4>
             <ul>
@@ -335,6 +357,7 @@
               <li><a href="#">Sit quas consectetur</a></li>
             </ul>
           </div><!-- End footer links column-->
+
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Nobis illum</h4>
@@ -347,9 +370,11 @@
             </ul>
           </div><!-- End footer links column-->
 
+
         </div>
       </div>
     </div>
+
 
     <div class="footer-legal text-center position-relative">
       <div class="container">
@@ -367,13 +392,17 @@
       </div>
     </div>
 
+
   </footer>
   <!-- End Footer -->
+
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
+
   <div id="preloader"></div>
+
 
   <!-- Vendor JS Files -->
   <script src="{{asset("studentCss/assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
@@ -384,9 +413,12 @@
   <script src="{{asset("studentCss/assets/vendor/purecounter/purecounter_vanilla.js")}}"></script>
   <script src="{{asset("studentCss/assets/vendor/php-email-form/validate.js")}}"></script>
 
+
   <!-- Template Main JS File -->
   <script src="{{asset("studentCss/assets/js/main.js")}}"></script>
 
+
 </body>
+
 
 </html>

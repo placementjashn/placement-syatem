@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\User;
 use App\Models\CompareList;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use App\Models\job;
 use App\Models\Applied;
@@ -35,17 +36,59 @@ class CompanyController extends Controller
     }
 
     //mange compare list
-     /* function storecomparelist(Request $request) {
-       // echo "hiii";
+      function storecomparelist(Request $request) {
         CompareList::create($request->except('_token'));
-        return "Company Added in compare list"; 
+        return redirect('comparedisplaylist'); 
+        /* $con = CompareList::select('*')
+        ->where('id','=', Auth::User()->id)->select('id')->get()->count();
+        
+        if($con <= 2)  {
+            CompareList::create($request->except('_token'));
+        }   
+        else{
+            echo "Maximum Two Company Was Compare";
+        } 
+ */
+
+        /* $con =1;
+        if($con<=2)  {
+            CompareList::create($request->except('_token'));
+        }   
+        else{
+            die('Maximum Two Company Was Compare');
+            /* $this->info("Your Message");
+                echo "Maximum Two Company Was Compare"; 
+        }
+         /* return view('comparedisplaylist',$values); 
+         /* dd($values);  */
+          /* return "Company Added in compare list";     
+           return redirect('comparedisplaylist');    */
     }
     function removecomparelist() {
 
     }
     function showcomparelist() {
+         $data = CompareList::select('*')
+         ->where('id','=',Auth::User()->id)->with('user','company')->get()->toArray();
+        /* $data = CompareList::with('item')->where('id',Auth::User()->id)->get(); */
+         /* dd($data);  */
+        /* die($data); */
+       /*  return view('comparedisplaylist',['data'=>$data]);  */
+         return view('comparedisplaylist',compact('data')); 
+    } 
 
-    } */
+    public function applieddata(Request $request){
+        $applied = new Applied;
+        $applied->company_id =$request['company_id'];
+        $applied->job_id =$request['job_id'];
+        $applied->jobname=$request['job_name'];
+        $applied->JobDescription=$request['jobDescription'];
+        $applied->id =$request['userid'];
+        $applied->qulification =$request['qulification'];
+        $applied->experience =$request['experience'];
+        $applied->save();
+        return redirect('/appliedstudview'); 
+    }
 
     
     //company side student
@@ -66,19 +109,6 @@ class CompanyController extends Controller
         ->get();
         /* die($jobs); */
         return view('appliedStudentform',['jobs'=>$jobs]);
-    }
-    public function applieddata(Request $request){
-        $applied = new Applied;
-        $applied->job_id =$request['job_id'];
-        $applied->username =$request['username'];
-        $applied->contact =$request['contact'];
-        $applied->company_id =$request['company_id'];
-        $applied->email =$request['email'];
-        $applied->qulification =$request['qulification'];
-        $applied->experience =$request['experience'];
-        $applied->id=$request['id'];
-        $applied->save();
-        return redirect('/appliedstudview'); 
     }
     public function view()
     {
