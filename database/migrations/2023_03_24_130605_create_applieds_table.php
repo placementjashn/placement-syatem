@@ -1,8 +1,10 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 
 return new class extends Migration
 {
@@ -18,13 +20,12 @@ return new class extends Migration
             /* $table->string('id'); */
             $table->unsignedBigInteger('id');
             $table->foreign('id')->references('id')->on('users');
-            $table->unsignedBigInteger('job_id'); 
+            $table->unsignedBigInteger('job_id');
             $table->foreign('job_id')->references('job_id')->on('job');
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('company_id')->on('companies');
-            $table->string('username');
-            $table->string('contact');
-            $table->string('email');
+            $table->string('jobname');
+            $table->string('JobDescription');
             $table->string('qulification');
             $table->string('experience');
         });

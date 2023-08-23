@@ -8,6 +8,7 @@ use App\Http\Controllers\postController;
 use App\Http\Controllers\Companyauth\RatingController;
 use App\Http\Controllers\frontend\HomeCssController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\companyCss\CompanyCssController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentCss\StudentCssController;
 use Illuminate\Http\Request;
@@ -27,15 +28,22 @@ use App\Http\Controllers\UserAuth;
 
 Route::get('/',[HomeCssController::class,'index']);//admincss
 
-Route::get('/stud',[StudentCssController::class,'index'])->name('studentCss.studentcss');//studentcss
+//studentcss
 Route::get('/about',[StudentCssController::class,'about']);
-Route::get('/services',[StudentCssController::class,'services']);
-
-Route::get('/sdetail',[StudentCssController::class,'sdetail']);
+/* Route::get('/services',[StudentCssController::class,'services']); */
+/* Route::get('/sdetail',[StudentCssController::class,'sdetail']); */
 Route::get('/blog',[StudentCssController::class,'blog']);
-Route::get('/bdetail',[StudentCssController::class,'bdetail']);
+/* Route::get('/bdetail',[StudentCssController::class,'bdetail']);
 Route::get('/projects',[StudentCssController::class,'projects']);
-Route::get('/contact',[StudentCssController::class,'contact']);
+Route::get('/contact',[StudentCssController::class,'contact']); */
+
+
+
+
+Route::get('/companyabout',[CompanyCssController::class,'index']);//companycss
+Route::get('/companydeals',[CompanyCssController::class,'deals']);
+Route::get('/companyreservation',[CompanyCssController::class,'reservation']);
+
 
 
 /* Route::get('/', function () {
@@ -43,9 +51,8 @@ Route::get('/contact',[StudentCssController::class,'contact']);
 }); */
 
 
+Route::get('/employee',[EmployeeController::class,'employeelist']);
 Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
-Route::get('/addemployee',[EmployeeController::class,'empadd']) ;//employee
-Route::get('/addemployee',[EmployeeController::class,'empadd']);//employee
 Route::post('/addemployee',[EmployeeController::class,'empdata']);//employee
 Route::get('/loginemp',[EmployeeController::class,'emplogin']);//employee
 Route::post('/loginemp',[EmployeeController::class,'verifylogin']);//employee
@@ -67,17 +74,21 @@ Route::get('/compare',[CompanyController::class,'compare']);//compare company
 Route::get('/compare/{company_id}',[CompanyController::class,'records'])->name('compare');//Record display
 Route::get('/companydata',[CompanyController::class,'companylist']);
 
+Route::get('/allpost',[postController::class,'posts']);
+
+
 //Compare list
-Route::post('/comparelist/module/store',[CompanyController::class,'storecomparelist'])->name('storecomparelist');
-Route::post('/comparelist/module/remove',[CompanyController::class,'removecomparelist'])->name('removecomparelist');
-Route::post('/comparelist/module/showcomparelist',[CompanyController::class,'showcomparelist'])->name('showcomparelist');
+Route::post('/comparelist/module/store',[CompanyController::class,'storecompareList'])->name('storecompareList');
+Route::get('/comparelist/module/remove',[CompanyController::class,'removecompareList'])->name('removecompareList');
+Route::get('/comparelist/module/comparedisplaylist',[CompanyController::class,'showcompareList'])->name('showcompareList');
+
 
 //Applyed for Company by student
-Route::get('/appliedCompanyStudentList/{company_id}',[CompanyController::class,'applied']);
+Route::get('/appliedCompanyStudentList/{job_id}',[CompanyController::class,'applied']);
 Route::post('/appliedCompanyStudentList',[CompanyController::class,'applieddata']);
 Route::get('/appliedstudview',[CompanyController::class,'view']);
 Route::get('/cancleapply/{applied_id}',[CompanyController::class,'cancleappliedjob']);
-
+Route::get('/employeestudlist',[CompanyController::class,'studentlistemp']);
 //Rating & Review 
 Route::get('/rating',[RatingController::class,'rating']);
 Route::get('/company/rating/status',[RatingController::class,'updateRatingStatus'])->name('company.rating.status');

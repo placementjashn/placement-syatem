@@ -1,4 +1,4 @@
-/**
+ /**
 * Template Name: UpConstruction - v1.3.0
 * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
 * Author: BootstrapMade.com
@@ -19,8 +19,8 @@
 /* Colors */
 :root {
   --color-default: #adb1b3;
-  --color-primary: #1c5d99;
-  --color-secondary: #ffffff;
+  --color-primary: #81c2fe;
+  --color-secondary: #000000;
 }
 
 /* Smooth scroll behavior */
@@ -28,12 +28,25 @@
   scroll-behavior: smooth;
 }
 
+/*-----------------------------------
+#tbody applied font blur
+/*------------------------------------*/
+tbody{
+  color: var(--color-default);
+}
+
+thead{
+  background-color: lightgray;
+}
+/* table, th, td {
+    border: 1px solid;
+    
+  } */
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: var(--font-default);
-  color: var(--color-default);
   overflow-x: hidden;
 }
 
@@ -121,7 +134,7 @@ section {
 
 .breadcrumbs:before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   inset: 0;
 }
@@ -272,7 +285,7 @@ section {
 .header .logo h1 {
   font-size: 24px;
   font-weight: 700;
-  color: #1c5d99;
+  color: #ffffff;
   margin-bottom: 0;
   font-family: var(--font-primary);
 }
@@ -315,7 +328,7 @@ section {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
-    color: rgba(7, 7, 7, 0.6);
+    color: rgb(160, 160, 160);
     text-transform: uppercase;
     white-space: nowrap;
     transition: 0.3s;
@@ -353,7 +366,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #0d4598;
+    color: #ffffff;
   }
 
   .navbar .dropdown ul {
@@ -366,14 +379,14 @@ section {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+   /*  background: #43434398;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25); */
     transition: 0.3s;
   }
 
-  .navbar .dropdown ul li {
+  /* .navbar .dropdown ul li {
     min-width: 200px;
-  }
+  } */
 
   .navbar .dropdown ul a {
     padding: 10px 20px;
@@ -387,10 +400,11 @@ section {
     font-size: 12px;
   }
 
+  
   .navbar .dropdown ul a:hover,
-  .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover>a {
-    color: var(--color-primary);
+  .navbar .dropdown ul .active:hover
+  {
+    color: white;
   }
 
   .navbar .dropdown:hover>ul {
@@ -2580,7 +2594,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   color: #fff;
-  background: url("../img/footer-bg.jpg") top center no-repeat;
+  background: url("/img/student/footer.jpeg") top center no-repeat;
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;

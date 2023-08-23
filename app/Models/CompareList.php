@@ -8,19 +8,36 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Company;
 use App\Models\User;
-
-class Comparelist extends Authenticatable
+use App\Models\job;
+class CompareList extends Authenticatable
 {
     use HasFactory;
-    protected $table = 'comaprelist';
-    protected $primaryKey  = "compare_id";
+    protected $table = 'compare_lists';
+    /* protected $primaryKey  = "compare_id"; */
     protected $guarded =[];
 
-     public function company_name()
-     {
-        return $this->belongsTo(User::class,'company_id');
-     }
 
+    public function company(){
+      return $this->belongsTo('App\Models\Company','company_id');
+  }
+
+
+  public function user(){
+   return $this->belongsTo('App\Models\User','id');
+}
+public function job(){
+   return $this->belongsTo('App\Models\job','job_id');
+}  /*
+     public function user()
+     {
+        return $this->belongsTo(User::class,'id');
+     }
+     A
+     public function company()
+     {
+        return $this->belongsTo(Company::class,'company_id');
+     } */
+/*
      public function totalCompany($id)
      {
         return Company::where('company_id',$id)->count();
@@ -30,5 +47,5 @@ class Comparelist extends Authenticatable
         'remember_token',
     ];
     use HasFactory;
-    
+     */
 }

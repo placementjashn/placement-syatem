@@ -57,13 +57,6 @@
     <div>
         <form action="{{url('/addemployee')}}" method="post" enctype="multipart/form-data">
             <!-- Nav tabs --> 
-            
-            @if(Session::has('success'))
-            <div class="alert alert-success">{{session::get('success')}}</div>
-            @endif
-            @if(Session::has('fail'))
-            <div class="alert alert-danger">{{session::get('fail')}}</div>
-            @endif    
             @csrf
             <div class="row form">
                {{-- <div class="col-sm-6">

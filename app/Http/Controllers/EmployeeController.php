@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\Company;
 use App\Models\job;
 use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
     public function company(){
+        
         $data=Employee::select("*")
         ->where("companyemail", "=", Auth::guard('company')->user()->email)->get();
         return view('company.dashboard',['data'=>$data]);
@@ -39,7 +41,11 @@ class EmployeeController extends Controller
         $emp->designation = $request['designation'];
         $emp->email = $request['email'];
         $emp->password = Hash::make($request['password']);
-        $emp->empimg = $request['empimg'];
+        $file= $request->file('empimg');
+        $filename=$file->getClientOriginalName();
+        $file-> move('img/employee', $filename);
+           
+        $emp->empimg = $filename;
         $emp->gender = $request['gender'];
         $emp->phone = $request['phone'];
         $emp->companyemail=$request['companyemail'];
@@ -50,9 +56,17 @@ class EmployeeController extends Controller
          /* return redirect('/loginemp');  */
     }
 
+
     public function emplogin(){
         return view('loginemp');
     }
+
+    public function employeelist(){
+        $employees=Employee::where('company_id','=',Auth::guard('company')->user()->company_id)->get();
+
+        return view('companyCss.employeelist',['employees'=>$employees]);
+    }
+
 
     public function verifylogin(Request $request)
     {

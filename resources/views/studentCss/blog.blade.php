@@ -1,463 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>UpConstruction Bootstrap Template - Blog</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
- <!-- Favicons -->
- <link href="{{asset("studentCss/assets/img/favicon.png")}}" rel="icon">
- <link href="{{asset("studentCss/assets/img/apple-touch-icon.png")}}" rel="apple-touch-icon">
+    <title>Compare List</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
- <!-- Google Fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
- <!-- Vendor CSS Files -->
- <link href="{{asset("studentCss/assets/vendor/bootstrap/css/bootstrap.css")}}" rel="stylesheet">
- <link href="{{asset("studentCss/assets/vendor/bootstrap-icons/bootstrap-icons.css")}}" rel="stylesheet">
- <link href="{{asset("studentCss/assets/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet">
- <link href="{{asset("studentCss/assets/vendor/aos/aos.css")}}" rel="stylesheet">
- <link href="{{asset("studentCss/assets/vendor/glightbox/css/glightbox.min.css")}}" rel="stylesheet">
- <link href="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.css")}}" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="{{ asset('studentCss/assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('studentCss/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
- <!-- Template Main CSS File -->
- <link href="{{asset("studentCss/assets/css/main.css")}}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: UpConstruction - v1.3.0
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('studentCss/assets/vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('studentCss/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('studentCss/assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('studentCss/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('studentCss/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('studentCss/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('studentCss/assets/css/main.css') }}" rel="stylesheet">
 </head>
+
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      @foreach($users as $user)
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>{{$user->name}}<span></span></h1>
-      </a>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="{{url('/stud')}}" class="active">Home</a></li>
-         
-          <li><a href="{{url('/blog')}}">Company List</a></li>
-          <li><a href="{{url('/services')}}">Applied Job List</a></li>
-          {{-- <li><a href="{{url('/stud')}}">Home</a></li>
-          <li><a href="{{url('/about')}}">About</a></li>
-          <li><a href="{{url('/services')}}">Services</a></li>
-          <li><a href="{{url('/projects')}}">Projects</a></li>
-          <li><a href="{{url('/blog')}}"  class="active">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i
-                class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                    class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="{{url('/contact')}}">Contact</a></li> --}}
-        </ul>
-      </nav><!-- .navbar -->
-      @endforeach 
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url({{asset("studentCss/assets/img/breadcrumbs-bg.jpg")}});">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-        <h2>Company List</h2>
-        <ol>
-          <li><a href="{{url('/stud')}}">Home</a></li>
-          <li>company</li>
-        </ol>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      @foreach($companies as $company)
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 posts-list">
-
-          <div class="col-xl-7 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="img/company/{{$company->image}}" class="img-fluid" alt="">
-                <span class="post-date">December 12</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">{{$company->name}}</h3>
-
-                {{-- <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">John Doe</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
-                  </div>
-                </div> --}}
-
-                <p>
-                  {{$company->description}}
-                </p>
-
-                <hr>
-
-                <a href="{{route('joblist',$company->company_id)}}" class="readmore stretched-link"><span>Read More</span><i
-                    class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div> 
-          </div><!-- End post list item -->
-          @endforeach
-           {{-- <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{asset("studentCss/assets/img/blog/blog-2.jpg")}}" class="img-fluid" alt="">
-                <span class="post-date">March 19</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Nisi magni odit consequatur autem nulla dolorem</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Julia Parker</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
-                  </div>
-                </div>
-
-                <p>
-                  Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo
-                  libero rerum voluptatem pariatur nam.
-                </p>
-
-                <hr>
-
-                <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
-                    class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div> --}}<!-- End post list item -->
-{{--
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{asset("studentCss/assets/img/blog/blog-3.jpg")}}" class="img-fluid" alt="">
-                <span class="post-date">June 24</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Maria Doe</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
-                  </div>
-                </div>
-
-                <p>
-                  Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis
-                  et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
-                </p>
-
-                <hr>
-
-                <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
-                    class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{asset("studentCss/assets/img/blog/blog-4.jpg")}}" class="img-fluid" alt="">
-                <span class="post-date">August 05</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius
-                  exercitationem.</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Maria Doe</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
-                  </div>
-                </div>
-
-                <p>
-                  Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum
-                  enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
-                </p>
-
-                <hr>
-
-                <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
-                    class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{asset("studentCss/assets/img/blog/blog-5.jpg")}}" class="img-fluid" alt="">
-                <span class="post-date">September 17</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Accusamus quaerat aliquam qui debitis facilis consequatur</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">John Parker</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Politics</span>
-                  </div>
-                </div>
-
-                <p>
-                  In itaque assumenda aliquam voluptatem qui temporibus iusto nisi quia. Autem vitae quas aperiam
-                  nesciunt mollitia tempora odio omnis. Ipsa odit sit ut amet necessitatibus. Quo ullam ut corrupti
-                  autem consequuntur totam dolorem.
-                </p>
-
-                <hr>
-
-                <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
-                    class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <div class="post-item position-relative h-100">
-
-              <div class="post-img position-relative overflow-hidden">
-                <img src="{{asset("studentCss/assets/img/blog/blog-6.jpg")}}" class="img-fluid" alt="">
-                <span class="post-date">December 07</span>
-              </div>
-
-              <div class="post-content d-flex flex-column">
-
-                <h3 class="post-title">Distinctio provident quibusdam numquam aperiam aut</h3>
-
-                <div class="meta d-flex align-items-center">
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-person"></i> <span class="ps-2">Julia White</span>
-                  </div>
-                  <span class="px-3 text-black-50">/</span>
-                  <div class="d-flex align-items-center">
-                    <i class="bi bi-folder2"></i> <span class="ps-2">Economics</span>
-                  </div>
-                </div>
-
-                <p>
-                  Expedita et temporibus eligendi enim molestiae est architecto praesentium dolores. Illo laboriosam
-                  officiis quis. Labore officia quia sit voluptatem nisi est dignissimos totam. Et voluptate et
-                  consectetur voluptatem id dolor magni impedit. Omnis dolores sit.
-                </p>
-
-                <hr>
-
-                <a href="{{url("/bdetail")}}" class="readmore stretched-link"><span>Read More</span><i
-                    class="bi bi-arrow-right"></i></a>
-
-              </div>
-
-            </div>
-          </div><!-- End post list item -->
-
-        </div> --}}<!-- End blog posts list -->
-
-        <div class="blog-pagination">
-          <ul class="justify-content-center">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
-        </div><!-- End blog pagination -->
-
-      </div>
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="footer-content position-relative">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>UpConstruction</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End footer info column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Hic solutasetp</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nobis illum</h4>
-            <ul>
-              <li><a href="#">Ipsam</a></li>
-              <li><a href="#">Laudantium dolorum</a></li>
-              <li><a href="#">Dinera</a></li>
-              <li><a href="#">Trodelas</a></li>
-              <li><a href="#">Flexo</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            @foreach ($users as $user)
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1>{{ $user->name }}<span></span></h1>
+                </a>
+
+
+                <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+                <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        <li><a href="{{ url('/dashboard') }}" class="active">Home</a></li>
+                        <li><a href="{{ url('/blog') }}">Company List</a></li>
+                        <li><a href="{{ url('/appliedstudview') }}">Applied Job List</a></li>
+                        <li><a href="{{ route('showcompareList') }}"> Comapre Company List</a></li>
+                        {{-- <li><a href="{{url('/studlogout')}}">Log Out</a></li> --}}
+                        <li class="dropdown"><a href="#"><img class="rounded-circle" height="45px" width="45px"
+                                    src="{{ asset('img/student/' . Auth::user()->image) }}"
+                                    alt="{{ Auth::user()->image }}"></a>
+                            <ul>
+                                <li>
+                                    <x-dropdown-link :href="route('profile.edit')">
+                                        {{ __('Profile') }}
+                                    </x-dropdown-link>
+                                </li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <x-dropdown-link :href="route('logout')"
+                                            onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                            {{ __('Log Out') }}
+                                        </x-dropdown-link>
+                                    </form>
+
+
+                                </li>
+                            </ul>
+                </nav><!-- .navbar -->
+            @endforeach
         </div>
-      </div>
-    </div>
+    </header><!-- End Header -->
 
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>UpConstruction</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-            href="https://themewagon.com">ThemeWagon</a>
-        </div>
-      </div>
-    </div>
 
-  </footer>
-  <!-- End Footer -->
+    <main id="main">
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
 
-  <div id="preloader"></div>
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs d-flex align-items-center"
+            style="background-image: url({{ asset('/img/student/header.jpeg') }});">
+            <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-  <!-- Vendor JS Files -->
-  <script src="{{asset("studentCss/assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
-  <script src="{{asset("studentCss/assets/vendor/aos/aos.js")}}"></script>
-  <script src="{{asset("studentCss/assets/vendor/glightbox/js/glightbox.min.js")}}"></script>
-  <script src="{{asset("studentCss/assets/vendor/isotope-layout/isotope.pkgd.min.js")}}"></script>
-  <script src="{{asset("studentCss/assets/vendor/swiper/swiper-bundle.min.js")}}"></script>
-  <script src="{{asset("studentCss/assets/vendor/purecounter/purecounter_vanilla.js")}}"></script>
-  <script src="{{asset("studentCss/assets/vendor/php-email-form/validate.js")}}"></script>
 
-  <!-- Template Main JS File -->
-  <script src="{{asset("studentCss/assets/js/main.js")}}"></script>
+                <h2>Company List</h2>
+                <ol>
+                    <li><a href="{{ url('/stud') }}">Home</a></li>
+                    <li>company</li>
+                </ol>
 
+
+            </div>
+        </div><!-- End Breadcrumbs -->
+
+
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+
+                <div class="row gy-4 posts-list">
+                    @foreach ($companies as $company)
+                        <div class="col-xl-6 col-md-6">
+                            <div class="post-item position-relative h-100">
+
+
+                                <div class="post-img position-relative overflow-hidden" style="height:230px;">
+                                    @if (file_exists(public_path('img/company/' . $company->image)))
+                                        <img src="img/company/{{ $company->image }}" class="img-fluid" alt="">
+                                    @else
+                                        <img src="{{ asset('img/company/1678168513.jpeg') }}" class="img-fluid"
+                                            alt="">
+                                    @endif
+                                </div>
+
+
+                                <div class="post-content d-flex flex-column">
+
+
+                                    <h3 class="post-title">{{ $company->name }}</h3>
+                                    <p>
+                                        {{ $company->description }}
+                                    </p>
+                                    <hr>
+                                    @auth
+                                        <a href="{{ route('compare', $company->company_id) }}"><input type="hidden"
+                                                value="{{ $company->company_id }}">
+                                        @endauth
+                                        <a href="javaScript:void(0)" class="btn btn-primary"
+                                            onclick="saveToCompareList('{{ $company->company_id }}','{{ Auth::User()->id }}')">Add
+                                            To Compare</a>
+                                        @guest
+                                            <a href="javascript:void(0)" class="btn btn-primary"
+                                                onclick="saveToCompareList('{{ $company->company_id }})','0')">Add To
+                                                Compare</a>
+                                        @endguest
+                                        <br>
+                                        <a href="{{ route('joblist', $company->company_id) }}"
+                                            class="btn btn-primary"><span>Read More</span><i
+                                                class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div><!-- End post list item -->
+                    @endforeach
+                    <!-- End blog pagination -->
+
+
+                </div>
+            </div>
+        </section><!-- End Blog Section -->
+        <!-- ======= Footer ======= -->
+        <footer id="footer" class="footer">
+            <div class="footer-legal text-center position-relative">
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>JashnPlacement</span></strong>. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+
+    </main><!-- End #main -->
+
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('studentCss/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('studentCss/assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('studentCss/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('studentCss/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('studentCss/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('studentCss/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ asset('studentCss/assets/vendor/php-email-form/validate.js') }}"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="{{ asset('studentCss/assets/js/main.js') }}"></script>
+
+
+    <!-- compare company -->
+    <script>
+        function saveToCompareList(company_id, id) {
+            /*   alert("Hello"); */
+            /* alert(company_id); */
+
+            if (id == 0) {
+                alert("Login is required To compare the company");
+            } else {
+/*                 alert("User_ID" + id); */
+                $.ajax({
+                    /*  consol.log("janki"); */
+                    "url": '{{ route('storecompareList') }}',
+                    "method": "POST",
+                    "data": {
+                        company_id: company_id,
+                        id: id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(resp) {
+                        /* alert(resp);  */
+                        console.log(resp);
+                        alert("Added In ComparList");
+                    },
+                    error: function(error) {
+                        alert(error);
+                    }
+                })
+            }
+        }
+    </script>
 </body>
+
 
 </html>

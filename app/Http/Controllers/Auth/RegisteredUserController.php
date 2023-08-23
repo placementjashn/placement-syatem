@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\Http\Controllers\Auth;
+
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -14,6 +16,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Barryvdh\DomPDF\Facade\PDF;
 
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -23,6 +26,7 @@ class RegisteredUserController extends Controller
     {
         return view('auth.register');
     }
+
 
     /**
      * Handle an incoming registration request.
@@ -39,7 +43,8 @@ class RegisteredUserController extends Controller
             'location' => ['required'],
             'image' => ['required'],
             'resume'=>['required'],
-        ]); 
+        ]);
+
 
         $user = User::create([
             'name' => $request->name,
@@ -53,17 +58,22 @@ class RegisteredUserController extends Controller
             'image' => $imagename,
             /* $pdf = PDF::loadView('contract.contract-pdf', $data);
             $pdf->save('contract.pdf');
-            $s3 =\Storage::disk('s3'); 
+            $s3 =\Storage::disk('s3');
             $s3->put('pdf/contract', new File('contract.pdf'), 'public');*/
             $resume = time().'.'.$request->resume->getClientOriginalExtension(),
             $request->resume->move('img/student',$resume),
             'resume' => $resume,
+            'stream'=> $request->stream,
+            'university'=>$request->university,
             /* 'resume' => $request->resume, */
         ]);
 
+
         event(new Registered($user));
 
+
         Auth::login($user);
+
 
         return redirect(RouteServiceProvider::HOME);
     }

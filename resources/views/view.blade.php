@@ -29,17 +29,13 @@
                     <a href="{{url('/view')}}" class="nav-link"> Manage Post </a>
                 </div>
             </li>
-            <li class="nav-item">
+           {{--  <li class="nav-item">
                 <a href="#tab5Id" class="nav-link">Student list 
                 </a>
             </li>
-           
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
-              <div class="dropdown-menu">
-                <a href="#" class="nav-link">Profile</a>
-                <a href="{{url('/logout')}}" class="nav-link" >Logout</a>
-              </div>
+            --}}
+            <li class="nav-item dropdown"> 
+              <a href="{{url('/logout')}}" class="nav-link" >Logout</a>
           </li>
         </ul>
       </div>

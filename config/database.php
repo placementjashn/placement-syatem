@@ -1,8 +1,11 @@
 <?php
 
+
 use Illuminate\Support\Str;
 
+
 return [
+
 
     /*
     |--------------------------------------------------------------------------
@@ -15,7 +18,9 @@ return [
     |
     */
 
+
     'default' => env('DB_CONNECTION', 'mysql'),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +38,9 @@ return [
     |
     */
 
+
     'connections' => [
+
 
         'sqlite' => [
             'driver' => 'sqlite',
@@ -42,6 +49,7 @@ return [
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
+
 
         'mysql' => [
             'driver' => 'mysql',
@@ -56,12 +64,13 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
-            'strict' => true,
+            'strict' => false,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',
@@ -78,6 +87,7 @@ return [
             'sslmode' => 'prefer',
         ],
 
+
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
@@ -93,7 +103,9 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +118,9 @@ return [
     |
     */
 
+
     'migrations' => 'migrations',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -119,14 +133,18 @@ return [
     |
     */
 
+
     'redis' => [
 
+
         'client' => env('REDIS_CLIENT', 'phpredis'),
+
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
         ],
+
 
         'default' => [
             'url' => env('REDIS_URL'),
@@ -137,6 +155,7 @@ return [
             'database' => env('REDIS_DB', '0'),
         ],
 
+
         'cache' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
@@ -146,6 +165,8 @@ return [
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
+
     ],
+
 
 ];
